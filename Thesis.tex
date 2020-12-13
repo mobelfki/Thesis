@@ -1,0 +1,48 @@
+\documentclass[12pt]{report}
+\usepackage{ amssymb }
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\graphicspath{ {figures/} }
+\usepackage{array}
+\usepackage{geometry}
+\geometry{
+left=2cm,
+right=2cm,
+top=3cm,
+bottom=3cm
+}
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+\newcommand{\kl}{$\kappa_{\lambda}$\ }
+\newcommand{\ifb}{$fb^{-1}$\ }
+\newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\ }
+\title{Thesis}
+\author{BELFKIR Mohamed}
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+\input{Intro/Intro}
+\input{Ch1/chapter1}
+\input{Ch2/Chapter2}
+\input{Ch3/Chapter3}
+\input{Ch4/Chapter4}
+\input{Ch5/Chapter5}
+\input{Ch6/Chapter6}
+\input{Con/Con}
+\input{Adx/Adx1/Appendix1}
+
+
+\end{document}
