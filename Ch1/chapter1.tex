@@ -36,7 +36,7 @@ In the SM, particles classified as either fermions or bosons depending on what s
 \subsubsection{Leptons}
 Leptons (comes from the Greek word meaning "light") are grouped into three families or generations formed by three charged leptons: electron e, muons $\mu$ and tau $\tau$ with electric charge -e, with e being the elementary charge of $\sim 1.6 \ 10^{-19} $C, and their neutral complemented partners neutrinos : $\nu_{e}, \nu_{\mu}$ and $\nu_{\tau}$. Only electron and neutrinos (in SM) are stable. A quantum number called Leptonic number (L) is associated with each lepton. Electron, muon and tau have identical properties (a charge, spin) however tau is 3477 times heavier than an electron, the muon has 17 times the mass of an electron. The rest mass of an electron is $9.10938356 \ 10^{-31} Kg$. From 20 May 2019  kilogram not anymore part of the International System of Units for that masses will be expressed by the unit of energy (E) the electron-volt (eV). Mass is related to eV by the equation $E=mc^2$, c is the velocity of light. In particle and high energy physics, all constants fixed to one (c=1). Electron mass is $511 \ keV$.
 \subsubsection{Quarks}
-Quarks are electrically charger particles, with charge of $+\frac{2}{3}e$ for so-called up-type quarks and $-\frac{1}{3}e$ for the down-type quarks. There are sin known quarks, similarly to leptons quarks are paired into three generations. The first generation consists of up (u) and down (d) quarks, the second has the charm (c) and strange (s) quarks and top (t) and bottom (b) quarks for the third generation. Quarks can not exist in a free state. Table \ref{tab:fermions} shows a summary of leptons and quarks. \\
+Quarks are electrically charger particles, with charge of $+\frac{2}{3}e$ for so-called up-type quarks and $-\frac{1}{3}e$ for the down-type quarks. There are six known quarks flavours, similarly to leptons quarks are paired into three generations. The first generation consists of up (u) and down (d) quarks, the second has the charm (c) and strange (s) quarks and top (t) and bottom (b) quarks for the third generation. Quarks can not exist in a free state. Table \ref{tab:fermions} shows a summary of leptons and quarks. \\
 Each of the higher generations has particles with higher mass and tends to decay to the lower one, explains why the ordinary matter made off the first-generation particles. Each fermion has it is corresponding anti-particle.
 \begin{table}[ht]
 \centering
@@ -68,7 +68,7 @@ Each of the higher generations has particles with higher mass and tends to decay
 Standard Model of elementary particles assumes neutrinos to be mass-less particles, while some experiments demonstrate that neutrinos have a non-negligible mass $\sim eV$. 
 
 \subsubsection{Bosons}
-As mentioned before, bosons are particles of integer angular momentum and obey to the Bose-Einstein statistics. They are the carriers of the gauge interactions between fermions. Photon ($\gamma$) is a boson known as a quantum of the electromagnetic field including electromagnetic radiation such as light. Photons are neutral and mass-less particles.  $W^{\pm}, Z^{0}$ are bosonic particles wish carriers the weak interaction. $Z^{0}$ boson is neutral while $W^{\pm}$ charged with a charge of $\pm$e. Contrary to photons, Weak bosons are massive bosons. $W^{\pm}$ and $Z^{0}$ mess predicted to be so large that it took many years to build powerful accelerators to produce them. $W^{\pm}$ and $Z^{0}$ bosons have been discovered at CERN in 1983 by the UA1 and UA2 collaboration, and their masses were found to be about 80 GeV and 91 GeV respectively. Gluons are the neutral quantum of the strong force known as the "glue" that links quarks to form hadrons. The mass of the gluons is known to be strictly zero. They are eights gluons differed with their colours charge. 
+As mentioned before, bosons are particles of integer angular momentum and obey to the Bose-Einstein statistics. They are the carriers of the gauge interactions between fermions. Photon ($\gamma$) is a boson known as a quantum of the electromagnetic field including electromagnetic radiation such as light. Photons are neutral and mass-less particles.  $W^{\pm}, Z^{0}$ are bosonic particles wish carriers the weak interaction. $Z^{0}$ boson is neutral while $W^{\pm}$ charged with a charge of $\pm$e. Contrary to photons, Weak bosons are massive bosons. $W^{\pm}$ and $Z^{0}$ mess predicted to be so large that it took many years to build powerful accelerators to produce them. $W^{\pm}$ and $Z^{0}$ bosons have been discovered at CERN in 1983 by the UA1 and UA2 collaboration, and their masses were found to be about 80 GeV and 91 GeV respectively. Gluons are the neutral quantum of the strong force known as the "glue" that links quarks to form hadrons. The mass of the gluons is known to be strictly zero. They are eights gluons. 
 \subsection{Elementary Interactions}
 \label{chap1:SM:EI}
 
@@ -89,13 +89,54 @@ To be a valid gauge theory the QED lagrangian should invariant under a U(1) loca
     \mathcal{L} = \bar{\psi}i\gamma^\mu\partial_\mu\psi - m\psi\bar{\psi} + q\psi\gamma^{\mu}\psi A_{\mu} - \frac{1}{4}F^{\mu\nu}F_{\mu\nu},
 \end{equation}
 where $F^{\mu\nu} = - F^{\mu\nu} = \partial^{\nu}A^{\mu} - \partial^{\mu}A^{\nu}$ is the field-strength tensor for the electromagnetic force, as described by Maxwell equations, describes the kinetic propagation of the field. The term $q\psi\gamma^{\mu}\psi A_{\mu}$ reflects the interaction between a fermion and the electromagnetic force (photon) with strength q (q=-e) the electromagnetic interaction charge (electric charge). The mass term of the photon is not added to the lagrangian since it spoils the gauge invariance. This is in agreement with the observation that the photon is mass-less. U(1) has one generator corresponds to the photon mediator.
-
 \subsubsection{Electro-Weak interaction}
+Electroweak consists of an unification of the electromagnetic and weak interactions. It is described by the combined gauge symmetry $SU(2)_{T}\times U(1)_{Y}$, where the $U(1)_{Y}$ symmetry mimics that of QED with the weak hypercharge Y. The $SU(2)$ represents the weak interaction with its generator vector T called weak isospin. The Lagrangian of the theory can be written as : 
+\begin{equation}
+    \mathcal{L}_{EW} = \bar{\psi}i\gamma^\mu\partial_\mu\psi -eY\bar{\psi}\gamma^{\mu}B_{\mu}\psi-g_{W}\bar{\psi}\gamma^{\mu}\textbf{T.W$_\mu$}\psi
+    -\frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \frac{1}{4}W^{i\mu\nu}W^i_{\mu\nu},
+\end{equation}
+where $g_{W}$ is the weak coupling to the fermionic fields. The first two terms are similar to $\mathcal{L}_{QED}$. However, the term representing the coupling of fermions to photons is replaced by more general terms, and the $W_{\mu}$ and $B_{\mu}$ fields are introduced. The two charged vector bosons $W^\pm$ appear as linear combinations of the $W_{\mu}$ field components, $W^{\pm}_{\mu} = \frac{1}{\sqrt{2}}(W^1_{\mu}\mp W^2_{\mu})$. The photon is now created through the mixing of the $W_{\mu}$ and $B_{\mu}$ fields, as :
+\begin{equation}
+    A_{\mu} = B_{\mu}cos\theta_{W} + W^3_{\mu}sin\theta_{W},
+\end{equation}
+where $\theta_{W}$ is the weak mixing angle, and the $Z_{\mu}$ field, corresponding to the Z boson, is generated similarly as : 
+\begin{equation}
+     Z_{\mu} = -B_{\mu}sin\theta_{W} + W^3_{\mu}cos\theta_{W}.
+\end{equation}
+The field strength tensor for the weak gauge fields $W^i$ is defined as:
+\begin{equation}
+    W^{i}_{\mu\nu} = \partial_{\mu}W^i_{\nu} - \partial_{\nu}W^i_{\mu} - g_{W}\epsilon_{ijk}W^i_{\mu}W^i_{\nu},
+    \label{eq:W}
+\end{equation}
+The third non-Abelian term in Eq.(\ref{eq:W}), similar as in QCD model, gives rise to the weak boson self-interactions. \\
+Fermions are decomposed into left-handed and right-handed chirality types. The chirality is defined for mass-less particles as the same as hilicity and refers to the relation between the spin and momentum direction. While for massive particles chirality is trickier to define. Note that the electroweak force interacts only with left-handed particles and the right-handed anti-particles, violating the parity. The chirality distinct between left-handed doublets, and the right-handed singlets:
+\begin{equation}
+    (\nu_i \ i)^T_L, i_R \ with i = e, \mu or \tau,
+\end{equation}
+and, 
+\begin{equation}
+    (u \ d)^T_L, \ (c \ s)^T_L, \ (t \ b)^T_L, \ u_R, \ d_R ... \ . 
+\end{equation}
 
+\subsubsection{Strong interaction}
+Additionally to QED, the strong interaction is described by Quantum Chromo-Dynamics (QCD), which is a local gauge symmetry under $SU(3)_C$. SU(3) has eight generators correspond to the eight gluons mediators of the strong force. The expression for the locally gauge invariant Lagrangian of QCD which describes interactions of quarks of mass m, quark-field spinors $\psi$ a mass-less gluons is:
+\begin{equation}
+    \mathcal{L}_{QCD} = \sum_{flavours} \bar{\psi}_a(i\gamma^\mu\partial_\mu\delta_{ab}-g_{s}\gamma^\mu t^C_{ab}G^C_\mu - m\delta_{ab}\psi_b - \frac{1}{4}F^A_{\alpha\beta}F^{A\alpha\beta},
+\end{equation}
+where a = 1,2,3 is the color index .The $G^{C}_\mu$ are the gluon fields with C= 1,2,..,8 that transform under the adjoint representation of the SU(3) group.  The $t^C_{ab}$ are the generators of the SU(3) group, the quantity $g_{s}$ corresponds to strong coupling constant that determines the strength of interactions between coloured particles. The strong field tensor is defined as :
+\begin{equation}
+    F^A_{\alpha\beta} = \partial_\mu G^A_\nu - \partial_\nu G^A_\mu - g_sf^{ABC}G^B_\mu G^C_\nu,
+ \end{equation}
+where $f^{ABC}$ are the structure constants of the SU(3) group. In contrast to QED, the field tensor of the QCD includes the gluon triplet and quartic self-interactions. Only particles carrying colour charge (i.e.quarks) couple to these gluons. Colour charge is conserved in each interaction. Since the SU(3) group is non-Abelian, the gluons themselves must also carry (anti-)colour charge and thus interact with each other. \\
 
+Finally, the standard model Lagrangian density could be summarized as : 
+\begin{equation}
+    \mathcal{L}_{SM} \sim \mathcal{L}_{EW} + \mathcal{L}_{QCD}.
+\end{equation}
+Note that, in the $L_{EW}$  no mass term is introduced for the two newly appearing bosons, while experimental observations were found that indicate they were massive. Additionally, the fermion mass term that appeared in $L_{QED}$ is now absent, requiring the introduction of an additional mechanism to explain the origin of their mass. This is handled through the process of Electroweak Symmetry Breaking (EWSB), and the introduction of the Higgs mechanism.
 \section{Electroweak Symmetry Breaking (EWSB)}
-
 \label{chap1:EWSB}
+
 
 This section will ask the question mass of particles and introduce the EWSB to answer.\\
 Introduce the Higgs boson and its proprieties.\\
