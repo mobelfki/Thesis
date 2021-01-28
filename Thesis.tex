@@ -10,10 +10,10 @@
 \usepackage{subcaption}
 \usepackage{xcolor}
 \geometry{
-left=2cm,
-right=2cm,
-top=3cm,
-bottom=3cm
+left=1.5cm,
+right=1.5cm,
+top=2cm,
+bottom=2cm
 }
 \usepackage[english]{babel}
 \usepackage{multirow}
@@ -28,10 +28,17 @@ bottom=3cm
 \newcommand{\kl}{$\kappa_{\lambda}$\ }
 \newcommand{\ifb}{$fb^{-1}$\ }
 \newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\ }
+
+\newcommand{\bib}[6]{
+    \bibitem{#1} #2, {\em #3}, \href{#4}{#5}, #6
+}
 \title{Thesis}
 \author{BELFKIR Mohamed}
 \date{December 2020}
-
+\usepackage[ backend=biber, style=numeric, sorting=none ]{biblatex}
+\usepackage{csquotes}
+\addbibresource{Ch1/Chapter1.bib}
+\addbibresource{Ch2/Chapter2.bib}
 \begin{document}
 
 \maketitle
@@ -39,10 +46,9 @@ bottom=3cm
 \tableofcontents
 \listoffigures
 \listoftables
-
 \newpage
 \input{Intro/Intro}
-\input{Ch1/chapter1}
+\input{Ch1/Chapter1}
 \input{Ch2/Chapter2}
 %\input{Ch3/Chapter3}
 \input{Ch4/Chapter4}
@@ -50,6 +56,6 @@ bottom=3cm
 \input{Ch6/Chapter6}
 \input{Con/Con}
 \input{Adx/Adx1/Appendix1}
-
+\printbibliography
 
 \end{document}
