@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{book}
 \usepackage{ amssymb }
 \usepackage{graphicx}
 \usepackage{float}
@@ -23,6 +23,7 @@ bottom=2cm
 {\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 \pagestyle{mystyle}
 
+\newcommand{\eT}{$E_\mathrm{T}$\ }
 \newcommand{\pT}{$p_{T}$\ }
 \newcommand{\kt}{$\kappa_{t}$\ }
 \newcommand{\kl}{$\kappa_{\lambda}$\ }
@@ -32,6 +33,55 @@ bottom=2cm
 \newcommand{\bib}[6]{
     \bibitem{#1} #2, {\em #3}, \href{#4}{#5}, #6
 }
+
+% Hadronic leakage
+\newcommand*{\Rhad}{\ensuremath{R_\mathrm{had}}\xspace}
+\newcommand*{\Rhadone}{\ensuremath{R_\mathrm{had_1}}\xspace}
+
+% Third
+\newcommand*{\fIII}{\ensuremath{f_3}\xspace}
+
+% Middle
+\newcommand*{\Reta}{\ensuremath{R_\eta}\xspace}
+\newcommand*{\Rphi}{\ensuremath{R_\phi }\xspace}
+\newcommand*{\wetatwo}{\ensuremath{w_{\eta_2}}\xspace}
+
+% Strips
+\newcommand*{\Fside}{\ensuremath{f_\mathrm{side}}\xspace}
+\newcommand*{\wthree}{\ensuremath{w_{s\,3}}\xspace}
+\newcommand*{\wtot}{\ensuremath{w_{s\,\mathrm{tot}}}\xspace}
+\newcommand*{\DeltaE}{\ensuremath{\Delta{}E_s}\xspace}
+\newcommand*{\Eratio}{\ensuremath{E_\mathrm{ratio}}\xspace}
+\newcommand*{\Emaxtwor}{\ensuremath{R_\mathrm{max\,1}}\xspace}
+\newcommand*{\fI}{\ensuremath{f_1}\xspace}
+
+% other shapes
+\newcommand*{\eoverp}{\ensuremath{E/p}\xspace}
+\newcommand*{\deltaeta}{\ensuremath{\Delta\eta_1}\xspace}
+\newcommand*{\deltaphi}{\ensuremath{\Delta\phi_2}\xspace}
+\newcommand*{\dOSig}{\ensuremath{\sigma(d_0)}\xspace}
+\newcommand*{\TRTHighTHitsRatio}{\ensuremath{F_\text{HT}}\xspace}
+%\newcommand*{\TRTPID}{TRTPID\xspace}
+\newcommand*{\TRTPID}{eProbabilityHT\xspace}
+\newcommand*{\TR}{\ensuremath{F_\text{HT}}\xspace}
+\newcommand*{\trackdO}{\ensuremath{d_0}\xspace}
+\newcommand*{\trackzO}{\ensuremath{z_0}\xspace}
+\newcommand*{\ptconept}{\ensuremath{p_T\text{cone20}/p_T}\xspace}
+\newcommand*{\deltapoverp}{\ensuremath{\Delta p/p}\xspace}
+\newcommand*{\deltaphires}{\ensuremath{\Delta\phi_\text{res}}\xspace}
+\newcommand*{\nvtx}{\ensuremath{n_\text{vtx}}\xspace}
+\newcommand*{\nvtxmax}{\ensuremath{n_\text{vtx,max}}\xspace}
+\newcommand*{\dOSignificance}{\ensuremath{\trackdO/\dOSig}}
+\newcommand*{\deltaZOsinTheta}{\ensuremath{|\Delta z_{0}\sin\theta|}\xspace}
+\newcommand*{\deltaZO}{\ensuremath{\Delta z_{0}}\xspace}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \title{Thesis}
 \author{BELFKIR Mohamed}
 \date{December 2020}
@@ -39,6 +89,7 @@ bottom=2cm
 \usepackage{csquotes}
 \addbibresource{Ch1/Chapter1.bib}
 \addbibresource{Ch2/Chapter2.bib}
+\DeclareUnicodeCharacter{2212}{-}
 \begin{document}
 
 \maketitle
