@@ -304,7 +304,7 @@ Additionally, an ambiguity resolution is performed to remove a part of the overl
     \label{fig:chap2:Objects:Egamma:Ambg}
 \end{figure}
 
-Most of LHC physics require the identification of prompt non-fake leptons and / or photons. Prompt particles are those not coming from a hadron or tau decay. Non-fake particles are those which type was properly reconstructed ($i.e.$ a non-fake reconstructed electron is a true electron, not another mis-identified particle). Their identification and separation can be obtained with several selection criteria and algorithms. The identification for the reconstructed electrons and photons is finally based on the reconstructed super-cluster objects. A set of shower shape and other discriminating variables are calculated for the identification using cells in the fixed-size window. A list is given in Table \ref{tab:chap2:Objects:Egamma:SS} long with an indication if they are used for electron or photon identification. The prompt and non-fake leptons/photons are usually isolated, without much activity around them. It is therefore important to define a proper "isolation criteria" to reduce the contamination from non-prompt and fake objects. Electron isolation and identification are described in Sections \ref{chap2:Objects:Egamma:EIso} and \ref{chap2:Objects:Egamma:EID} respectively, while Chapter \ref{gamma} is dedicated to photon proprieties.
+Most of LHC physics require the identification of prompt non-fake leptons and / or photons. Prompt particles are those not coming from a hadron or tau decay. Non-fake particles are those which type was properly reconstructed ($i.e.$ a non-fake reconstructed electron is a true electron, not another mis-identified particle). Their identification and separation can be obtained with several selection criteria and algorithms. The identification for the reconstructed electrons and photons is finally based on the reconstructed super-cluster objects. A set of discriminating variables are calculated for the identification using cells in the fixed-size window. A list is given in Table \ref{tab:chap2:Objects:Egamma:SS} long with an indication if they are used for electron or photon identification. The prompt and non-fake leptons/photons are usually isolated, without much activity around them. It is therefore important to define a proper "isolation criteria" to reduce the contamination from non-prompt and fake objects. Electron isolation and identification are described in Sections \ref{chap2:Objects:Egamma:EIso} and \ref{chap2:Objects:Egamma:EID} respectively, while Chapter \ref{gamma} is dedicated to photon proprieties.
 \begin{table}[tp]
     
     \caption{Discriminating variables used for electron and photon
@@ -390,6 +390,7 @@ Most of LHC physics require the identification of prompt non-fake leptons and / 
 \end{table}
 
 \subsubsection{Electron and Photon calibration}
+\label{chap2:Objects:Egamma:Cal}
 After the electron and photon super clusters are built, an initial energy calibration and position correction is applied to them \cite{Egamma_Calibration}. A complex chain with several successive calibration steps is used to calibrate the electron and photon energies based on simulation and well known reference processes. A schematic overview of the whole calibration chain is shown in Figure \ref{fig:chap2:Objects:Egamma:Cal}.
 \begin{figure}[H]
     \centering
@@ -466,7 +467,6 @@ For physics purposes three WPs are defined. These operating points are referred 
 \label{chap2:Objects:Muon}
 \subsubsection{Muon reconstruction}
 \label{chap2:Objects:Muon:Reco}
-
 Muons are the only charged particles leaving the calorimeter system. Muon reconstruction is performed in two sub-detectors independently. Firstly, the muon tracks are reconstructed in the ID like any track as described in Section \ref{chap2:Objects:Trk}. Then, the ID reconstruction is combined with the muon reconstruction in MS sub-detector to perform the muon object used in physics analysis. In the MS, the muons are triggered in RPC/TGC if at least one hut exists, defining the region of activity (ROA). All the muon chambers intersecting with the ROA are then selected as muon track candidates. The MDT segments are reconstructed by performing a straight-line fit (the bending of muons $>$ few GeV is sufficiently small) to the hits found in each layer \cite{hough}. The fitted segments are required to point loosely towards the IP, in order to reject background events and random hit combinations. Muon track candidates are then built by extrapolation each of these segments to the other. At least two matching segments  using their relative positions and angles are required to build a track, except in the barrel–endcap transition region where a single high-quality segment can be used. \\
 The combined reconstruction is performed according to various algorithms based on the provided information by sub-detectors \cite{Muon_Reco_2014_algo,Muon_Reco_2016_algo}: 
 \begin{itemize}

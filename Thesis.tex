@@ -17,6 +17,7 @@ bottom=2cm
 }
 \usepackage[english]{babel}
 \usepackage{multirow}
+\usepackage{comment}
 \usepackage[pagestyles]{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
 \newpagestyle{mystyle}
@@ -89,11 +90,11 @@ bottom=2cm
 \usepackage{csquotes}
 \addbibresource{Ch1/Chapter1.bib}
 \addbibresource{Ch2/Chapter2.bib}
+\addbibresource{Ch3/Chapter3.bib}
 \DeclareUnicodeCharacter{2212}{-}
 \begin{document}
 
 \maketitle
-
 \tableofcontents
 \listoffigures
 \listoftables
@@ -101,7 +102,7 @@ bottom=2cm
 \input{Intro/Intro}
 \input{Ch1/Chapter1}
 \input{Ch2/Chapter2}
-%\input{Ch3/Chapter3}
+\input{Ch3/Chapter3}
 \input{Ch4/Chapter4}
 \input{Ch5/Chapter5}
 \input{Ch6/Chapter6}
