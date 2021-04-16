@@ -177,7 +177,7 @@ For this study, Inclusive photons from the $Z\rightarrow ll\gamma$ are considere
 \end{enumerate}
 No identification criteria is applied to photons to avoid any bias from the identification.
 \subsubsection{Electrons reweighting applied to photons}
-The first strategy has been to apply the electron reweighting to photons. The developed reweighting matrix for electrons is directly applied to the selected photons from radiative Z events. Figure \ref{fig:gamma:ss:reweighting:photon:electron} shows the energy profiles and layer 2 shower shapes variables before and after the reweighting. The reweighting goes in the correct direction but not enough to correct photons shower shape mis-modelling; this motivates to implement specific reweighting for photons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix ().
+The first strategy has been to apply the electron reweighting to photons. The developed reweighting matrix for electrons is directly applied to the selected photons from radiative Z events. Figure \ref{fig:gamma:ss:reweighting:photon:electron} shows the energy profiles and layer 2 shower shapes variables before and after the reweighting. The reweighting goes in the correct direction but not enough to correct photons shower shape mis-modelling; this motivates to implement specific reweighting for photons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix \ref{Adx1:Electron}.
 \begin{figure}[ht]
     \centering
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/phiProfile_NCon_Eta_0.40_0.60.jpg}}
@@ -200,7 +200,7 @@ The first strategy has been to apply the electron reweighting to photons. The de
     \label{fig:gamma:ss:reweighting:photon:electron}
 \end{figure}
 \subsubsection{Photon reweighting}
-The second strategy is to drive specific reweighting for photon. Similarly to electrons, the reweighting is recomputed for photons using radiative Z events inclusively in conversion to allow for more statistics. Figure \ref{fig:gamma:ss:reweighting:photon:photon} shows the profiles and shower shapes after applying the derived reweighting on photons. A good agreement is observed in energy profiles for both direction $\eta$ and $\phi$. However for shower shapes variables, no significant improvement is observed and the reweighting seems to be not working for photons. From the energy profiles in Figures \ref{fig:gamma:ss:reweighting:photon:electron} and \ref{fig:gamma:ss:reweighting:photon:photon} photons reweighting from radiative Z are larger than the one for electrons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix (). To validate the reweighting procedure a closure test is performed on pseudo data.
+The second strategy is to drive specific reweighting for photon. Similarly to electrons, the reweighting is recomputed for photons using radiative Z events inclusively in conversion to allow for more statistics. Figure \ref{fig:gamma:ss:reweighting:photon:photon} shows the profiles and shower shapes after applying the derived reweighting on photons. A good agreement is observed in energy profiles for both direction $\eta$ and $\phi$. However for shower shapes variables, no significant improvement is observed and the reweighting seems to be not working for photons. From the energy profiles in Figures \ref{fig:gamma:ss:reweighting:photon:electron} and \ref{fig:gamma:ss:reweighting:photon:photon} photons reweighting from radiative Z are larger than the one for electrons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix \ref{Adx1:Photon}. To validate the reweighting procedure a closure test is performed on pseudo data.
 \begin{figure}[ht]
     \centering
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/phiProfile_NCon_Eta_0.40_0.60.jpg}}
@@ -381,30 +381,141 @@ Figure \ref{fig:gamma:CNN:Validation:Imp} shows the relative improvement over th
 %    \label{fig:gamma:CNN:Validation:ROC:MaxImp}
 %\end{figure}
 
-\subsubsection{Out-of-Sample validation Z$\rightarrow ll\gamma$}
+\subsubsection{Photon Efficiency Estimation : Out-of-sample validation}
 \label{gamma:CNN:Zllg}
-Radiated photons from Z boson decay are used to evaluate the final improvement achieved by CNN after an appropriate optimization to define the CNN WPs. The optimization is done by maximizing the $S/\sqrt{(S+B)}$ with at least the same or higher background rejection as cut-based WPs which leads to maximize the signal efficiency. CNN output then is scanned in bins of $|\eta|$ for both converted and unconverted photons separately to define two WPs (Loose and Tight). To be more consistent with cut-based Tight WP the following binning is chosen : [0, 0.6, 0.8, 1.15, 1.37, 1.81, 2.01, 2.37]. The identification efficiency is evaluated using the Radiative Z method already described in Section \ref{gamma:ID}. 
+Radiated photons from Z boson decay are used to evaluate the final improvement achieved by CNN after an appropriate optimization to define the CNN WPs. The optimization is done by maximizing the $S/\sqrt{(S+B)}$ with at least the same or higher background rejection as cut-based WPs which leads to maximize the signal efficiency. CNN output then is scanned in bins of $|\eta|$ for both converted and unconverted photons separately to define two WPs (Loose and Tight). To be more consistent with cut-based Tight WP the following binning is chosen : [0, 0.6, 0.8, 1.15, 1.37, 1.81, 2.01, 2.37]. \\
+The identification efficiency is evaluated using the Radiative Z method already described in Section \ref{gamma:ID}. Due to the contamination from the Z$\rightarrow$ll+jet, where the jets are mis-identified as photons, the efficiency should be corrected by subtracting this background component from the counted numbers. Therefore, a template fit method was performed to estimate the signal purity both before and after applying the CNN tight identification. To perform the template fit, the $m_{ll\gamma}$ probability density function (PDF) for signal ($Z\rightarrow ll\gamma$) is extracted from simulated events while the background (Z$\rightarrow$ll+jet) is fitted using a second order polynomial function. The likelihood sum of the signal and background PDFs, with floating normalization is fitted to the data $m_{ll\gamma}$ distribution in the range [60, 120]. Then, the signal purities (P) are calculated within the signal region [80, 100] GeV, making the efficiency corrected as:
+\begin{equation}
+    \epsilon_{ID} = \frac{N^{after ID}\times P^{after ID}}{N^{before ID} \times P^{before ID}},
+\end{equation}
+The purities are evaluated in 5 \pT bins and separately for converted and unconverted photons as well as for $ee\gamma$, $\mu\mu\gamma$ and $ll\gamma$ channels. The purities are reported in Table \ref{tab:gamma:CNN:Zllg:Purity:B} and Table \ref{tab:gamma:CNN:Zllg:Purity:A}. Template fit results in the $ll\gamma$ channel is shown in Appendix \ref{Adx2:TemplateFit}.
+
+\begin{table}[H]
+\raggedleft
+\begin{longtable}[c]{ccccccc}
+\hline\hline
+                             & \multicolumn{3}{c}{Unconverted}               & \multicolumn{3}{c}{Converted}                \\
+                            \hline
+\endfirsthead
+%
+\endhead
+%
+                             & $ee\gamma$           & $\mu\mu\gamma$           & $ll\gamma$           & $ee\gamma$           &  $\mu\mu\gamma$          & $ll\gamma$           \\
+    \hline
+10$<E_T<$15 & 98.1$\pm$4.7   &   96.2$\pm$1.9   &   96.6$\pm$1.8   &   97.8$\pm$7.7   &   95.7$\pm$3.4    &   97.7$\pm$3.8  \\
+15$<E_T<$20 & 99.4$\pm$12.7  &   99.1$\pm$5.1   &   90.7$\pm$1.9   &   99.3$\pm$20.2  &   98.7$\pm$7.5    &   98.8$\pm$6.9  \\
+20$<E_T<$25 & 99.5$\pm$24.2  &   99.6$\pm$10.3  &   99.6$\pm$9.5   &   99.2$\pm$29.4  &   99.4$\pm$13.3   &   99.2$\pm$11.2 \\
+25$<E_T<$30 & 99.4$\pm$33.8  &   99.7$\pm$15.2  &   99.7$\pm$14.5  &   99.3$\pm$51.4  &   99.5$\pm$19.1   &   99.5$\pm$18.2    \\
+30$<E_T<$100 & 99.1$\pm$33   &   99.7$\pm$17.8  &   99.7$\pm$16.5  &   99.1$\pm$50.8  &   99.6$\pm$23.4   &   99.5$\pm$21.4 \\
+\hline\hline
+\end{longtable}
+\caption{Fitted photon purity of all probes, before tight CNN ID.The uncertainties are only statistical.}
+\label{tab:gamma:CNN:Zllg:Purity:B}
+\end{table}
+
+\begin{table}[H]
+\raggedleft
+\begin{longtable}[c]{ccccccc}
+\hline\hline
+                             & \multicolumn{3}{c}{Unconverted}               & \multicolumn{3}{c}{Converted}                \\
+                            \hline
+\endfirsthead
+%
+\endhead
+%
+                             & $ee\gamma$           & $\mu\mu\gamma$           & $ll\gamma$           & $ee\gamma$           &  $\mu\mu\gamma$          & $ll\gamma$           \\
+    \hline
+10$<E_T<$15 & 99.6$\pm$11.2    & 98.9$\pm$4.1       & 99.1$\pm$3.8    & 99.3$\pm$16.1    & 98.5$\pm$6.4     & 99.1$\pm$6.9  \\
+15$<E_T<$20 & 99.8$\pm$23.1    & 99.7$\pm$8.9       & 99.7$\pm$8.1    & 99.7$\pm$34.1    & 99.6$\pm$13.2    & 99.6$\pm$12.0 \\
+20$<E_T<$25 & 99.8$\pm$38.1    & 99.8$\pm$15.2      & 99.8$\pm$14.1   & 99.7$\pm$46.6    & 99.6$\pm$17.9    & 99.7$\pm$18.1  \\
+25$<E_T<$30  & 99.7$\pm$49.1   & 99.8$\pm$18.8      & 99.8$\pm$18.5   & 99.6$\pm$66.1    & 99.7$\pm$25.6    & 99.7$\pm$25.    \\
+30$<E_T<$100 & 99.5$\pm$45.6   & 99.8$\pm$21.2      & 99.8$\pm$20.7   & 98.9$\pm$49.4    & 99.7$\pm$28.5    & 99.7$\pm$25.8     \\
+\hline\hline
+\end{longtable}
+\caption{Fitted photon purity of all probes, after tight CNN ID.The uncertainties are only statistical.}
+\label{tab:gamma:CNN:Zllg:Purity:A}
+\end{table}
+The very low background statistics at high \pT leads to a large uncertainties. It indicates that the probes with \pT$>$ 30 GeV are very pure photon samples both before and after applying the CNN. Therefore, the template fit method is only applied for the first \pT bins, and the efficiencies for the rest of bins are obtained by counting. The combined $ll\gamma$ channel is used to estimate the efficiency and evaluate the scale factors.   
+
 \begin{figure}[ht]
     \centering
-    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt.png}}
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt.png}} \\
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Loose_Wp_vs_Loose_CNN__UnConverted_Iso_tight_Wgt.png}}
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Loose_Wp_vs_Loose_CNN__Converted_Iso_tight_Wgt.png}}
-    \caption{Photon identification efficiency for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). For both Tight WP (top) and Loose WP (bottom). Unconverted photons (right) and converted photons (left). As a function of photon \eT. Bottom ratios show the scale factors. 2017 Data is used.}
-    \label{fig:gamma:CNN:Zllg:Energy}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_1.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_2.png}} \\
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_3.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_4.png}}
+    \caption{Unconverted Photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). For 4 $|\eta|$ regions. Bottom ratios show the scale factors. 2017 Data is used.}
+    \label{fig:gamma:CNN:Zllg:Energy:UnC}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_UnConverted_Iso_tight_Wgt.png}}
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_Converted_Iso_tight_Wgt.png}} \\
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Loose_Wp_vs_Loose_CNN_MU_UnConverted_Iso_tight_Wgt.png}}
-	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Loose_Wp_vs_Loose_CNN_MU_Converted_Iso_tight_Wgt.png}}
-    \caption{Photon identification efficiency for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). For both Tight WP (top) and Loose WP (bottom). Unconverted photons (right) and converted photons (left). As a function of pile up $<\mu>$. Bottom ratios show the scale factors. 2017 Data is used.}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_1.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_2.png}} \\
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_3.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_4.png}}
+    \caption{Converted Photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). For 4 $|\eta|$ regions. Bottom ratios show the scale factors. 2017 Data is used.}
+    \label{fig:gamma:CNN:Zllg:Energy:C}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_mu_UnConverted_Iso_tight_Wgt.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_mu_Converted_Iso_tight_Wgt.png}} \\
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_Converted_Iso_tight_Wgt.png}}
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_Converted_Iso_tight_Wgt.png}}
+    \caption{Photon identification efficiency for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). Unconverted photons (right) and converted photons (left). As a function of pile up $<\mu>$ (top) and number of primary vertices (nPV) (bottom). Bottom ratios show the scale factors. 2017 Data is used.}
     \label{fig:gamma:CNN:Zllg:MU}
 \end{figure}
+Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C} show photon identification efficiency for Tight CNN WP compared to cut-based Tight as a function of photon \eT for unconverted and converted photons respectively. CNN over performs the cut-based algorithm. Ratio plots show the scale factor. The CNN scale factors are reported in Table \ref{tab:gamma:CNN:Zllg:SF:UnC} and Table \ref{tab:gamma:CNN:Zllg:SF:C}, and founded to be closer to one than the cute-based expect for the first \eT bin where the scale factor is slightly large but still better than cut-based. 
+\begin{table}[H]
+    \centering
+   \begin{tabular}{ccccc}
+   \hline\hline
+     & 0$<|\eta|<$0.6 & 0.6$<|\eta|<$1.37 & 1.81$<|\eta|<2.01$  & 2.01$<|\eta|<$2.37 \\
+    \hline
+10$<E_T<$15   & 0.965 $\pm$ 0.0046 & 0.984 $\pm$ 0.0051 & 1.045 $\pm$ 0.0155 & 1.04 $\pm$ 0.011\\
+15$<E_T<$20   & 1.01 $\pm$  0.0032 & 1.03 $\pm$ 0.0036  & 1.01 $\pm$ 0.0114 & 0.982 $\pm$ 0.008 \\
+20$<E_T<$25   & 1.002 $\pm$ 0.0026 & 1.003 $\pm$ 0.003  & 0.980 $\pm$ 0.0099 & 0.992 $\pm$ 0.0093\\
+25$<E_T<$30   & 0.999 $\pm$ 0.0025 & 0.998 $\pm$ 0.003  & 0.997 $\pm$ 0.0114 & 1.001 $\pm$ 0.091\\
+30$<E_T<$35   & 0.999 $\pm$ 0.0032 & 0.999 $\pm$ 0.0032 & 1     $\pm$ 0.0746 & \\
+35$<E_T<$40   & 0.996 $\pm$ 0.0051 & 1.002 $\pm$ 0.0043 &                    & \\
+40$<E_T<$45   & 0.999 $\pm$ 0.0067 & 0.995 $\pm$ 0.0077 &                    & \\
+45$<E_T<$50   & 1     $\pm$ 0.0086 & 1.001 $\pm$ 0.0093 &                    & \\
+50$<E_T<$60   & 1.004 $\pm$ 0.0114 & 1     $\pm$ 0.0097 &                    & \\
+60$<E_T<$80   & 1.006 $\pm$ 0.0179 & 1.012 $\pm$ 0.0326 &                    & \\
+80$<E_T<$100  & 1     $\pm$ 0.07   &                    &                    & \\
+\hline\hline
+\end{tabular}
+\caption{Scale factors for Tight CNN ID efficiency measured with unconverted photons from $Z\rightarrow ll\gamma$ decays, in various bins of pseudorapidity and transverse energy. The uncertainty includes only statistical components.}
+\label{tab:gamma:CNN:Zllg:SF:UnC}
+\end{table}
 
-Figure \ref{fig:gamma:CNN:Zllg:Energy} shows the result identification efficiency for Tight and Loose WPs compared to cut-based Tight and Loose WPs respectively as a function of photon \eT. CNN over performs the cut-based algorithm for both WPs. The Loose CNN WP achieve an efficiency of 99\% on the full energy spectrum. Without any correction, the CNN performs in the same way for both real and simulated (scale factor close to unity). The CNN is not sensitive to any shower shapes mis-modelling as it uses the cell fraction energy where the mis-modelling is infinitesimal and not cached by the CNN algorithm. This is illustrated in Figure \ref{fig:gamma:CNN:Zllg:CNNOutput} where no significant difference in the real and simulated data shapes of the CNN distribution is observed.
+
+\begin{table}[H]
+    \centering
+   \begin{tabular}{ccccc}
+   \hline\hline
+     & 0$<|\eta|<$0.6 & 0.6$<|\eta|<$1.37 & 1.81$<|\eta|<2.01$  & 2.01$<|\eta|<$2.37 \\
+    \hline
+10$<E_T<$15   & 0.96 $\pm$ 0.012   & 0.944 $\pm$ 0.0085 & 0.978 $\pm$ 0.013  & 0.973 $\pm$ 0.013\\
+15$<E_T<$20   & 1.02 $\pm$ 0.008   & 0.99  $\pm$ 0.006  & 1.008 $\pm$ 0.01   & 0.963 $\pm$ 0.011\\
+20$<E_T<$25   & 0.999 $\pm$ 0.0067 & 0.99  $\pm$ 0.0044 & 1.001 $\pm$ 0.008  & 1.003 $\pm$ 0.012\\
+25$<E_T<$30   & 0.999 $\pm$ 0.0063 & 0.995 $\pm$ 0.0044 & 0.994 $\pm$ 0.014  & 0.95  $\pm$ 0.137\\
+30$<E_T<$35   & 1.007 $\pm$ 0.0079 & 0.995 $\pm$ 0.0054 & 1     $\pm$ 0.089  & \\
+35$<E_T<$40   & 0.997 $\pm$ 0.0114 & 1.004 $\pm$ 0.0066 &                    & \\
+40$<E_T<$45   & 0.987 $\pm$ 0.0277 & 0.998 $\pm$ 0.012  &                    & \\
+45$<E_T<$50   & 0.983 $\pm$ 0.0508 & 1.    $\pm$ 0.018  &                    & \\
+50$<E_T<$60   & 0.976 $\pm$ 0.0455 & 0.99  $\pm$ 0.0279 &                    & \\
+60$<E_T<$80   & 0.983 $\pm$ 0.0654 & 1.    $\pm$ 0.078  &                    & \\
+80$<E_T<$100  & 1     $\pm$ 0.37   &                    &                    & \\
+\hline\hline
+\end{tabular}
+\caption{Scale factors for Tight CNN ID efficiency measured with converted photons from $Z\rightarrow ll\gamma$ decays, in various bins of pseudorapidity and transverse energy. The uncertainty includes only statistical components.}
+\label{tab:gamma:CNN:Zllg:SF:C}
+\end{table}
+
+
+The CNN is not sensitive to any shower shapes mis-modelling as it uses the cell fraction energy where the mis-modelling is infinitesimal and not cached by the CNN algorithm. This is illustrated in Figure \ref{fig:gamma:CNN:Zllg:CNNOutput} where no significant difference in the real and simulated data shapes of the CNN distribution is observed.
 \begin{figure}[H]
 %   \centering
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/SubPlot_CNN_output_ETA_bin_0_UnConverted_Iso_tight.png}}
@@ -413,10 +524,10 @@ Figure \ref{fig:gamma:CNN:Zllg:Energy} shows the result identification efficienc
     \label{fig:gamma:CNN:Zllg:CNNOutput}
 \end{figure}
 
-At low \eT and especially for high $|\eta|$, the photon efficiency dropped because photons with low \eT deposit more energy in the first sampling compared to photons with high \eT, and the zeros added to the first sampling whitens more than the half of the image which reduce the CNN learning ability for this category of photons. \\
-The presence of additional pp interactions in the event affects the photon identification and isolation efficiencies. Figure \ref{fig:gamma:CNN:Zllg:MU} shows the evolution of photon identification efficiency as a function of pile up. A clear drop by $\sim$9\%-16\% when going from $\mu\sim$5 to $\mu\sim$70, depending on the photon candidate's pseudorapidity and conversion status. The drop is explained by the additional activities around the hottest cell affecting the CNN performance of extracting the shower. \\
+At low \eT and especially for high $|\eta|$, the photon efficiency dropped because photons with low \eT deposit more energy in the first sampling compared to photons with high \eT, and the zeros added to the first sampling whitens more than the half of the image which reduce the CNN learning ability for this category of photons, thus large scale factors in the first \eT bins. \\
+The presence of additional pp interactions in the event affects the photon identification and isolation efficiencies. Figure \ref{fig:gamma:CNN:Zllg:MU} shows the evolution of photon identification efficiency as a function of average number of interaction per bunch crossing ($<\mu>$) and the number of primary vertices (nPV). A clear drop by $\sim$9\%-16\% when going from $\mu\sim$5 to $\mu\sim$70, depending on the photon candidate's pseudorapidity and conversion status. The drop is explained by the additional activities around the hottest cell affecting the CNN performance of extracting the shower. \\
 The proposed identification algorithm is getting integrated into the ATLAS Athena framework and is planned to be used as a baseline for Run 3. \\
-Additional control plots are shown in the Appendix ().
+Additional control plots for Tight CNN and Loose CNN WPs are shown in the Appendix \ref{Adx2}.
 
 \section{Conclusion}
 \label{gamma:conc}
@@ -430,4 +541,4 @@ Additional control plots are shown in the Appendix ().
 %    \item How we can improve the CNN for future ?
 %\end{itemize}
 
-As mentioned at the begging of this chapter, photon identification is an essential ingredient to select and study the \HHyybb decay. ATLAS provides a cut-based algorithm that uses global shower shapes variables to identify prompt photons. However, the shower shapes are affected by the mis-modelling discrepancy leading to a scale factor far from one. Besides, the cut-based algorithm suffers from the features space dimensionality which limit its performance. The CNN algorithm provides a solution to these problems by using low-level detector information. Using the neural network with low-level detector information scale up the features space. The CNN over performs the cut-based method by generating its complicated variables and handling their correlations for better separation. Even with the performance achieved, CNN still needs to be improved to handle some issues, the low efficiency at low \eT and the pile-up effect which reduce its performance for high pile events. Appendix is dedicated to discuss future improvements for the CNN identification algorithm. 
+As mentioned at the begging of this chapter, photon identification is an essential ingredient to select and study the \HHyybb decay. ATLAS provides a cut-based algorithm that uses global shower shapes variables to identify prompt photons. However, the shower shapes are affected by the mis-modelling discrepancy leading to a scale factor far from one. Besides, the cut-based algorithm suffers from the features space dimensionality which limit its performance. The CNN algorithm provides a solution to these problems by using low-level detector information. Using the neural network with low-level detector information scale up the features space. The CNN over performs the cut-based method by generating its complicated variables and handling their correlations for better separation. Even with the performance achieved, CNN still needs to be improved to handle some issues, the low efficiency at low \eT and the pile-up effect which reduce its performance for high pile events. Appendix \ref{Adx3} is dedicated to discuss future improvements for the CNN identification algorithm. 
