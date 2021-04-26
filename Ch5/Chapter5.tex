@@ -1,15 +1,15 @@
 \newpage
-\chapter{Measurement Higgs Self-coupling}
+\chapter{Measurement of Higgs Self-coupling}
 \label{HHyybb}
 
-The aim of this thesis is to perform a measurement of the Higgs self-coupling using the full Run-2 data in the \HHyybb decay channel. Up to here, all the ingredients needed to reconstructed the \HHyybb events are presented in the previous chapters. This chapter describes the analysis strategy to measure the Higgs self-coupling.
+The central subject of this thesis is to search for di-Higgs events decaying into \HHyybb using the full Run-2 data sample and interpret the absence of signal events into a measurement of the Higgs self-coupling. All the ingredients needed to reconstruct the \HHyybb events were presented in the previous chapters. This chapter describes the analysis strategy to measure the Higgs self-coupling, the results and their comparison to the previous ATLAS publication with 36\ifb and the CMS full Run-2 results.  
 %This chapter should include the HH analysis and \kl limits
 
 \section{Data and simulation}
 \label{HHyybb:Data&MC}
-As mentioned before, the analysis uses the full Run-2 data recorded by ATLAS during 2015 to 2018 with a total of integrated luminosity of 139 $\pm$ 2.4 \ifb. The values of the integrated luminosity recorded in each year is shown in Table \ref{tab:HHyybb:Data&MC:Lumi} \cite{Lumi}. 
-Similarly to $H\rightarrow\gamma\gamma$ analysis, the \HHyybb analysis relies on different set of di-photon triggers for each year. The trigger used for 2015-2016 requires at least two photons with $E_T$ is greater than 35 GeV for leading and 25 for the sub-leading photon passing the loose identification. The di-photon trigger used in 2017-2018 requires at least two photons with the same requirement of their transverses energy while for the identification the medium WP is used, due to the increasing rates. For boosted Higgs, two high momentum single-photon triggers available in 2018 were added in a logical OR with the di-photon, requiring a loose photon with an energy of 120 GeV and 140 GeV respectively. 
-\begin{table}[ht]
+As mentioned before, the analysis uses the full Run-2 data recorded by ATLAS between 2015 to 2018 corresponding to a total integrated luminosity of 139 $\pm$ 2.4 \ifb (Figure \ref{fig:chap2:LHC:Lumi}). The values of the integrated luminosity recorded in each year is shown in Table \ref{tab:HHyybb:Data&MC:Lumi} \cite{Lumi}. \\
+Similarly to $H\rightarrow\gamma\gamma$ analysis, the \HHyybb analysis relies on different set of di-photon triggers for each year. The trigger used for 2015-2016 required at least two photons with $E_T$ is greater than 35 GeV for leading and 25 for the sub-leading photon both passing the loose identification. The di-photon trigger used in 2017-2018 requires at least two photons with the same requirement on their transverse energies but requiring a medium WP identification to reduce fake rates. Figure \ref{fig:HHyybb:Data&MC:Trig} shows the di-photon trigger efficiency for each year as a function of photon \eT and $\eta$. Slightly lower efficiencies are observed in 2017–2018 due to the tightening in photon identification. In addition, no significant dependence on $\eta$ is observed in trigger efficiency, and remaining close to 100\%. For boosted Higgs ($p_T^{Higgs} > $ 650 GeV), two high momentum single-photon trigger available in 2018 were added in a logical OR with the di-photon, requiring a loose photon with an energy of 120 GeV and 140 GeV respectively. The high momentum single-photon triggers have no impact on HH analysis, since only 0.1\% of signal events are passing this trigger. The efficiency of the trigger selection is $\sim$ 83\% for HH signal, and remains looser than the final analysis selection. 
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
     \hline\hline
@@ -22,16 +22,24 @@ Similarly to $H\rightarrow\gamma\gamma$ analysis, the \HHyybb analysis relies on
     \caption{Integrated luminosity recorded by ATLAS in Run 2 per year of data taking.}
     \label{tab:HHyybb:Data&MC:Lumi}
 \end{table}
-The \HHyybb Monte Carlo (MC) are generated from two production mode the ggF HH and VBF HH. Events from ggF HH production were generated at NLO using the \textsc{Powheg-Box} v2 generator in the finite top-quark mass approximation with PDFLHC15 PDF set \cite{HH_FT, HH_Powheg, PDF4LHC}. The \textsc{PYTHIA} 8.2 is used for parton showering. Two samples are generated for \kl= 1 and \kl= 10. Events from the VBF HH production were generated at LO  using \textsc{MadGraph5\_aMC@NLO} \cite{HH_VBF} using the \texttt{NNPDF3.0nnlo} PDF set \cite{VBF_PDF} and \textsc{PYTHIA} for showering. \\
 
-A reweighting procedure is developed to avoid generating MC samples for each \kl for both ggF and VBF. Truth level HH samples with 10M events are produced for \kl= 0, 1, 10 and 20 with specific HH decay mode. A linear combination of samples with \kl= 0, 1 and 20 derived from Equation \ref{eq:chap1:HH:XSEC:Param} is used to derive weight and \kl= 10 is used to validate the method at truth level. The total cross-section as a function of \kl and \kt with is parameterized as:
+\begin{figure}[htbp]
+    \centering
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/Trigger_Et.pdf} }
+	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/Trigger_Eta.pdf}} 
+    \caption{Di-photon trigger efficiency in data 2015-2018 as a function of (a) \eT and (b) $\eta$. The ratios of data to MC simulation efficiencies are also shown.}
+    \label{fig:HHyybb:Data&MC:Trig}
+\end{figure}
+The simulated \HHyybb sample (MC) are generated from two production mode the ggF HH and VBF HH as describe in Section \ref{chap1:HH:HPD}. Events from ggF HH production were generated at NLO using the \textsc{Powheg-Box} v2 generator in the finite top-quark mass approximation with PDFLHC15 PDF set \cite{HH_FT, HH_Powheg, PDF4LHC}. The \textsc{PYTHIA} 8.2 is used for parton showering. Two samples were generated for \kl= 1 and \kl= 10. Events from the VBF HH production were generated at LO  using \textsc{MadGraph5\_aMC@NLO} \cite{HH_VBF} using the \texttt{NNPDF3.0nnlo} PDF set \cite{VBF_PDF} and \textsc{PYTHIA} for showering. \\
+
+A reweighting procedure was developed to avoid generating MC samples for each \kl for both ggF and VBF. Truth level HH samples with 10 million events were produced for \kl= 0, 1, 10 and 20 with specific HH decay mode. A linear combination of samples with \kl= 0, 1 and 20 derived from Equation \ref{eq:chap1:HH:XSEC:Param} is used to derive weight. The method was validated on \kl= 10. The total cross-section as a function of \kl and \kt with is parameterized as:
 \begin{equation}
-    \left|A\left(\kappa_{t}, \kappa_{\lambda}\right)\right|^{2}=\kappa_{t}^{2}\left[\left(\kappa_{t}^{2}+\frac{\kappa_{\lambda}^{2}}{20}-\frac{399}{380} \kappa_{t} \kappa_{\lambda}\right)|A(1,0)|^{2}+\left(\frac{40}{38} \kappa_{t} \kappa_{\lambda}-\frac{2}{38} \kappa_{\lambda}^{2}\right)|A(1,1)|^{2}+\frac{\kappa_{\lambda}^{2}-\kappa_{t} \kappa_{\lambda}}{380}|A(1,20)|^{2}\right]
+    \left|A\left(\kappa_{t}, \kappa_{\lambda}\right)\right|^{2}=\kappa_{t}^{2}\left[\left(\kappa_{t}^{2}+\frac{\kappa_{\lambda}^{2}}{20}-\frac{399}{380} \kappa_{t} \kappa_{\lambda}\right)|A(1,0)|^{2}+\left(\frac{40}{38} \kappa_{t} \kappa_{\lambda}-\frac{2}{38} \kappa_{\lambda}^{2}\right)|A(1,1)|^{2}+\frac{\kappa_{\lambda}^{2}-\kappa_{t} \kappa_{\lambda}}{380}|A(1,20)|^{2}\right],
 \end{equation}
-Weights are the derived by dividing the binned $m_{HH}$ distribution for the target \kl by the binned $m_{HH}$ distribution for the SM sample. A bin of 10 GeV is adopted and \kt= 1. For each \kl value, the inclusive cross section is normalized to its theoretical prediction \cite{LHE}. The reweighting procedure is common across all HH analysis and has been validated for \HHyybb by comparing the $m_{\gamma\gamma}$ and event yields in the generated \kl= 10 and the reweighted \kl= 1 to \kl= 10. A good agreement is found with a maximum discrepancy of 3-4\% taken as systematic uncertainty related to the method.  \\ 
+with weights derived by dividing the binned $m_{HH}$ distribution of the target \kl by the binned $m_{HH}$ distribution of the SM sample. A bin of 10 GeV is adopted and \kt= 1. For each \kl value, the inclusive cross section is normalized to its theoretical prediction \cite{LHE}. The reweighting procedure is common across all HH analysis and has been validated for \HHyybb by comparing the $m_{\gamma\gamma}$ and event yields in the generated \kl= 10 and the reweighted \kl= 1 to \kl= 10. A good agreement is found with a maximum discrepancy of 3-4\% taken as systematic uncertainty related to the method.  \\ 
 
-For backgrounds processes, different MC samples are used depending on the process. Table \ref{tab:HHyybb:Data&MC:Samples} lists the generators, parton showering and PDF used for each component. 
-\begin{table}[ht]
+For backgrounds processes, different generators were used depending on the process. $H\to\gamma\gamma$ decay channel is considered for single Higgs backgrounds. An alternative showering with \textsc{Herwig}7 for the single Higgs backgrounds is used to estimate the systematic effects of the parton shower. Table \ref{tab:HHyybb:Data&MC:Samples} lists the generators, parton showering and PDF used for each component. 
+\begin{table}[htbp]
   \centering
     \begin{tabular}{ cccc }
     \hline\hline
@@ -54,7 +62,7 @@ For backgrounds processes, different MC samples are used depending on the proces
   \label{tab:HHyybb:Data&MC:Samples}
 \end{table}
 
-The dominant background is the reducible continuum $\gamma\gamma+$jets which is not taken from the generated \texttt{SHERPA} MC, instead a data-driven technique is used to estimate its contribution from real data. In addition, all single Higgs in the di-photon final state are considered in all production modes.  An alternative showering with \textsc{Herwig}7 for the single Higgs backgrounds is used to estimate the systematic effects of the parton shower.
+The dominant background is the reducible continuum $\gamma\gamma+$jets which is not taken from the generated \texttt{SHERPA} MC, instead a data-driven method is used to estimate its contribution using an analytical function. The functional form is fixed using the simulated \texttt{SHERPA} sample.
 
 \section{Object and event selection}
 \label{HHyybb:ObjEvt}
@@ -62,49 +70,50 @@ The dominant background is the reducible continuum $\gamma\gamma+$jets which is 
 \subsection{Object selection}
 \label{HHyybb:ObjEvt:Obj}
 
-\subsubsection{Photons}
+\subsubsection{Di-photons}
 \label{HHyybb:ObjEvt:Obj:gamma}
-Photons reconstructed using the dynamic topological clusters as defined in Section \ref{chap2:Objects:Egamma} and passing a pre-selection of $p_T > $ 25 GeV and $|\eta| < $2.37 (excluding the transition region) are selected. The selected photons are calibrated using the latest Run-2 calibration correction for the energy scale and resolution as detailed in Section \ref{chap2:Objects:Egamma:Cal}. Events must have at least two photons ($N_{photons} \geq $2). The $H\to\gamma\gamma$ candidate is reconstructed from the two highest $p_T$ photons in the events. \\
-The two photons are used to re-determined the primary vertex using an algorithm based on a neural network that makes use of the pointing information from the selected photons along with tracking information \cite{DiPhotonVertex}. Track-based quantities are re-computed based on defined primary vertex. \\
-A Loose isolation is applied to selected isolated photons as described in Section \ref{gamma:Iso}. Photons are required to pass the Tight identification WP as defined in Section \ref{gamma:ID}. \\
-The selected Higgs candidates are required to pass an additional selection which reflect the online trigger. It required that the leading (subleading) photon $p_T$ account for 35\% (25\%) of the invariant mass of the two photons. A mass window cut in the range [105, 160] GeV is applied, thus the cut on the leading (subleading) photon momentum fraction translates in a cut on its energy to be larger than 36.75 (26.25) GeV.
+The selected photons are reconstructed using the dynamic topological clusters as defined in Section \ref{chap2:Objects:Egamma} and must fulfill a pre-selection of $p_T > $ 25 GeV and $|\eta| < $2.37 (excluding the transition region). They are calibrated using the latest Run-2 calibration correction for the energy scale and resolution as detailed in Section \ref{chap2:Objects:Egamma:Cal}. Photons are required to pass the Tight identification WP as defined in Section \ref{gamma:ID}. Events must contain at least two photons ($N_{photons} \geq $2). The $H\to\gamma\gamma$ candidate is reconstructed from the two highest $p_T$ photons in the events.  
+The two photons are used to re-determined the primary vertex using an algorithm based on a neural network that makes use of the pointing information from the electromagnetic calorimeter along with tracking information \cite{DiPhotonVertex}. Track-based quantities are re-computed based on defined primary vertex. \\
+A Loose isolation is applied to select isolated photons as described in Section \ref{gamma:Iso}.
+The selected Higgs candidates are required to pass an additional selection which reflect the online trigger. It required that the leading (subleading) photon $p_T$ account for at least 35\% (25\%) of the invariant mass of the two photons. A mass window cut in the range [105, 160] GeV is applied, thus the cut on the leading (subleading) photon momentum fraction translates in a cut on its energy to be larger than 36.75 (26.25) GeV.
 
-\subsubsection{Leptons}
+\subsubsection{Leptons as veto}
 \label{HHyybb:ObjEvt:Obj:lepton}
 
-Electron candidates are required to have $p_T > $10 GeV and $|\eta| < $2.47 (excluding the transition region). Additionally they should pass the medium identification and tight isolation WPs as defined in Sections \ref{chap2:Objects:Egamma:EID} and \ref{chap2:Objects:Egamma:EIso}. Muon candidates are required to have $p_T > 10$, $|\eta| < $2.7 and required to satisfy a medium identification and Loose isolation WPs. Both the electrons and muons are matched to the primary vertex via requirements on the tracks' longitudinal and transverse impact parameters, $|z_0|$ and $|d_0|$.
+Electron candidates are required to have $p_T > $ 10 GeV and $|\eta| < $2.47 (excluding the transition region). Additionally they should pass the medium identification and tight isolation WPs as defined in Sections \ref{chap2:Objects:Egamma:EID} and \ref{chap2:Objects:Egamma:EIso}. \\
+Muon candidates are required to have $p_T > $ 10 GeV, $|\eta| < $2.7 and required to satisfy a medium identification and Loose isolation WPs. Both the electrons and muons are matched to the primary vertex via requirements on the tracks' longitudinal and transverse impact parameters, $|z_0|$ and $|d_0|$.
 
 \subsubsection{Jets}
 \label{HHyybb:ObjEvt:Obj:Jet}
-As described in Chapter \ref{Jet}, particle flow jets are adopted for this analysis. They are required to have $|\eta| < $2.5 and $p_T > $25 GeV. A tight JVT WP is applied which aims at distinguishing between jets arising from the hard-scatter and those from pile-up, as defined in Section \ref{Jet:Tag}. The selected jets are calibrated using the calibration chain already described. \\
+As described in Chapter \ref{Jet}, particle flow jets are adopted for this analysis. They are required to have $|\eta| < $2.5 and $p_T > $25 GeV. A tight JVT WP is applied to separate jets arising from the hard-scatter and those from pile-up, as defined in Section \ref{Jet:Tag}. The selected jets are calibrated using the calibration chain described in Section \ref{Jet:Cal}. \\
 
-The flavour of the jets is determined using the DL1r tagger with 77\% efficiency WP. The energy of $b$-tagged jets is additionally corrected for the $b$-hadrons semileptonic decay and the undetected energy of the neutrinos using the $b$-jet calibration method introduced in Section \ref{Jet:Cal:BCal}. The improvement on the $m_{b\bar{b}}$ resolution is translated to 7.2\%$\pm$2\% improvement in the expected significance (the error is estimated using the bootstrap method \cite{Bootstrap}). An additional 5-10\% improvement on the $m_{b\bar{b}}$ resolution can be achieved through the use of a likelihood based kinematic fit denoted "kinematic fit". The kinematic fit uses the $H\to\gamma\gamma$ component reconstructed with a \% precision  to improve the $HH\to b\bar{b}b\bar{b}$ resolution through the constrain of the good overall balance in the transverse plane. I developed the kinematic fit for this \HHyybb analysis, while it is not used in this analysis because a bug was founded in its implementation after samples production, and fixing the bug for this round will delay the analysis and it is kept for next round. A detailed description of the kinematic fit can be found in Appendix (). \\
+The jet flavour is determined using the DL1r tagger with 77\% efficiency WP as described is Section \ref{Jet:Tag:Dlr}. Events are required to have exactly two $b$-jet ($N_{b-jet}^{77\%} = $ 2) to preserve the orthogonality with the $HH\to b\bar{b}b\bar{b}$. The two $b$-jet are used to reconstruct the $H\to b\bar{b}$ candidate. \\
+The energy of $b$-tagged jets is corrected with the calibration method introduced in Section \ref{Jet:Cal:BCal}. The improvement on the $m_{b\bar{b}}$ resolution is translated to 7.2\%$\pm$2\% improvement in the expected significance (the error is estimated using the bootstrap method \cite{Bootstrap}). An additional 5-10\% improvement on the $m_{b\bar{b}}$ resolution could be achieved through the use of a likelihood based kinematic fit denoted "kinematic fit". The kinematic fit uses the $H\to\gamma\gamma$ component reconstructed with a \% precision to improve the $H\to b\bar{b}$ resolution through the constrain of the good overall balance in the transverse plane. I developed the kinematic fit for this \HHyybb analysis, while it is not used in this analysis because a bug was found in its implementation after samples production, and fixing the bug for this round would have delayed the analysis. A detailed description of the kinematic fit can be found in Appendix \ref{Adx4}. \\
 
-Events are required to have exactly two $b$-jet ($N_{b-jet}^{77\%} ==$ 2) to preserve the orthogonality with the $HH\to b\bar{b}b\bar{b}$. The two $b$-jet are used to reconstruct the $H\to b\bar{b}$ candidate. \\
-An overlap removal procedure is applied to avoid using same detector signals in the same events. Jets within $\Delta R=$ 0.2 of electron or 0.4 of muon are removed.
+%An overlap removal procedure is applied to avoid using same detector signals in the same events. Jets within $\Delta R=$ 0.2 of electron or 0.4 of muon are removed.
 
 \subsection{Events selection}
 \label{HHyybb:ObjEvt:Evt}
-Events are reconstructed from $H\to b\bar{b}$ and $H\to\gamma\gamma$ defined above. In addition to the requirement on the number of photons ($N_{photons} \geq $2) and the $b$-jet veto ($N_{b-jet}^{77\%} == $ 2) : 
+Events are reconstructed from $H\to b\bar{b}$ and $H\to\gamma\gamma$ defined above. In addition to the requirement on the number of photons ($N_{photons} \geq $2) and the $b$-jet veto ($N_{b-jet}^{77\%} == $ 2) the following criteria are applied : 
 
 \begin{itemize}
     \protect
-    \item less than six central jets, to help rejecting the hadronic decay of the $t\bar{t}$H. 
-    \item veto on the number of leptons, to help rejecting the $t\bar{t}$H in its leptonic decay.  
+    \item less than six jets in the central detector region ($|\eta| < $ 2.5), to improve rejection of the hadronic decay of the $t\bar{t}$H. 
+    \item veto on leptons, to reject the $t\bar{t}$H in its leptonic decay.  
 \end{itemize}
 
-Selected events are then dived in two regions using $m_{b\bar{b}\gamma\gamma}^*$ variable, defined as  $m_{b\bar{b}\gamma\gamma}^* = m_{b\bar{b}\gamma\gamma} - m_{b\bar{b} - m_{\gamma\gamma} + 250}$ GeV. A high-mass region, with $m_{b\bar{b}\gamma\gamma}^* > $ 350 GeV, targeting the standard model signal, while a low-mass region, with $m_{b\bar{b}\gamma\gamma}^* < $ 350 GeV, is used to retain sensitivity for BSM signals. The dependence of $m_{b\bar{b}\gamma\gamma}^*$ can be seen in Figure \ref{fig:HHyybb:ObjEvt:Evt:myybb}. 
-\begin{figure}[ht]
+Selected events are then dived in two regions using $m_{b\bar{b}\gamma\gamma}^*$ variable, is defined as  $m_{b\bar{b}\gamma\gamma}^* = m_{b\bar{b}\gamma\gamma} - m_{b\bar{b}} - m_{\gamma\gamma} + 250$ GeV. The $m_{b\bar{b}\gamma\gamma}^*$ was implemented to improve the $m_{HH}$ resolution for resonant analysis. A high-mass region, with $m_{b\bar{b}\gamma\gamma}^* > $ 350 GeV, targeting the standard model signal, while a low-mass region, with $m_{b\bar{b}\gamma\gamma}^* < $ 350 GeV, is used to retain sensitivity for BSM signals and provide better constrain on \kl. The dependence of $m_{b\bar{b}\gamma\gamma}^*$ can be seen in Figure \ref{fig:HHyybb:ObjEvt:Evt:myybb}.  
+\begin{figure}[htbp]
     \centering
-	\subfloat[ggF HH production mode][ggF HH production mode]{\includegraphics[width=.45\textwidth]{Ch5/Img/yybbstar_ggF.png} }
-	\subfloat[VBF HH production mode][VBF HH production mode]{\includegraphics[width=.45\textwidth]{Ch5/Img/yybbstar_VBF.png}} 
-    \caption{The $m_{b\bar{b}\gamma\gamma}^*$ distributions for non-resonant ggF HH (a) and VBF HH (b) signals with several \kl values. $m_{b\bar{b}\gamma\gamma}^* = $ 350 GeV is chosen as the separating boundary between categories targeting the SM and BSM \kl signals.}
+	\includegraphics[width=.6\textwidth]{Ch5/Img/yybbstar_ggF.png} 
+	%\subfloat[VBF HH production mode][VBF HH production mode]{\includegraphics[width=.45\textwidth]{Ch5/Img/yybbstar_VBF.png}} 
+    \caption{The $m_{b\bar{b}\gamma\gamma}^*$ distributions for ggF HH signal with several \kl values. $m_{b\bar{b}\gamma\gamma}^* = $ 350 GeV is chosen as the separating boundary between categories targeting the SM and BSM \kl signals.}
     \label{fig:HHyybb:ObjEvt:Evt:myybb}
 \end{figure}
 
-In each mass region, a separate BDT is trained using \cite{XGBoost} to categorize ggF HH signal against a combination of the dominant MC backgrounds (continuum, $t\bar{t}H$, ggH and ZH). In the high-mass region, the \kl= 1 sample is used as signal while in the region targeting BSM scenarios (low-mass) the \kl= 10 sample is used as signal. Table \ref{tab:HHyybb:ObjEvt:Evt:BDT} lists the BDT inputs variables, the inputs set are use for both low and high-mass regions.
+In each mass region, a separate BDT is trained using \cite{XGBoost} to categorize ggF HH signal against a combination of the dominant MC backgrounds (continuum, $t\bar{t}H$, ggH and ZH). In the high-mass region, the SM \kl= 1 is considered as ggF HH signal while in the region targeting BSM scenarios (low-mass) the \kl= 10 ggF HH is used. Table \ref{tab:HHyybb:ObjEvt:Evt:BDT} lists the BDT inputs variables, the inputs set are used for both low and high-mass regions.
 
-\begin{table}[ht]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
        \hline \hline
@@ -133,17 +142,17 @@ The single topness is defined as :
 
 where $m_W = $ 80 GeV, $m_t = $ 173 GeV, and the minimum is taken overall possible combinations of 3 jets in the event. No requirement on the $b$-tagging is applied for the $j_3$. \\
 
-The BDT discriminate variable for low mass and high mass categories are shown in Figure \ref{fig:HHyybb:ObjEvt:Evt:dBDT}. In each mass region, two categories are defined based on the BDT score resulting in total of 4 categories as listed in Table \ref{tab:HHyybb:ObjEvt:Evt:Cat}.
+The BDT discriminate distribution in low mass and high mass categories are shown in Figure \ref{fig:HHyybb:ObjEvt:Evt:dBDT}. In each mass region, two categories are defined based on the BDT score resulting in total of 4 categories as listed in Table \ref{tab:HHyybb:ObjEvt:Evt:Cat}. Defining additional categories show no improvement to the analysis significance. 
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
 	\subfloat[Low mass region][Low mass region]{\includegraphics[width=.45\textwidth]{Ch5/Img/BDT_lowMass_Score.pdf} }
 	\subfloat[High mass region][High mass region]{\includegraphics[width=.45\textwidth]{Ch5/Img/BDT_highMass_Score.pdf}} 
-    \caption{The BDT score for the benchmark signals and the main backgrounds in the low- (a) and high- (b) mass region. Distributions are normalized to unit area. The dotted lines denote the category boundaries. Events with BDT score below 0.881 in the low mass region or below 0.857 in the high mass region are discarded.}
+    \caption{The BDT score for the benchmark signals and the main backgrounds in the low- (a) and high- (b) mass region. Distributions are normalized to unit area. The dotted lines denote the category boundaries. Events with BDT score below 0.881 in the low mass region or below 0.857 in the high mass region are rejected.}
     \label{fig:HHyybb:ObjEvt:Evt:dBDT}
 \end{figure}
 
-\begin{table}[ht]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
     \hline\hline
@@ -158,32 +167,43 @@ The BDT discriminate variable for low mass and high mass categories are shown in
     \caption{Definition of the analysis categories.}
     \label{tab:HHyybb:ObjEvt:Evt:Cat}
 \end{table}
-The BDT approach improve the analysis significance by approximately 20\% compared to the previous cut-based selection used in the 36\ifb analysis \cite{yybb_36ifb}.  
+The BDT approach improves the analysis significance by approximately 20\% compared to the previous cut-based selection used in the 36 \ifb analysis \cite{yybb_36ifb}. The \myy distribution in each of the BDT category is shown in Figure \ref{fig:HHyybb:ObjEvt:myy}. \\ 
+\begin{figure}[htbp]
+    \centering
+    \subfloat[][High mass, BDT tight]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_tightScore_HMass.pdf}}
+    \subfloat[][Low mass, BDT tight ]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_tightScore_LMass.pdf}} \\
+    \subfloat[][High mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_HMass.pdf}}
+    \subfloat[][Low mass, BDT loose ]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_LMass.pdf}}
+  
+    \caption{Distributions of \myy in all signal categories. The simulated continuum background is scaled by the $\gamma\gamma$, $\gamma$-jet/jet-$\gamma$, and jet-jet fractions and normalized to the data side-band. The background decomposition is described in Section \ref{HHyybb:Modelling:Bkg}.}
+    \label{fig:HHyybb:ObjEvt:myy}
+\end{figure}
 
+The BDT categorization is used as baseline for the publication, while I developed a multi-label classification based on Deep Neural Network which attempts to classify events and shows similar performance to the BDT. 
 \subsection{Event selection using Deep Neural Network}
 \label{HHyybb:ObjEvt:DNN}
+Following the same BDT strategy, a potential gain can be achieved using a multi-label classification DNN. DNNs always shows a better handling of correlation between variables to enhance classifier performances, thus the motivation of DNN. The multi-label classification attempts to classify each event in four process categories (HH signal, ZH, ttH or continuum). This helps in learning events topology for a better separation between signal and each background component separately. In addition, the multi-label classification allows for a control region where ZH is dominant which could be used as validation for the \HHyybb analysis. \\
 
-Following the same BDT strategy, a potential gain can be achieved using the Deep Neural Network (DNN). A separate DNN classifier is trained in each mass region using the same signal and backgrounds as the BDT. The DNNs attempt to classify each component against the rest (e.g continuum against signal + other backgrounds) in contrary to the BDT which only classify the signal against all background. \\
-The architecture of the two classifiers is identical. The classifiers are built using the \textsc{Keras} library with \textsc{TensorFlow} as backend \cite{keras,tensorflow}. it Contains an input layer constructed form a batch normalization and a fully connected layer, then five fully connected hidden layers with each one is flowed with a dropout layer, and finally an output layer. Each of the fully connected layers has 128 nodes activated using Rectified Linear Unit (ReLU) activation function, and their weights are randomly initialized by sampling from a truncated distribution centered on zero with width given by $\sqrt{\frac{2}{N_{inputs}}}$ where $N_{inputs}$ is the number of input features. The dropout layers are used to improve the robustness of the training and reduce overfitting effects, for high mass region model the dropout rate is 11\%, while for low mass region, the dropout rate is 22.5\%. The batch normalization layer is used standardizes the inputs to the first layer. The output layer is 4-nodes wide and activated using softmax activation function which allows one to interpret the outputs as the probability for each associated class (ggF HH, ZH, ttH or continuum) given the input event. During the training, a weighted categorical cross-entropy is used as loss function and Adam optimizer for network weight optimization.\\
+A separate DNN classifier is trained in each mass region using the same signal and background definitions as the BDT. The architecture of the two classifiers is identical. The classifiers are built using the \textsc{Keras} library with \textsc{TensorFlow} as backend \cite{keras,tensorflow}. Tt contains an input layer constructed form a batch normalization and a fully connected layer, then five fully connected hidden layers with each one is flowed with a dropout layer, and finally an output layer. Each of the fully connected layers has 128 nodes activated using Rectified Linear Unit (ReLU) activation function, and their weights are randomly initialized by sampling from a truncated distribution centered on zero with width given by $\sqrt{\frac{2}{N_{inputs}}}$ where $N_{inputs}$ is the number of input features. The dropout layers are used to improve the robustness of the training and reduce overfitting effects, for high mass region model the dropout rate is 11\%, while for low mass region, the dropout rate is 22.5\%. The batch normalization layer is used standardizes the inputs to the first layer. The output layer is 4-nodes wide and activated using softmax activation function which allows one to interpret the outputs as the probability for each associated class (ggF HH, ZH, ttH or continuum) given the input event. During the training, a weighted categorical cross-entropy is used as loss function and Adam optimizer for network weight optimization.\\
 Weights of the loss function correspond to the event class weight computed as the weight of event j associated to class i as :
 \begin{equation}
     weight_i^j = \frac{\sum_{j,i} N_i^j}{n\times\sum_{j} N_i^j},
 \end{equation}
-where $n=\sum i = 4$ is number of classes, $\sum_{j,i} N_i^j$ is the total number of events a cross all classes and $\sum_{j} N_i^j$ is the total number of events in the given class i. The event class weight allows the models to perform similarly between classes and reduces the unbalanced issue in data which affects the model classification ability.\\
-The two DNN models are trained with a learning rate of $1e^{-4}$ and a batch size fixed to 1000 events, with a maximum number of epochs set to 100. Similar to the CNN developed for photon identification, an early stopping metric evaluated on the validation data sample throughout the training is imposed during the training phase.\\ 
-DNNs use almost the same inputs variables as the BDT list in Table \ref{tab:HHyybb:ObjEvt:Evt:BDT} except for the single topness, $H_T$, the missing transverse energy and its azimuthal angle which are not included. The class-invariant symmetries (detector symmetry) complexity is removed by rotating all events around the beam axis in such a way that the leading photon has $\phi=0$ . \\
-Figure \ref{fig:HHyybb:ObjEvt:DNN:Loss} shows the evaluation of the loss function during the training time for the training and validation dataset, the early stopping stop the training around epoch 40 to avoid overfitting. The low mass model shows a high loss error compared to high mass one which translate the signal like background distribution, reducing the model separation in the low mass region.
-\begin{figure}[ht]
+where $n=\sum i = 4$ is the number of classes, $\sum_{j,i} N_i^j$ is the total number of events and $\sum_{j} N_i^j$ is the total number of events in the given class i. The event class weight allows the models to perform similarly between classes and reduces the unbalanced issue in data which affects the model classification ability.\\
+The two DNN models are trained with a learning rate of $1e^{-4}$ and a batch size fixed to 1000 events, with a maximum number of epochs set to 100. Similar to the CNN implemented for photon identification, an early stopping metric evaluated on the validation data sample throughout the training is imposed during the training phase.\\ 
+DNNs use almost the same inputs variables as the BDT list in Table \ref{tab:HHyybb:ObjEvt:Evt:BDT} except for the single topness, $H_T$, the missing transverse energy and its azimuthal angle variables which are not included. The class-invariant symmetries (detector symmetry) complexity is removed by rotating all events around the beam axis in such a way that the leading photon has $\phi=0$ . \\
+Figure \ref{fig:HHyybb:ObjEvt:DNN:Loss} shows the evaluation of the loss function during the training time for the training and validation dataset. The early stopping stop the training around epoch 40 to avoid overfitting. The low mass model shows a high loss error compared to the model trained in the high mass region, which translate the signal like background distribution, reducing the model separation in the low mass region.
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{Ch5/Img/Loss_DNN.png}
+    \includegraphics[width=0.45\textwidth]{Ch5/Img/Loss_DNN.png}
     \caption{Evaluation of the loss function for high mass (red) and low mass (blue) DNNs as a function of epoch number.}
     \label{fig:HHyybb:ObjEvt:DNN:Loss}
 \end{figure}
-One of the performance measurement of an classifier is the confusion matrix, the matrix compares the actual target values with those predicted by the model. This gives a holistic view of the performance of the classification model as well as the associated errors. Figure \ref{fig:HHyybb:ObjEvt:DNN:CM} shows the confusion matrix for high mass and low mass models. Note that the threshold value for the prediction of the model set to 0.5 on the softmax outputs. Both models show a high ($\sim$19\%) confusion between the ggF HH signal and the ZH background coming from the similarity between the event topology of the two processes. Similar for ttH event are almost confused with continuum or ZH. At low mass region, the performance clearly decreases due to the similarity in the kinematics and events topology between ggF HH and backgrounds.
-\begin{figure}[ht]
+One of the performance measurement of an classifier is the confusion matrix, the matrix compares the actual target values with those predicted by the model. This gives a holistic view of the performance of the classification model as well as the associated errors. Figure \ref{fig:HHyybb:ObjEvt:DNN:CM} shows the confusion matrix for high mass and low mass models. Note that the threshold value for the prediction of the model set to 0.5 on the softmax outputs. Both models show a high ($\sim$19\%) confusion between the ggF HH signal and the ZH background coming from the similarity between the event topology of the two processes. Similar for ttH event are almost confused with continuum or ZH. At low mass region, the performance clearly decreases due to the similarity in the kinematics and events topology between ggF HH and backgrounds which impact the sensitivity to high \kl values.
+\begin{figure}[htbp]
     \centering
-    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/cm_SM.png}}
-    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/cm_BSM.png}}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/cm_SM.png}}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/cm_BSM.png}}
     \caption{Normalized (to unity) confusion matrix for (a) high mass and (b) low mass models. JJ here denote the continuum $\gamma\gamma+$jets.}
     \label{fig:HHyybb:ObjEvt:DNN:CM}
 \end{figure}
@@ -200,23 +220,23 @@ The four outputs of the softmax layer are combined in a single discriminant deno
 \end{equation}
 $d_{HH}^{HM}$ in Equation \ref{eq:DHH_HM} represents the $d_{HH}$ discriminant for high mass region, while Equation \ref{eq:DHH_LM} is the $d_{HH}$ discriminant in low mass region. \\
 
-Figure \ref{fig:HHyybb:ObjEvt:DNN:dHH} shows the distribution of $d_{HH}$ discriminant for each process (ggF HH, ZH, ttH and continuum) in each mass region. At high mass $d_{HH}$ shows a clear separation between the HH and other process, while for low mass the discrepancy is low as expected. The side-band data flows the continuum background perfectly indicting a good modelling of the $d_{HH}$ distribution. 
-\begin{figure}[ht]
+Figure \ref{fig:HHyybb:ObjEvt:DNN:dHH} shows the distribution of $d_{HH}$ discriminant for each process (ggF HH, ZH, ttH and continuum) in each mass region. At high mass $d_{HH}$ shows a clear separation between the HH and other process, while for low mass the discrepancy is low as expected. The side-band data follows the continuum background perfectly indicating a good modelling of the $d_{HH}$ distribution. 
+\begin{figure}[htbp]
     \centering
-    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/dHH_SM.png}}
-    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/dHH_BSM.png}}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/dHH_SM.png}}
+    \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch5/Img/dHH_BSM.png}}
     \caption{$d_{HH}$ discriminant distribution in (a) high mass and (b) low mass. The black line shows the real data in the side band region ($m_{\gamma\gamma}\in[105,120] \cup [130,160]$).}
     \label{fig:HHyybb:ObjEvt:DNN:dHH}
 \end{figure}
 
 \subsubsection{Significance scan}
-In each region the corresponding discriminant is scanned in $90<m_{bb}<140$ GeV area to define two orthogonal categories high $d_{HH}$ and low $d_{HH}$ with a maximum significance, the category with highest significance has at least 0.8 continuum events in the $123<m_{\gamma\gamma}<127$ GeV region which corresponds to 9 background events in the $m_{\gamma\gamma}\in[105,120] \cup [130,160]$ GeV sufficient to perform an \myy fit, this is done in a similar way to the BDT. The significance is computed using the Asimov formula \cite{Z} defined as : 
+In each mass region, the corresponding discriminant is scanned with $90<m_{bb}<140$ GeV requirement to define two orthogonal categories high $d_{HH}$ and low $d_{HH}$ with a maximum significance. The category with highest significance must have at least 0.8 continuum events in the $123<m_{\gamma\gamma}<127$ GeV range, which correspond to 9 events in the $m_{\gamma\gamma}\in[105,120] \cup [130,160]$ GeV sufficient to perform the \myy fit. This is done in a similar way to the BDT. The significance is computed using the Asimov formula \cite{Z} defined as : 
 \begin{equation}
     Z = \sqrt{2\left[(s+b)\times log(1+s/b)-s\right]},
 \end{equation}
 
-where, s is the HH signal yield and b is the total background yield. In total 4 categories are defined, two for low mass region and two in high mass region. Significance of the 4 categories are then combined for the final significance. Table \ref{tab:Sig} lists the significance in each category.
-\begin{table}[ht]
+where, s is the HH signal yield and b is the total background yield. In total 4 categories are defined, two for low mass region and two in high mass region. Significance of the 4 categories are then combined for the final significance. Table \ref{tab:Sig} lists the significance in each category. \\
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
         \hline\hline
@@ -233,27 +253,12 @@ where, s is the HH signal yield and b is the total background yield. In total 4 
     \caption{Significance in each categories for SM HH and BSM $\kappa_\lambda$=10 signal.}
     \label{tab:Sig}
 \end{table}
-The proposed selection based on a DNN shows similar performances with respect to the BDT with less inputs variables. The removed variables in the DNN have a high importance in the BDT case, thus including those variables in the DNN for the Run-3 analysis will enhance the DNN performance. The BDT event categorization is used a baseline for Run-2 \HHyybb analysis since it shows a robustness and good improvement, while the DNN based selection is kept for next analysis rounds (Run-3). \\
-
-The \myy distribution in each of the BDT category is shown in Figure \ref{fig:HHyybb:ObjEvt:myy}. The background decomposition is described in Section \ref{HHyybb:Modelling:Bkg}.
-
-\begin{figure}[ht]
-    \centering
-    \subfloat[][High mass, BDT tight]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_tightScore_HMass.pdf}}
-    \subfloat[][Low mass, BDT tight ]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_tightScore_LMass.pdf}} \\
-    \subfloat[][High mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_HMass.pdf}}
-    \subfloat[][Low mass, BDT loose ]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_LMass.pdf}}
-  
-    \caption{Distributions of \myy in all signal categories. The continuum background is scaled by the $\gamma\gamma$, $\gamma$-jets or jet-$\gamma$, and jet-jet fractions and normalized to the data side-band.}
-    \label{fig:HHyybb:ObjEvt:myy}
-\end{figure}
-
-
+The proposed selection based on a DNN shows similar performances with respect to the BDT with less inputs variables. The removed variables in the DNN have a high importance in the BDT case, thus including those variables in the DNN would have enhanced the DNN performance. Given the time scale of the analysis, the DNN work was closed here to focus on the more high-priority work. Future DNN optimization are kept for Run-3 analysis. The DNN based selection is available and documented for the next publication with Run-3 data. \\
 
 \section{Signal and background modelling}
 \label{HHyybb:Modelling}
 
-To extract the \HHyybb signal yield, a fit to the \myy in the range 150 $<$ \myy $<$ 160 GeV. Analytic functions are used to describe the signal, single Higgs background and the continuum background. Parameters of the signal and the peaking single Higgs backgrounds shapes are fixed on MC distributions, while the background parameters are directly constrained on the data.   
+To extract the \HHyybb signal yield, a fit to the \myy in the range 105 $<$ \myy $<$ 160 GeV is performed in data. Analytic functions are used to describe the signal, single Higgs background and the continuum background. Parameters of the signal and the peaking single Higgs backgrounds shapes are fixed on MC distributions, while the background parameters are directly constrained on the data.   
 
 \subsection{Signal and single Higgs parameterization}
 \label{HHyybb:Modelling:Sig}
@@ -270,18 +275,18 @@ e^{-t^{2} / 2} &  if \ -\alpha_{low } \leq t \leq \alpha_{high } \\
 \end{array}\right.
 \end{equation}
 with $t = \frac{m_{\gamma\gamma} - \mu_{CB}}{\sigma_{CB}}$. $\mu_{CB}$ and $\sigma_{CB}$ describe the mean and the width of the Gaussian core, $\alpha_{low/high}$ describes the transition from the core to the tails of the distribution and $n_{low/high}$ describe the tails. N normalizes the distribution. The explicit separation of the Gaussian core from the tails in this function allows an easy treatment of the systematic uncertainties, as energy scale uncertainty allows a variation of the mean and the resolution systematic allows the variation of the width, thus the choice of this function.\\
-The normalizations are obtained from the expected MC yields. For each category (BDT categories), the parameters of the DSCB are fixed from the fit of the \myy obtained from MC simulation of the ggF and VBF HH processes with \kl = 1, since no significance dependence of the functional form with \kl was found. Fitted parameters are further allowed to vary only within the systematic uncertainties on the energy scale and resolution. Injection tests are performed to quantify potential biases from the signal HH only fit and signal + single Higgs fit. No statistically significant biases ($<$ 10\%) were observed in both tests, thus the same parameterized functions are used to fit the signal and single Higgs backgrounds.    
+The normalizations are obtained from the expected MC yields. For each BDT category, the parameters of the DSCB are fixed from the fit of the \myy obtained from MC simulation of the ggF and VBF HH processes with \kl = 1, since no significance dependence of the functional form with \kl was found. Fitted parameters are further allowed to vary only within the systematic uncertainties on the energy scale and resolution. Injection tests are performed to quantify potential biases from the signal HH only fit and signal + single Higgs fit. No statistically significant bias ($<$ 10\%) was observed in both tests, thus the same parameterized functions are used to fit the signal and single Higgs backgrounds.    
 
 \subsection{Continuum background parameterization}
 \label{HHyybb:Modelling:Bkg}
 
-The continuum background estimation is done in a data-driven way, MC used only to chose the functional form and its parameters are then left completely free in the fit to data, allowing to reduce uncertainties due to a background mismodelling. The background is decomposed to several component to take into account contribution from the continuous $\gamma\gamma$, $\gamma$j and jj fake photons components. The decomposition is done using a 2x2 ABCD side-band method \cite{ABCD}, in which an equation system is built and the equation system is solved to determine the relative contribution of each components (purity). The purities are measured inclusively and each BDT category. Inclusively the purity of the $\gamma\gamma$ events is around 85$\pm$2.9\% and the remaining 15$\pm$2.8\% consists of the $\gamma$+jet events and a negligible amount of the jj events. The $\gamma\gamma$ contribution increases after the BDT selection since a higher BDT score, the BDT tends to select events with higher photon \pT thus more real photons. The decomposition is shown in Figure \ref{fig:HHyybb:Modelling:Bkg:Decom}. 
+The continuum background estimation is done in a data-driven way. MC used only to choose the functional form and its parameters are then left completely free in the fit to data, allowing to reduce uncertainties due to background mismodelling. The background is decomposed into several components to take into account contribution from the continuous $\gamma\gamma$, $\gamma$j and jj fake photons components. The decomposition is done using a 2x2 ABCD side-band method \cite{ABCD}, in which an equation system is built which is solved to determine the relative contribution of each components (purity). The purities are measured inclusively and each BDT category. Inclusively, the $\gamma\gamma$ events purity is around 85$\pm$2.9\% and the remaining 15$\pm$2.8\% consists of the $\gamma$+jet events and a negligible amount of the jj events. The $\gamma\gamma$ contribution increases after the BDT selection since a higher BDT score, the BDT tends to select events with higher photon \pT thus more real photons. The decomposition is shown in Figure \ref{fig:HHyybb:Modelling:Bkg:Decom}. 
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_BackgroundDecomposition_plot_purity_inclusive.pdf}}
     \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_BackgroundDecomposition_plot_purity_yybb_nonRes_XGBoost_btag77_BCal_Cat.pdf}}
-    \caption{$\gamma\gamma$,$\gamma$j/$j\gamma$, and jet-jet fractions in the inclusive (a) and the BDT categories (b). In the BDT figure bin 1 corresponds to the High mass BDT tight category, bin 2 corresponds to the High mass BDT loose category, bin 3 corresponds to the Low mass BDT tight category, and finally bin 4 corresponds to the Low mass BDT loose category.}
+    \caption{$\gamma\gamma$, $\gamma$j/$j\gamma$, and jet-jet fractions in the inclusive (a) and the BDT categories (b). In the BDT figure bin 1 corresponds to the High mass BDT tight category, bin 2 corresponds to the High mass BDT loose category, bin 3 corresponds to the Low mass BDT tight category, and finally bin 4 corresponds to the Low mass BDT loose category.}
     \label{fig:HHyybb:Modelling:Bkg:Decom}
 \end{figure}
 
@@ -289,13 +294,13 @@ The functional form is chosen by fitting a MC background template. Given the hig
 
 \subsubsection{Spurious signal test}
 \label{HHyybb:Modelling:Bkg:SS}
-The spurious signal (SS) refers to any potential fake signal $N_{SS}$ obtained from fitting the smooth background distribution to a function that describes the signal plus background shape. The $N_{SS}$ is taken to be the largest number of fitted signal events computed for Higgs masses varying in intervals of 1 GeV from 121 GeV to 129 GeV. The SS requires the tested function fulfill one of the following criteria: 
+The spurious signal (SS) refers to any potential fake signal $N_{SS}$ obtained from fitting the smooth background distribution to a function that describes the signal plus background shape. The $N_{SS}$ is taken to be the largest number of fitted signal events computed for Higgs masses varying in intervals of 1 GeV from 121 to 129 GeV. The SS requires the tested function fulfill one of the following criteria: 
 \begin{itemize}
     \item $N_{SS} < $ 10\% $N_{s}^{exp}$, where $N_{s}^{exp}$ is the expected number of signal events within the BDT category. 
     \item $N_{SS} < $ 20\% $\sigma_{bkg}$, where $\sigma_{bkg}$ is the statistical uncertainty on the fitted signal events when performing a signal+background fit to the template. 
 \end{itemize}
 
-Due to the limited background statistics used, a new variable $\xi_{SS}$ is defined to relax the criterion defined before. The $\xi_{SS}$ is defined in a such way to allow for a 2$\sigma$ local statistical fluctuations in the background template. $\xi_{SS}$ is defined as: 
+Due to the limited background statistics used, a new variable $\xi_{SS}$ is defined to relax the criterion defined before. The $\xi_{SS}$ is defined in a such way to allow for a 2$\sigma$ local statistical fluctuation in the background template. $\xi_{SS}$ is defined as: 
 \begin{equation}
     \zeta_{\mathrm{SS}}=\left\{\begin{array}{ll}
 N_{\mathrm{SS}}+2 \Delta_{\mathrm{MC}}, & N_{\mathrm{SS}}+2 \Delta_{\mathrm{MC}}<0 \\
@@ -304,7 +309,7 @@ N_{\mathrm{SS}}-2 \Delta_{\mathrm{MC}}, & N_{\mathrm{SS}}-2 \Delta_{\mathrm{MC}}
 \end{array}\right.
 \end{equation}
 where $\Delta_{MC}$ is a local statistical fluctuation of the background template. The $\xi_{SS}$ should then pass the same criteria as $N_{SS}$. \\
-The function that gives the smallest $N_{SS}$ is selected as the final background function and the $N_{SS}$ is added a systematic on the signal yield. The exponential function $exp(a.m_{\gamma\gamma})$ is found to be the best choice for all BDT categories, the corresponding SS are shown in Table \ref{tab:HHyybb:Modelling:Bkg:SS}.
+The function that gives the smallest $N_{SS}$ is selected as the final background function and the $N_{SS}$ is added a systematic on the signal yield. The exponential function "$exp(a.m_{\gamma\gamma})$" is found to be the best choice for all BDT categories and the corresponding SS are shown in Table \ref{tab:HHyybb:Modelling:Bkg:SS}.
 
 \begin{table}[]
     \centering
@@ -324,28 +329,31 @@ The function that gives the smallest $N_{SS}$ is selected as the final backgroun
 
 \section{Systematic uncertainties}
 \label{HHyybb:Syst}
-Due to the rarity of the targeted process (Section \ref{chap1:HH:HPD}), and the restrictive event selection, the main and the dominant source of uncertainty in this analysis is the statistical uncertainty. Nevertheless, many other sources have to be considered, and are far from being negligible. They can be split into two categories, the experimental uncertainties and the theoretical uncertainties. The impact of each systematic on the shape and/or the expected event yield is evaluated in each BDT category. Since the main background is fully data-driven, these systematics are estimated for the single Higgs boson backgrounds and HH boson signal using MC simulation. Technically, these systematic uncertainties are implemented as nuisance parameters in the statistical model and are constrained by a Gaussian or log-normal function in most cases. 
+Due to the small number of expected signal events (Section \ref{chap1:HH:HPD}), and the restrictive event selection, the dominant source of uncertainty in this analysis is still the statistical one. Nevertheless, the systematic sources have to be considered. They can be split into two categories, the experimental and theoretical uncertainties. The impact of each systematic on the shape and/or the expected event yield is evaluated in each BDT category. Since the continuum is the main background and it is fully data-driven, no systematic are assigned to the continuum. The systematics are estimated for the single Higgs boson backgrounds and HH boson signal using MC simulation. Technically, these systematic uncertainties are implemented as nuisance parameters in the statistical model and are constrained by a Gaussian or log-normal function in most cases. 
 \subsubsection{Experimental systematic uncertainties}
 \label{HHyybb:Syst:Exp}
-Experimental systematic uncertainties are related mostly the reconstruction, the calibration, the tagging and the identification of the physics objects used in the analysis. In addition to 1.7\% uncertainty in the integrated luminosity used in this analysis (full Run 2), the following systematics are considered : 
+Experimental systematic uncertainties are related mostly the reconstruction, the calibration, the tagging and the identification of the physics objects used in the analysis. In addition to 1.7\% uncertainty in the integrated luminosity used in this analysis (full Run 2), the following sources of systematic are considered : 
 \begin{itemize}
     \item Spurious signal : as described in Section \ref{HHyybb:Modelling:Bkg:SS}, the potential bias arising the background modelling is assessed as an additional source of uncertainty in the total number of expected HH signal events in each category according to Table \ref{tab:HHyybb:Modelling:Bkg:SS}.
     \item Photon energy scale and resolution : related to the measurement of photon energy and its calibration arising from the different component such as the amount material front the calorimeter, cell energy non-linearity. Affecting both the shape and normalization of the modelling. Taken from \cite{PES}.
     \item Photon identification and isolation efficiencies : resulting mainly from the mis-modelling of the shower shape described in Section \ref{gamma:ss} and bias of the ID measurement method listed in Section \ref{gamma:ID}. 
     \item Trigger and vertex efficiencies : these are considered to account for the di-photon trigger efficiency used to select events and its uncertainty which affects the acceptance by 1\% for each category, and the photon-pointing vertex efficiency.
-    \item Jet energy scale and resolution : similar to photon energy related-uncertainties, are uncertainties related to the jet energy measurement and its calibration chain described in Section \ref{Jet:Cal:chain}. This systematic effects the $m_{b\bar{b}}$ distribution and are propagated to the $E_{T}^{miss}$ calculation. 
-    \item Flavor-tagging : this account for the $b$-tagging uncertainties resulting from the impact of parton shower and hadronisation on the $b$-tagging efficiency \cite{IP2}. This affects the acceptance of the analysis.
+    \item Jet energy scale and resolution : similar to photon energy related-uncertainties, they are related to the jet energy measurement and its calibration chain described in Section \ref{Jet:Cal:chain}. This systematic affects the $m_{b\bar{b}}$ distribution and are propagated to the $E_{T}^{miss}$ calculation. 
+    \item Flavor-tagging : this account for the $b$-tagging uncertainties resulting from the impact of parton shower and hadronisation on the $b$-tagging efficiency \cite{IP2}. This affects the acceptance.
 \end{itemize}
 
-In addition the systematic listed above, an additional uncertainty on the yield from the \pT-Reco correction is examined. Three variations of the correction function were generated using different $b$-tagging WPs (60\%, 77\%, 85\%). The relative impact on the yield for a given correction function is used as a systematic uncertainty. Table \ref{table_pt_reco_sys} summaries the relative effect to the nominal \pT-Reco correction on the yield, the impact on the shape is found to be negligible for both the position and the spread. The current WP is 77\%, but that at maximum (with the large acceptance of 85\% WP) the systematic is comparable to the flavor tagging systematic and still dominated by the jet energy scale and resolution uncertainties, thus is it neglected in the final results. 
+In addition to the systematic listed above, an additional uncertainty on the yield from the \pT-Reco correction is examined. Three variations of the correction function were generated using different $b$-tagging WPs (60\%, 70\%, 85\%). Figure \textbf{ToBe ReProduced} shows the \pT-Reco correction distribution for the four $b$-tagging WPs (60\%, 70\%, 77\%, 85\%). All WPs show almost the same correction distribution for high \pT jet while for low \pT the variation is larger. At low \pT region, a large fraction of light-jet mis-identified as $b$-jet contributes to compute the \pT-Reco correction, which leads to a low correction factor, specially for 85\% WPs which is the looser WP, and more the WP is tighter more the correction factor is higher.\\
+
+The relative impact on the yield for a given correction function is used as a systematic uncertainty. Table \ref{table_pt_reco_sys} summaries the relative effect to the nominal \pT-Reco correction on the yield. The impact on the shape is negligible for both the position and the spread. The current WP is 77\%, but that at maximum (with the large acceptance of 85\% WP) the systematic is comparable to the flavor tagging systematic and still dominated by the jet energy scale and resolution uncertainties, thus is it neglected in the final results. 
 \begin{table}[ht!]
     \centering
     \begin{tabular}{c|c}
+        \hline
+        \hline
         \pT-Reco variation & \% relative effect to nominal \\
         \hline
-        \hline
         60\% WP & $\pm$ 0.094 \\
-        77\% WP & $\pm$ 0.065 \\
+        70\% WP & $\pm$ 0.065 \\
         85\% WP & $\pm$ 0.12 \\
         \hline
         \hline
@@ -356,7 +364,7 @@ In addition the systematic listed above, an additional uncertainty on the yield 
 
 \subsubsection{Theoretical systematic uncertainties}
 \label{HHyybb:Syst:Theo}
-Theoretical systematic regroups all the uncertainties related to the theory predictions. The following systematics are considered :
+Sources of systematic uncertainties related to the theory are considered:
 
 \begin{itemize}
     \item QCD scale uncertainties : these are defined to account for the potential effect of missing higher order in the matrix element. These are estimated by varying the re-normalisation $\mu_R$ and the factorisation $\mu_F$ scales coherently by factor of 2 or 0.5 from their nominal values and recalculating the cross section in each case. The largest deviation from the nominal cross section across the \kl range [-10, 10] is taken as the uncertainty.  
@@ -370,14 +378,15 @@ Theoretical systematic regroups all the uncertainties related to the theory pred
 \section{Statistical model}
 \label{HHyybb:Stat}
 
-The observed data is interpreted using the Modified Frequentest method ($CL_s$) \cite{CL_s}. A hypothesis test made to evaluate the compatibility between the observed data and the background-only hypothesis which assumes no signal in the data. The test statistic used here is the profile likelihood ratio \cite{Z} built from signal+background model . The signal is extracted by performing a simultaneous maximum likelihood fit of the \myy distribution in the range [105, 160] GeV over the four BDT categories. The likelihood is defined as : 
+The observed data is interpreted using the Modified Frequentest method ($CL_s$) \cite{CL_s}. An hypothesis test is made to evaluate the compatibility between the observed data and the background-only hypothesis which assumes no signal in the data. The test statistic used here is the profile likelihood ratio \cite{Z} built from signal+background model . The signal is extracted by performing a simultaneous maximum likelihood fit of the \myy distribution in the range [105, 160] GeV over the four BDT categories. The likelihood is defined as : 
 \begin{equation}
     \mathcal{L}=\prod_{c}\left(Pois\left(n_{c}
     \mid N_{c}(\theta)\right) \cdot \prod_{i=1}^{n_{c}}
     f_{c}\left(m_{\gamma \gamma}^{i}, \theta\right) \cdot G(\theta)\right),
 \end{equation}
 where for each event i in a category c, $n_c$ is the observed number of events in real data, while $N_c$ is the expected number of event from MC simulation, 
-$f_c$ indicate the value of the pdf function, $\tetha$ are nuisance parameters (systematic uncertainties) with G is the their constraint pdfs. The expected number of event combine the signal HH (ggF + VBF), single Higgs backgrounds, the spurious signal and the continuum background, defined as : 
+$f_c$ indicates the value of the pdf function, $\theta$ are nuisance parameters (systematic uncertainties) with G is the their constraint pdfs. 
+The expected number of events combines the signal HH (ggF + VBF), single Higgs backgrounds, the spurious signal and the continuum background, defined as : 
 \begin{equation}
     N_{c}(\theta)=\mu \cdot N_{\mathrm{HH},
     \mathrm{c}}\left(\theta_{yield }\right)+N_{\mathrm{H},
@@ -386,7 +395,7 @@ $f_c$ indicate the value of the pdf function, $\tetha$ are nuisance parameters (
     \mathrm{c}}+N_{continuum , \mathrm{c}},
 \end{equation}
 
-where $\tetha_{yield}$ and $\tetha_{SS}$ are the systematics on the yield from experimental, theoretical uncertainties and spurious signal uncertainties. $\mu$ is the parameter of interest of the fit, POI, (signal strength) which measure the HH cross section normalized to its SM predicted value. \\
+where $\theta_{yield}$ and $\theta_{SS}$ are the systematics on the yield from experimental, theoretical uncertainties and spurious signal uncertainties. $\mu$ is the parameter of interest of the fit, POI, (signal strength) which measure the HH cross section normalized to its SM predicted value. \\
 The pdf $f_c$ is the sum of the DSCBs modelling the HH, single Higgs and the spurious signal and the exponential function modelling the continuum background described in Section \ref{HHyybb:Modelling}. Only the signal strength, the exponential function parameter a, its normalization $N_{continuum}$ and the systematics uncertainties are allowed to float in the fit. \\
 The profile likelihood ratio test is defined as: 
 \begin{equation}
@@ -405,12 +414,12 @@ In the absence of signal, an exclusion limit at 95\% Confidence Level (CL) is se
 \subsection{Observed events and \myy fit}
 \label{HHyybb:Results:Fit}
 The result of the background-only fit of the \myy distribution for each category are shown in Figure \ref{fig:HHyybb:Results:Fit:myy}. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][High mass, BDT tight]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_SM_1_v2.pdf}}
-    \subfloat[][Low mass, BDT tight ]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_SM_2_v2.pdf}} \\
-    \subfloat[][High mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_BSM_1_v2.pdf}}
-    \subfloat[][Low mass, BDT loose ]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_BSM_2_v2.pdf}}
+    \subfloat[][High mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_SM_2_v2.pdf}} \\
+    \subfloat[][Low mass, BDT tight]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_BSM_1_v2.pdf}}
+    \subfloat[][Low mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/figures_Results_unweighted_yybb_BSM_2_v2.pdf}}
     \caption{The data are compared to the background-only fit for the four BDT categories. Both the continuum background and the background from single Higgs boson production are considered.}
     \label{fig:HHyybb:Results:Fit:myy}
 \end{figure}
@@ -442,25 +451,25 @@ VBF & $0.01266 \pm 0.00016$ & $0.01618 \pm 0.00018$ & $(3.22 \pm 0.08) \cdot 10^
 
 \subsection{Cross-section limits and \kl constrain}
 \label{HHyybb:Results:Xsec}
- Since no significance excess over the SM prediction is found, exclusion limits at 95\% CL are claimed on the Higgs boson pair production cross section for each \kl as described in Section $\ref{HHyybb:Stat}$. The upper limits obtained for the Higgs boson production cross section $\sigma_{HH}$ in the ggF + VBF production modes is 140 fb were expecting 180 fb. As a multiple of the SM production cross-section, the observed limit is 4.1 times the SM prediction and the expected limit of 5.5 times the SM prediction. \\
+ Since no significance excess over the SM prediction is found, exclusion limits at 95\% CL are claimed on the Higgs boson pair production cross section for each \kl as described in Section $\ref{HHyybb:Stat}$. The upper limits obtained for the Higgs boson production cross section $\sigma_{HH}$ in the ggF + VBF production modes is 140 fb. The median value of 180 fb is estimated. As a multiple of the SM production cross-section, the observed limit is 4.1 times the SM prediction and the expected limit of 5.5 times the SM prediction. \\
 
-As no HH event is observed, the constraint on the Higgs self coupling is derived from the cross-section limit scan versus \kl by taking the inter-section between the theoretical prediction and the measured cross section, as shown in Figure \ref{fig:HHyybb:Results:Xsec:Limit}. The observed constraint is -1.5 $<$ \kl $<$ 6.7, while the expected constraint is -2.4 $<$ \kl $<$ 7.7 obtained assuming \kl = 1. Effects from BSM scenario on the single Higgs cross section and Higgs boson branching ratio are neglected. The couplings of Higgs boson to other particles are set to their SM values \cite{Higgs_80ifb}. In addition to the constraint a measurement of \kl is performed by floating \kl in the fit and assuming SM prediction, the best-fit \kl is $2.7^{+2.1}_{-2.2}$ which is near to \kl with the minimum HH cross-section. The likelihood scan as a function of \kl is shown in Figure \ref{fig:HHyybb:Results:Xsec:LH}.
-\begin{figure}[ht]
+As no excess of HH event is observed, the constraint on the Higgs self coupling is derived from the cross-section limit scan versus \kl by taking the inter-section between the theoretical prediction and the measured cross section, as shown in Figure \ref{fig:HHyybb:Results:Xsec:Limit}. The observed constraint at 95\% confidence level (CL) is -1.5 $<$ \kl $<$ 6.7, while the expected constraint is -2.4 $<$ \kl $<$ 7.7 obtained assuming \kl = 1. Effects from BSM scenario on the single Higgs cross section and Higgs boson branching ratio are neglected. The couplings of Higgs boson to other particles are set to their SM values \cite{Higgs_80ifb}. In addition to the constraint a measurement of \kl is performed by floating \kl in the fit and assuming SM prediction, the best-fit \kl is $2.7^{+2.1}_{-2.2}$ which is near to \kl with the minimum HH cross-section. The likelihood scan as a function of \kl is shown in Figure \ref{fig:HHyybb:Results:Xsec:LH}.
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch5/Img/figures_Results_kappa_lambda_scan.pdf}
     \caption{Observed and expected limits at 95\% CL on the cross section of non-resonant Higgs boson pair production as a function of the Higgs boson self-coupling modifier $\kappa_{\lambda}= \lambda_{HHH}/\lambda^{\textrm{SM}}_{HHH}$. The $\pm 1\sigma$ and $\pm 2\sigma$ bands show the variations on the expected limit due to statistical and systematic uncertainties. The theory prediction curve represents the scenario where all parameters and couplings are set to their SM values except for \kl. The uncertainty band of the theory prediction curve shows the cross section uncertainty.}
     \label{fig:HHyybb:Results:Xsec:Limit}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch5/Img/figures_Results_scan_hhyybb_kl.pdf}
     \caption{The likelihood function as a function of \kl, with $\mu = $  1. The observed 68\% and 95\% CL ranges are [0.5, 4.7] and [-1.4, 6.5] respectively, while the expected are ([-1.4, 6.4] and [-3.1, 8.2].}
     \label{fig:HHyybb:Results:Xsec:LH}
 \end{figure}
 
-Table \ref{tab:HHyybb:Results:Xsec:Sys} shows the impact of the systematic uncertainties on the upper limit on $\mu$. The dominant systematic after the statistical uncertainties are related to the spurious signal and the photon energy scale (PES) uncertainties. As mentioned in Section \ref{HHyybb:Syst:Exp}, the PES systematic is arising from the measurement of photon energy and its calibrated which is mainly affected by the cell non-linearity, additional passive material in front of the calorimeter. The bias due to background function choice leads to the large spurious uncertainties and mainly dominated by the statistical fluctuations of the MC continuum background statistics used in the spurious signal test. Since generating of more MC events was however not possible in the time scale of the analysis, several attempts are done to improve the continuum statistics and reduce statistical fluctuation. The Gaussian Process Regression (GPR) \cite{GPR} is used to smooth and reduce fluctuations in the \myy distribution, this method reduces the $N_{SS}$ by 84\%. Increasing statistics by inverting the $b$-tagging requirements reduces the systematic on $\mu$ by $\sim$ 3\%. Since the analysis is statistically dominated, the global significance may not improve significantly, thus these improvement are not included.  
-\begin{table}[ht]
+Table \ref{tab:HHyybb:Results:Xsec:Sys} shows the impact of the systematic uncertainties on the upper limit on $\mu$. The dominant systematic after the statistical uncertainties are related to the spurious signal and the photon energy scale (PES) uncertainties. As mentioned in Section \ref{HHyybb:Syst:Exp}, the PES systematic is arising from the measurement of photon energy and its calibrated which is mainly affected by the cell non-linearity, additional passive material in front of the calorimeter. The bias due to background function choice leads to the large spurious uncertainties and mainly dominated by the statistical fluctuations of the MC continuum background statistics used in the spurious signal test. Since generating of more MC events was however not possible in the time scale of the analysis, several attempts are done to improve the continuum statistics and reduce statistical fluctuation. The Gaussian Process Regression (GPR) \cite{GPR} is used to smooth and reduce fluctuations in the \myy distribution, this method reduces the $N_{SS}$ by 84\%. Increasing statistics by inverting the $b$-tagging requirements reduces the systematic on $\mu$ by $\sim$ 3\%. Since the analysis is statistically dominated, the global significance may not improve significantly, thus these improvement are not included in the final results.  
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
 \hline \hline 
@@ -483,5 +492,158 @@ PDF+ $\alpha_{\mathrm{s}}$ & Normalization & 0.7  \\
 \section{Comparison to 36 \ifb results}
 \label{HHyybb:36ifb}
 
+Table \ref{tab:HHyybb:36ifb} resumes the observed and expected limits as well as the constrain on \kl derived with 36 \ifb and 139 \ifb \cite{yybb_36ifb, yybb_139}. The limit is improved from 36 \ifb analysis with a factor 5. The improvement quot both the increasing of 3.9 in luminosity and the new analysis strategy. By extrapolating the 36 \ifb results to 139 \ifb, the new analysis strategy improves the limit by a factor 2.4. Such improvement is mainly coming from the implementation of machine learning in event categorization and the split in the two $m_{b\bar{b}\gamma\gamma}^*$ bins. In addition to the analysis strategy, the 139 \ifb benefits from several improvements such as the usage of the PFlow algorithm for jet reconstruction which improves jet resolution as well as the specific $b$-jet energy calibration which enhances the analysis sensitivity by $\sim$ 10\%. The $b$-tagging efficiency is also improved by moving from the MV2c10 algorithm to the DL1r which show a higher efficiency as shown in Figure \ref{fig:Jet:Tag:Dlr:Eff_77}. Considering the VBF production mode for the first time as a part of the signal when setting limits on \kl brings an improvement of 6-8\% in kl interval. 
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccccc}
+    \hline \hline
+         & Expected & Observed & Expected & Observed \\
+         & 36 \ifb  & 36 \ifb  & 139 \ifb & 139 \ifb \\
+         \hline 
+    $\sigma_{HH}/\sigma_{HH}^{SM}$ limit & 28 & 22 & 5.5 & 4.1 \\
+    \kl interval & [-8.3, 13.2] & [-8.2, 13.2] & [-2.4, 7.7] & [-1.5, 6.7] \\
+    \hline\hline
+    \end{tabular}
+    \caption{Summary of \HHyybb results from 36 \ifb and 139 \ifb analysis.}
+    \label{tab:HHyybb:36ifb}
+\end{table}
+
+
 \section{Comparison to CMS \HHyybb results}
 \label{HHyybb:CMS}
+Also, the CMS collaboration published their study of the search of \HHyybb using the data collected by CMS detector between 2015 and 2018 which correspond to 137 \ifb \cite{CMS_yybb}. Similarly to ATLAS, no significance deviation from the background-only hypothesis is found by CMS. The analysis strategy used by CMS is very different from the one presented in this thesis, yielded to different limits and \kl measurement. Due to the differences in the analysis strategies, a direct comparison is not trivial. The results obtained by CMS on the limit are presented in Figure \ref{fig:HHyybb:CMS:Xsec} and summarized in Table \ref{tab:HHyybb:CMS}. The \kl likelihood scan is shown in Figure \ref{fig:HHyybb:CMS:kl:LH}. CMS results are extracted from a simultaneous fit of (\myy , \mbb) in 14 analysis categories (on MVA output and $m_{b \bar{b} \gamma \gamma}^{*}$) defined using several MVA techniques and containing 12 ggF HH categories and 2 VBF HH categories. In contrary to ATLAS, CMS defines a dedicated categories to target the VBF HH. In addition, CMS provides a specific orthogonal category to target $t\bar{t}H$ to set constraint on the \kt, both HH and single Higgs are combined to provide an improved constrain of the \kl and \kt parameters. The inclusion of the $t\bar{t}H$ significantly improves the constraint on \kt as demonstrated in the 2D likelihood scan of \kl and \kt in Figure \ref{fig:HHyybb:CMS:kl:LH}. Besides this, CMS uses two machine learning based techniques to improve the $b$-jet energy:
+\begin{itemize}
+    \item a DNN approach to improve the energy of resolution similarly to the method presented in Section \ref{Jet:Cal:BCal}.
+    \item additional BDT approach which use the fact that there is no missing transverse momentum from the hard-scattering process in the \HHyybb final state to correct the \mbb invariant mass which is almost similar to the kinematic fit described in Appendix \ref{Adx4}
+\end{itemize}
+. CMS benefit from the 2D fit of \myy and \mbb, while for ATLAS only \myy is used as final discriminant variable. The 2D fit was considered in ATLAS analysis but not used in the final results, since similar improvement was observed between using the 2D fit and including the \mbb in the MVA training.
+%while it brought some additional technical complexity , its implementation is kept more next round. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Ch5/Img/CMS-HIG-19-018_kl_scan.pdf}
+    \caption{Expected and observed 95\% CL upper limits on the \HHyybb cross section obtained for different values of \kl assuming \kt = 1. The green and yellow bands represent, respectively, the one and two standard deviation extensions beyond the expected limit. The long-dashed red line shows the theoretical prediction. }
+    \label{fig:HHyybb:CMS:Xsec}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+    \hline \hline
+         & Expected & Observed\\
+         \hline 
+   CMS  $\sigma_{HH}/\sigma_{HH}^{SM}$ limit & 5.2 & 7.7 \\
+   CMS \kl interval & [-2.5, 8.2] & [-3.3, 8.5]  \\
+    \hline
+    ATLAS  $\sigma_{HH}/\sigma_{HH}^{SM}$ limit & 5.5 & 4.1 \\
+    ATLAS \kl interval & [-2.4, 7.7] & [-1.5, 6.7] \\
+    \hline \hline
+    \end{tabular}
+    \caption{Summary of CMS \HHyybb results. Limit is presented as a multiple of SM expected value. Comparison to ATLAS results is also shown.}
+    \label{tab:HHyybb:CMS}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Ch5/Img/CMS-HIG-19-018_kl_kt_LH.pdf}
+    \caption{Negative log-likelihood, as a function of \kl, evaluated with an Asimov data set assuming the SM hypothesis. The 68 and 95\% CL intervals are shown with the dashed gray lines. The two curves are shown for the HH (blue) and HH+ $t\bar{t}H$ (orange) analysis categories. All other couplings are set to their SM values.}
+    \label{fig:HHyybb:CMS:kl:LH}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Ch5/Img/CMS-HIG-19-018_kl_LH.pdf}
+    \caption{Negative log-likelihood contours at 68 and 95\% CL in the (\kl, \kt) plane evaluated with an Asimov data set assuming the SM hypothesis (left) and the observed data (right). The contours obtained using the HH analysis categories only are shown in blue, and in orange when combined with the ttH categories. The best fit value for the HH categories only (\kl = 0.6, \kt = 1.2) is indicated by a blue circle, for the HH+ttH categories (\kl = 1.4, \kl = 1.3) by an orange diamond, and the SM prediction (\kl = 1.0, \kt = 1.0) by a black star. The gray band shows the region where LO parametrization of \kt used in CMS analysis is not reliable. }
+    \label{fig:HHyybb:CMS:LH:2D}
+\end{figure}
+
+CMS shows a slightly better expected limit than ATLAS, which could be explained by the dedicated VBF category which improves the limit. ATLAS shows a more precise \kl constraint which is related (to my opinion) to the under-optimization done by CMS when defining the analysis ggF regions. In CMS analysis, the ggF HH categories in $m_{b \bar{b} \gamma \gamma}^{*}$ are defined after the MVA is trained, while in ATLAS the training is done separately in each $m_{b \bar{b} \gamma \gamma}^{*}$ category with specific signal as described in Section \ref{HHyybb:ObjEvt:Evt}. The signal used by CMS for training is a mixture of SM HH and 12 BSM benchmarks proposed in Reference \cite{CMS_BSM}, the mixing procedure is not explained in their published article. The training strategy used by ATLAS and the previous 36 \ifb CMS analysis seems to improve the MVA performance in each $m_{b \bar{b} \gamma \gamma}^{*}$ region, giving better sensitivity to \kl which is mainly derived by the low mass category. Even with lower di-photon trigger threshold and better photon energy resolution, ATLAS result shows a more precise measurement compared to CMS. 
+
+\section{Comparison to other HH decay channels}
+\label{HHyybb:HH}
+As discussed in Section \ref{chap1:HH:HPD}, other production modes are sensitive to the Higgs self-coupling. In the following, the final states \bbbb, \bbtt channels are discussed. At the timescale of this thesis, the full Run-2 analysis of these two channels are not yet published, only the 2015-2016 data results will be considered.
+
+\subsection{\bbbb channel}
+\label{HHyybb:HH:4b}
+In the \bbbb analysis, the two Higgs of the HH system are reconstructed from 4 $b$-tagged jets with an invariant of each pair of $b$-tagged jets closes to $m_{H}$. Only 27.5 \ifb of the collected data between 2015 and 2016 is used because of an inefficiencies in the online vertex reconstruction affected $b$-jet triggers that were used. The invariant mass of the two Higgs $m_{HH}$ is used a discriminant variable between the HH production and the large background mainly coming from the QCD multi-jets (95\%) and the $t\bar{t}$ (5\%). A fully data-driven method is used to estimate the QCD multi-jets and $t\bar{t}$ backgrounds. Even with the largest branching ratio, thus higher statistic, the \bbbb channel suffers from the hardest QCD multi-jets and $t\bar{t}$ backgrounds which reduce dramatically the sensitivity of this channel, leading to low sensitivity to \kl. Table \ref{tab:HHyybb:HH:4b} resumes the limit on HH cross section and the constraint on the \kl driven by \bbbb channel with the 27.5 \ifb data. 
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+    \hline\hline
+        & Expected & Observed \\
+    \hline    
+        $\sigma_{HH}/\sigma_{HH}^{SM}$ & 21 & 12.9 \\
+        \kl interval & [-11.6, 18.8] & [-10.9, 20.1] \\
+    \hline\hline
+    \end{tabular}
+    \caption{The 95\% limits of the HH production cross-section and the allowed \kl interval for \bbbb analysis.}
+    \label{tab:HHyybb:HH:4b}
+\end{table}
+
+\subsection{\bbtt channel}
+\label{HHyybb:HH:tt}
+
+For \bbtt analysis, HH events are reconstructed from two $b$-tagged jets and two $\tau$-leptons. The analysis is split events into two categories: the $\tau_{lep}\tau_{had}$, in which one of the two $\tau$s is decaying laptonically and the other hadronically triggered by single lepton trigger (SLT), and the $\tau_{had}\tau_{had}$ in which both $\tau$s are decaying hadronically. The two categories are statistically combined. A BDT is used to improve the separation between signal and background. Similarly to the \bbbb, the dominant background processes are the $t\bar{t}$, QCD multi-jet and Z bosons produced in association with jets originating from heavy-flavor quarks as well as the irreducible ZH background. Data-driven methods are used to estimate the background contamination. The \bbtt uses the BDT score as a discriminating variable to extract the statistical results, which is less sensitive to \kl variations as shown in Figure \ref{fig:HHyybb:HH:tt}. Table \ref{tab:HHyybb:HH:tt} resumes the limit on HH cross section and the constraint on the \kl driven by this channel.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[][$\tau_{lep}\tau_{had}$]{\includegraphics[width=.5\textwidth]{Ch5/Img/bbtt_BDT_lephad.png}}
+    \subfloat[][$\tau_{had}\tau_{had}$]{\includegraphics[width=.5\textwidth]{Ch5/Img/bbtt_BDT_hadhad.png}}
+    \caption{The BDT distributions in the \bbtt analysis for the $\tau_{lep}\tau_{had}$ and $\tau_{had}\tau_{had}$ categories.}
+    \label{fig:HHyybb:HH:tt}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cccc}
+    \hline\hline
+        & Expected & Observed \\
+    \hline    
+       $\tau_{lep}\tau_{had}$ & $\sigma_{HH}/\sigma_{HH}^{SM}$ & 28.4 & 23.5 \\
+       $\tau_{had}\tau_{had}$ & $\sigma_{HH}/\sigma_{HH}^{SM}$ & 17.4 & 16.4 \\
+       \hline 
+      Combined & $\sigma_{HH}/\sigma_{HH}^{SM}$ & 14.8 & 12.7 \\
+        & \kl interval & [-8.9, 16.8] & [-7.4, 15.7] \\
+    \hline\hline
+    \end{tabular}
+    \caption{The 95\% limits of the HH production cross-section and the allowed \kl interval for \bbtt analysis.}
+    \label{tab:HHyybb:HH:tt}
+\end{table}
+
+\subsection{Combination}
+
+A combination of the three channels was performed to set better constraint on the \kl and the cross-section limit \cite{HH_Comb_36}. In this combination, the \bbbb and \bbtt are combined with the 36 \ifb \bbyy to set constraint on the \kl. Other channels are also considered for cross-section limit combination such as $\bar{b}bW^+W^-$, $\bar{b}b\gamma\gamma$ and $W^+W^-W^+W^-$. Figure \ref{fig:HHyybb:comb} shows the upper limits for individual final states and their combination. The combined observed (expected) upper limit on the SM HH production is 6.9 (10) times the SM prediction. The sensitivity the SM HH is driven by the \bbbb, \bbtt and \bbyy which explain the motivation to consider only these three channels for \kl constraint. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Ch1/Img/XSec_Comb_36.png}
+    \caption{Upper limits at 95\% CL on the ggF SM HH production normalised to its SM expectation from \bbtt \bbbb \bbyy $\bar{b}bW^+W^-$ $\bar{b}b\gamma\gamma$ and $W^+W^-W^+W^-$ decay channels.}
+    \label{fig:HHyybb:comb:xsec}
+\end{figure}
+
+The upper limits as a function of \kl is shown in Figure \ref{fig:HHyybb:comb:kl}. In the \bbtt final state the observed limits are more stringent than the expected limits over the whole range of \kl, due to a deficit of data relative to the background predictions at high values of the BDT score. The \bbyy limit shows a weaker dependence on \kl than the \bbbb and \bbtt limits because its acceptance varies less as function of \kl. The combination results are summarized in Table \ref{tab:HHyybb:Comb:XSEC}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Ch1/Img/Klambda_Comb_36.png}
+    \caption{Upper limits at 95\% CL on the cross-section of the ggF SM HH production as a function of \kl.}
+    \label{fig:HHyybb:comb:kl}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+    \hline
+         & Observed & Expected \\
+    \hline
+        $\sigma_{gg\rightarrow HH}$/$\sigma^{SM}_{gg\rightarrow HH}$ & 6.9 & 10 \\
+        Allowed \kl interval & [-5,12] & [-5.8,12.0] \\
+        \hline
+    \end{tabular}
+    \caption{The 95\% CL observed and expected limits on the Higgs boson pair cross-section normalized to the SM production cross-section and the allowed \kl interval.}
+    \label{tab:HHyybb:Comb:XSEC}
+\end{table}
+
+\section{Conclusion}
+
+The full Run-2 \HHyybb analysis, sets the best (up to the date) constraint on the Higgs self-coupling. The previous results are improved by a factor of 2.4 on top of the luminosity increase. The improvement is mainly coming from the analysis strategy which enhance the sensitivity to \kl anomalous by divining events in sub-categories of $m_{HH}$, implementing machine learning to improve separation between signal and background and improving the $b$-jet energy resolution. The developed $b$-jet energy calibration leads to an improvement of 10\% on the analysis significance. The presented full Run-2 \HHyybb analysis sets a better constraint than the full Run-2 CMS analysis and the combined 36 \ifb results. The observed limit on HH cross-section is set to 4.2 times the SM prediction and the 95\% CL allowed \kl interval is [-1.5, 6.7]. No HH event is observed in the full Run-2 data neither by ATLAS or CMS. New data taking period are needed for better precision such the next Run-3 in which an additional integrated luminosity of 300 \ifb with the same pile up conditions is expected to be collected, and HL-LHC with 20 times more data than Run-2 as described in Section \ref{chap2:Upgrad}. Next Chapter is dedicated to discuss the possible improvements and prospective for HH search in Run-3 and HL-LHC. 

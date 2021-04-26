@@ -12,7 +12,7 @@ The EMTopo jets are built after using the Anti-$k_t$ algorithm. This algorithm i
 where $k_{T,i}^{-2}$ is the transverse momentum of cluster i, $\Delta R_{ij}$ is the relative distance between the clusters, and $R$ is the jet radius fixed to 0.4 for all the jets used in this thesis. \\
 Alternatively, the PFlow jets are built by combining the topoclusters to the ID tracking information. Firstly, well-measured tracks are selected by requesting a tight quality selection. Tracks are required to be within $|\eta|<$ 2.5 and have $p_T>$ 0.5 GeV. Tracks must have at least nine hits in the silicon detectors and no missing Pixel hits. Tracks with $p_T>$ 40 GeV are excluded as well as tracks matched to electrons or muons with medium quality criteria and their deposited energy in the calorimeter is taken into account in the algorithm \cite{PFlow_Reco}. No requirement on the track-vertex is applied to the track in this stage. Then, the algorithm assigns each track to a single topological cluster to from a track/topo-cluster system. The extrapolated (to the second sampling of the EM) distance between the cluster barycenter and the track is used in addition to the $E^{cluster}/p^{track}$ in the matching. The expected energy in the calorimeter, deposited by the particle, is then computed. Additional topo-clusters are added to the track/topo-cluster system, if the particle deposits its energy in more than one topo-cluster. At this stage, the expected energy deposited by the particle in the calorimeter is subtracted cell by cell from the set of the matched topo-clusters. Finally, if the remaining energy in the system is consistent with the expected shower fluctuations, the topo-cluster remnants are removed. The PFlow algorithm combine between the calorimeter information and soft tracks which do not reach the calorimeter to improve jet resolution at low $p_T$ compare to EMTopo jets (As Figure \ref{fig:Jet:Cal:chain:JER} demonstrates). This algorithm is sketched in Figure \ref{fig:Jet:JR:PFlowSketch}. 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=1.\textwidth]{Ch4/Img/PFlow_Algo.png}
     \caption{A flow chart of how the particle flow algorithm proceeds, starting with track selection and continuing until the energy associated with the selected tracks has been removed from the calorimeter \cite{PFlow_Reco}.}
@@ -27,7 +27,7 @@ The resulting jets from Monte Carlo simulation are needed to be calibrated such 
 \subsection{Jet Calibration Chain}
 \label{Jet:Cal:chain}
  The first step in the calibration chain aims to recalculate the jet direction to point to the hard scatter primary vertex rather than the center of the detector. This correction only affects the jet $\eta$ and resulting on a better $\eta$ resolution without changing the jet energy. Figure \ref{fig:Jet:Cal:chain} presents an overview of the  ATLAS calibration scheme for jets.
-\begin{figure}[H]
+\begin{figure}[htbp]
      \centering
      \includegraphics[width=0.8\textwidth]{Ch4/Img/calibration_chain.png}
      \caption{Calibration stages for jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet \cite{JES_Sys_13_TeV}.}
@@ -48,7 +48,7 @@ The aim of this correction is to correct, through a Monte Carlo based procedure,
     E_{JES}^{\mathrm{jet}}=\frac{E^{\mathrm{jet}}}{F(E^{\mathrm{jet}},\eta)},
 \end{equation}
 where $E_{JES}^{\mathrm{jet}}$ and $E^{\mathrm{jet}}$ are jet energy after and before the JES calibration, the $F(E^{\mathrm{jet}},\eta)$ is the inverted jet response for given (E,$\eta$) bin. A second correction is derived to account for a bias seen in the reconstructed jet $\eta$. The $\eta$ correction is computed as the difference between the reconstructed $\eta^{reco}$ and the truth $\eta^{truth}$ as a function of $E^{truth}$ and $\eta$. Similarly to JES correction, a numerical inversion is used to derive the correction in $E^{reco}$. This correction is evaluated on multi-jet events sample. At this step EMTopo (PFlow) jet is denoted EM+JES (PFlow+JES). Comparisons of the jet energy resolution measurement for PFlow+JES and EM+JES jets as a function of jet $p_T$ is shown if Figure \ref{fig:Jet:Cal:chain:JER}.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch4/Img/Jet_Resolution_Topo_vs_PFlow.png}
     \caption{The relative jet energy resolution for fully calibrated PFlow+JES jets (green curve) and EM+JES jets (blue curve) as a function of $p_T$ jet.}
@@ -69,7 +69,7 @@ In this correction, the aim is to correct effects due to intrinsic properties of
 The last step of the jet calibration chain recovers the disagreement between real data a simulated Monte Carlo in the jet response coming from the imperfect detector simulation and mismodelling. The correction is extracted by balancing the jet $p_T$ against that of well-measured reference objects from Z+jets, $\gamma$+jets and dijet events. Figure \ref{fig:Jet:Cal:chain:InSitu} shows the final $in situ$ combination as a function of jet $p_T$. To complete the calibration, the inverse of the curve ($R_{MC}/R_{data}$) is taken as the scaling factor and applied to data. \\
 Additional details on the each calibration steps can be found at \cite{JES_Sys_13_TeV}. \\
 Figure \ref{fig:Jet:Cal:chain:JER} demonstrates the performance of PFlow at low jet \pT coming from combining calorimeter and track information as well as the low threshold on track \pT, for high jet \pT the performances of both EMTopo and PFlow are comparable. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch4/Img/Jet_MC_Data_Ration.png}
     \caption{Ratio of the PFlow+JES (blue curve) and EM+JES (green curve) jet response in data to that in the nominal Monte Carlo event generators as a function of $p_T$ jet.}
@@ -96,7 +96,7 @@ Jet can be matched its vertex origin within $|\eta|<$ 2.5 (the ID acceptance) wh
     R_{p_{\mathrm{T}}}=\frac{\sum_{k} p_{T}^{\mathrm{track}_{k}}\left(\mathrm{PV}_{0}\right)}{p_{\mathrm{T}}^{j e t}},
 \end{equation}
 The  $\sum_{k} p_{\mathrm{T}}^{{track}_{k}}\left(\mathrm{PV}_{0}\right)$ term, appearing in both formulas, represents the scalar sum of tracks $p_T$ originating from the hard scattered vertex and associated to a jet, corrJVF also uses a similar term for PU vertices $p_{\mathrm{T}}^{\mathrm{PU}}=\sum_{n \geq 1} \sum_{l} p_{\mathrm{T}}^{\mathrm{track}_{l}}\left(\mathrm{PV}_{n}\right)$  where PU vertices are noted as $\mathrm{PV}_{n}$, $\frac{1}{k . n_{tracks }^{\mathrm{PU}}}$ where k=0.01 is a correction factor used to correct the behaviour from linear increase with the number of tracks. For both EMTopo and PFlow the JVT is built similarly, while WPs are defined differently for the two types of jets given the fact that PFlow has built-in pileup jet suppression in it reconstruction algorithm. For EMTopo three WPs are defined (Loose, Medium and Tight) and only two WPs (Medium and Tight) are defined for PFlow jets. Figure \ref{fig:Jet:Tag:JVT} shows the JVT reconstructed variable as well as the fake rate efficiency for JVF, $R_{p_T}$, corrected JVF and the combined JVT discriminate variables.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch4/Img/JVT.png}}
     \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch4/Img/JVT_Eff.png}} 
@@ -114,14 +114,14 @@ where k=2.5 is a factor to account for intrinsic differences between the jet and
     fJVT = max(fJVT_i) = max(\frac{-\vec{p}_{T, i} \cdot \vec{p}_{T}^{j e t}}{\vec{p}_{T}^{j e t} \cdot \vec{p}_{T}^{j e t}})
 \end{equation}
 where $fJVT_i$ is the jet fJVT with respect to the vertex i. Figure \ref{fig:Jet:Tag:JVT:fJVT} shows the fJVT discriminant tends to have large values for QCD pileup jets, while the distribution for hard-scatter jets falls steeply.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch4/Img/fJVT.png}
     \caption{The fJVT distribution for hard-scatter (blue) and pileup (green) forward jets.}
     \label{fig:Jet:Tag:JVT:fJVT}
 \end{figure}
 It is important to note that the fJVT discriminant is only clearly defined for QCD PU jets, as opposed to stochastic pileup jets. To be able to select stochastic jets, fJVT is accompanied with an additional requirement on the jet timing. Two fJVT working point are defined Loose WPs which correspond to fJVT$<0.5$ and a Tight one with fJVT$<0.4$, their efficiency is shown in Figure \ref{fig:Jet:Tag:JVT:Eff}.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch4/Img/fJVT_Eff.png}
     \caption{Efficiency for hard-scatter jets as a function of the forward jet $p_T$.}
@@ -145,13 +145,13 @@ Outputs from these algorithms construct input to MV and DL1. Many variations of 
 \end{equation}
 where $p_b$, $p_c$ and $p_{light-flavour}$ are the NN outputs probabilities that the jet is a \bq-jet, $c$-jet or light-jet respectively. $f_{c-jets}$ is the $c$-jet fraction taken into account, which can be tuned separately according to physics analysis needs. \\  
 For both MV2 and DL1 4 WPs are computed for different \bq-tagging efficiencies. The WPs are defined as a fixed cut or \pT dependent cut on the final discriminant variable (Eq. \ref{b-jet}) and labelled with the corresponding integrated efficiency on \bq-jets. The working points are : 85\%, 77\%, 70\% and 60\%. Figure \ref{fig:Jet:Tag:Dlr:Eff} shows a comparison of performances for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization. The 2019 DL1r shows a significance improvement over other algorithms. Figure \ref{fig:Jet:Tag:Dlr:Eff_77} shows the efficiency of identifying \bq-jets as a function of jet \pT for 77\% WP requirement, for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization \cite{Btag_Perf}. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch4/Img/b_jet_Eff.png}
     \caption{ROC curves for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization. The x-axis corresponds to the b-jet efficiency, while the y-axis corresponds to light-flavor jets rejection. The shaded bands represent the statistical uncertainty.}
     \label{fig:Jet:Tag:Dlr:Eff}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch4/Img/b_jet_Eff_77.png}
     \caption{Efficiency of identifying b-jets as a function of jet pT for an inclusive 77\% efficiency requirement, for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization.}
@@ -166,13 +166,13 @@ The default JES calibration (Section \ref{Jet:Cal:chain:JES}) applied to all jet
     \item larger semi-leptonic branching ratio of \bq-hadrons which produce elusive neutrino.
 \end{itemize}
 Figure \ref{fig:Jet:Cal:BCal:bJet} illustrates these statements through the schematic of a \bq-jet. To overcome this issue, a step-by-step approach, firstly developed in VH($H\rightarrow b\bar{b}$) analysis demonstrates a potential improvements \cite{Vhbb}, the first correction called "$\mu$-in-jet" includes soft muon in the jet to address the semi-leptonic decays of \bq-hadrons inside \bq-jet. The second correction called "$p_T$Reco" corrects \bq-jets for the neutrino presence in the semi-leptonic decay and out-of-cone radiation effect by introducing a global correction factor the jet transverse momenta. The developed approach in VH(bb) is computed only for EMTopo \bq-jets from the signal VH(bb) simulated events. To generalise this correction to any channel with \bq-jets in the final state its amplitude is computed from \bq-jets produced in $t\bar{t}$ simulated event for both EMTopo and PFlow jets. This correction is added as an addition step to the calibration chain already mentioned above (Figure \ref{fig:Jet:Cal:BCal:Chain}).
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Ch4/Img/b_jet_chain.png}
     \caption{Calibration stages for jets including \bq-jet energy correction.}
     \label{fig:Jet:Cal:BCal:Chain}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{Ch4/Img/b-jet.png}
     \caption{Example of a \bq-jet.}
@@ -181,7 +181,7 @@ Figure \ref{fig:Jet:Cal:BCal:bJet} illustrates these statements through the sche
 \subsection{$\mu$-in-jet correction}
 \label{Jet:Cal:BCal:MuInJet}
 The decays of $B$ and $D$ hadrons produce each three type of leptons with a branching ratio of 11\%. These leptons are usually mixed with other particles within jets. For electrons and taus, their identification efficiency is low and, as consequence, will not be flagged as semi-leptonic and their energies are fully included in the jet reconstruction as mentioned in Section \ref{Jet:JR}. The energy coming from their associated neutrinos will be mixed with $p_T$Reco. Instead, the muon is a minimum ionising particle, depositing a very little energy in the calorimeter. To correct for the semi-lepton decay, the four vector momenta of a muon found inside the jet is added to the the four vector momenta of the jet. To select the associate muon to the jet, selection criteria, listed in Table \ref{tab:Jet:Cal:BCal:MuInJet:Sel}, were defined 
-\begin{table}[ht]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
        \hline\hline
@@ -208,7 +208,7 @@ The relevant target is the particle-level \texttt{TruthWZ} jets container,
 which contains reconstructed jets with the same reconstruction algorithm ($AntiK_t$), 
 using all stable hadrons and non-isolated muons and neutrinos. To generalize the correction and make it signal independent and used by any analysis with $b$-jet in final state, the correction factor is derived from a $t\bar{t}$ sample.
 It is binned in $ln(p_T)$ of reconstructed jet up to 400 GeV. The log scale is used because of the exponential shape of \pT spectrum and to provide a smooth distribution for interpolation. The scale factor is computed separately for semi-leptonic and hadronic jets and evaluated as the mean of the distribution of the ratio between reconstructed $b$-jet \pT and the  corresponding \texttt{TruthWZ} jet \pT, matched within $\Delta R < 0.3$ for the given \pT bin. For each $b$-tagged jet, the 4-vector is scaled by the scale factor computed using a linear interpolation by \texttt{TH1::Interpolate(ln(\pT))} function.  The correction is derived for each jet reconstruction algorithms EMTopo or PFlow and for each $b$-tagging algorithms MV2 or DL1r. Figure \ref{fig:Jet:Cal:BCal:pTReco} shows the correction factor distribution for different MV2 jet labels and reconstruction algorithms. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
    \centering
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/ptrecotopo.png}}\quad
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/ptrecopflow.png}}
@@ -225,7 +225,7 @@ Figure \ref{fig:Jet:Cal:BCal:pTReco} shows that :
 \subsection{$b$-jet energy correction improvement}
 \label{Jet:Cal:BCal:Result}
 Figure \ref{fig:Jet:Cal:BCal:Result:E}, shows the maximum possible gain in $b$-jet energy resolution in $t\bar{t}$ sample (used to compute the $p_{T}$Reco correction). The energy resolution is improved by 40\% (20\%) for high (low) energy for semi-leptonic jet, and about 20\% (5\%) for high (low) energy for hadronic jet. Almost similar improvement is observed for both jet types (EMTopo and PFlow).
-\begin{figure}[ht]
+\begin{figure}[htbp]
    \centering
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/E_AntiKt4EMTopoJets.png}}\quad
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/E_AntiKt4EMPFlowJets.png}}
@@ -236,7 +236,7 @@ Figure \ref{fig:Jet:Cal:BCal:Result:E}, shows the maximum possible gain in $b$-j
 \subsubsection{Improvement on $H\rightarrow\bar{b}b$}
  The power of \HHyybb is coming from the $H\rightarrow\gamma\gamma$ part wish has a very narrow peak helping in rejection a huge amount of the continuum background by defining a narrow windows on $m_{\gamma\gamma}$ spectrum to select the Higgs signal. The $H\rightarrow\bar{b}b$ is suffering from the $b$-jet mis-calibration and has a large $m_{bb}$ resolution compared to $m_{\gamma\gamma}$, which explain why the $b$-jet energy calibration is  mandatory in such analysis.\\
 The gain on $m_{bb}$ resolution from the decoupled method is quantifies on \HHyybb. The gain in $b$-jet energy resolution reported before is translated into $\sim$22\% improvement in the $m_{bb}$ invariant mass resolution as Figure \ref{fig:Jet:Cal:BCal:Result:mbb} shows. In addition, the $m_{bb}$ peak position get closer to the Higgs mass. Similar improvement in both topological and particle flow jets. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
    \centering
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/mbb_AntiKt4EMTopoJets.png}}\quad
    \subfloat[][]{\includegraphics[width=.48\textwidth]{Ch4/Img/mbb_AntiKt4EMPFlowJets.png}}

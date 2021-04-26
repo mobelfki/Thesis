@@ -19,7 +19,7 @@ This include :
 Photon isolation and different isolation WPs will be discussed here. \\
 }
 Photon isolation is almost similar to the one from electrons (Section \ref{chap2:Objects:Egamma:EIso}). However, photon isolation uses different requirements to define three WPs. Table \ref{tab:gamma:Iso:WPs} summarizes the defined operating points \cite{Egamma_Perf_2017}.
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
     \hline \hline
@@ -32,7 +32,7 @@ Photon isolation is almost similar to the one from electrons (Section \ref{chap2
     \label{tab:gamma:Iso:WPs}
 \end{table}
 A discrepancy between the peak positions of the simulated and real distributions of the calorimeter-based variables is observed since Run 1 \cite{Mismodelling_Run1}, pointing to a mismodelling of the lateral profile development of the electromagnetic showers and results in different isolation efficiency in data and simulations and large scale factors. A data-driven shift is applied to handle the mismodelling in simulation. The shifts values are defined by the difference in the peak values between data and simulation from a fit. The fit is performed using the Crystal Ball pdfs \cite{CrystalBall} on the $E^{cone40}_T$ and $E^{cone20}_T$ variables in bin of $\eta$, \eT and conversion type (Converted or Unconverted) separately. The resulting shift are then added to simulation. Figure \ref{fig:gamma:Iso:Shifts} shows the distribution of $E^{cone40}_T$ after the data-driven shifts applied.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\textwidth]{Ch3/Img/photon_shifts_iso.png}
     \caption{Distribution of $E^{cone40}_T$ in data and simulation, in the central region of the detector ($|\eta|<$0.6), separately for converted (left) and unconverted (right) photons after the data-driven shifts are applied.}
@@ -40,7 +40,7 @@ A discrepancy between the peak positions of the simulated and real distributions
 \end{figure}
 
 Figure \ref{fig:gamma:Iso:Eff} shows the efficiency of the isolation working points defined in Table \ref{tab:gamma:Iso:WPs}, using $Z\rightarrow ll\gamma \ (l=e,\mu)$. The radiative Z decays signature is used to estimate the photon efficiencies since it provides a clean environment of prompt photons, especially in the low-\eT range. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\textwidth]{Ch3/Img/Photon_Iso_Eff.png}
     \caption{Efficiency of the isolation working points for converted(left) and unconverted (right) photons as a function of photon \eT. The lower panel shows the ratio of the efficiencies measured in data and in simulation (scale factors).}
@@ -52,14 +52,14 @@ Figure \ref{fig:gamma:Iso:Eff} shows the efficiency of the isolation working poi
 The identification algorithm will be discussed here, and how the shower shape mis-modelling is affecting the ID efficiency. \\
 }
 In contrary to electron identification, photon identification still relies on rectangular selection criteria, \emph{cut-based algorithm}, using a set of global variables which characterize the lateral and longitudinal electromagnetic shower development in the calorimeter and encode separation between prompt-photons and fake photons originating from the decay of QCD jets. Such variables, listed in Table \ref{tab:chap2:Objects:Egamma:SS} and depicted in Figure \ref{fig:gamma:ID:SS} with their respective definitions, are called shower shapes. Shower shapes from the first EM layer play a significantly important role in rejecting the collimated photons from $\pi^0\rightarrow\gamma\gamma$ decay. \\ 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\textwidth]{Ch3/Img/ShowerShapes.png}
     \caption{Schematic representation of the photon identification discriminating variable \cite{ShowerShapes_fig}. \\}
     \label{fig:gamma:ID:SS}
 \end{figure}
 The cut-based algorithm provides three WPs: Tight, Medium and Loose, with less restrictive selections respectively. The Medium and Loose WPs mainly used for Trigger purposes. Since the trigger system is transparent between converted and unconverted photons, they are similar for both converted and unconverted. Table \ref{tab:gamma:ID:Var} lists the variables set used in each WP. The optimization of the WPs is done using TMVA \cite{TMVA} in bins of $|\eta|$ since the shower shapes vary due to calorimeter granularity. Because the shower shapes are different between the converted and unconverted photons due to the opening angle of the $e^+e^-$ conversion pair and the material interaction, the optimization of Tight WP is preformed separately for converted and unconverted photons. The Tight WP comes with two versions: \eT-independent selection and the \eT-dependent tuned in separate bins of \eT. The tuning is done in two energy regimes with two different series of simulated dataset. For photon with 10$<$\eT$<$25 GeV, the $Z\rightarrow ll\gamma$ simulated sample is used to define the signal, while the corresponding background is derived from the $Z\rightarrow ll+jets$ simulated sample. Above \eT=25 GeV, the inclusive-photon production simulated sample is used as a signal, and the background is the dijet. The simulated samples are described in Section 3.1 and 3.2 of Ref. \cite{Egamma_Perf_2017}.    
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
         Working Point & Variables set \\
@@ -72,7 +72,7 @@ The cut-based algorithm provides three WPs: Tight, Medium and Loose, with less r
     \label{tab:gamma:ID:Var}
 \end{table}
 Similarly to the calorimeter based variables for isolation, the shower shapes variables suffer from the mis-modelling of the EM shower. The mis-modelling is addressed using a data-driven correction similar to the one applied for isolation features. Corrections are applied as a simple shift to simulated values to align with the real data distributions. Shifts are derived using a $\chi^2$ minimization between the data and simulation in bins of $|\eta|$ and \eT as described in Ref \cite{Photon_Eff_2015}. Figure \ref{fig:gamma:ID:SS:Corr} shows examples of the shower shapes distributions before and after correction compared to the real distributions using radiative Z photons. Section \ref{gamma:ss} dedicated to the shower shape mis-modelling and its correction using an alternative method. \\
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{Ch3/Img/SS_correction.png}
     \caption{Distributions of the \Reta \ and \wthree \ for converted and unconverted photon candidates with \eT in [10,50] GeV and $|\eta|<$2.37 selected from radiative Z events for data (black), uncorrected simulation (dashed red line) and the corrected simulation (solid blue line).}
@@ -85,20 +85,20 @@ The photon identification efficiency is measured using three different methods o
 \item Electron Extrapolation (EE) is the third method, uses a transformed electron shower shapes sample form $Z\rightarrow e^+e^-$ and measures $\epsilon_{ID}$ in the region 25 $<$\eT$<$150 GeV.
 \end{itemize}
 These methods are fully described in Section 5 of Ref. \cite{Photon_Eff_2015}. The efficiencies from each method are then combined to provide a $\epsilon_{ID}$ measurement for the \eT-dependent selection as shown in Figures \ref{fig:gamma:ID:Eff:UnCov} and \ref{fig:gamma:ID:Eff:Cov}. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch3/Img/Unconverted_Eff_2017.png}
     \caption{The photon identification efficiency with \eT-dependent selection, and the ratio of data to simulation efficiencies, for unconverted photons with a Loose isolation requirement applied as pre-selection, as a function of \eT in four different $|\eta|$ regions. The combined scale factor, obtained using a weighted average of scale factors from the individual measurements, is also presented; the band represents the total uncertainty.}
     \label{fig:gamma:ID:Eff:UnCov}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch3/Img/Unconverted_Eff_2017.png}
     \caption{The photon identification efficiency with \eT-dependent selection, and the ratio of data to simulation efficiencies, for converted photons with a Loose isolation requirement applied as pre-selection, as a function of \eT in four different $|\eta|$ regions. The combined scale factor, obtained using a weighted average of scale factors from the individual measurements, is also presented; the band represents the total uncertainty.}
     \label{fig:gamma:ID:Eff:Cov}
 \end{figure}
 A comparison between the two versions of the Tight WP is shown in Figure \ref{fig:gamma:ID:Eff:Tight}.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{Ch3/Img/Tight_ID.png}
     \caption{Efficiencies of the Tight photon identification for unconverted (left) and converted (right) signal photons, plotted as a function of photon \eT. The Loose isolation  is applied as a pre-selection. For both plots, the bottom panel shows the ratios between the \eT-dependent and the \eT-independent identification efficiencies.}
@@ -130,7 +130,7 @@ The main idea behind the reweighting is to factorize out the material effects an
 so it is derived independent from bremsstrahlung and similar for both electrons and positrons.
 \subsection{Electron results}
 Figure \ref{fig:gamma:ss:reweighting:electron} shows a reduction in data-simulation discrepancy after the reweighting and leads on a similar distribution for shower shape computed from layer 2 ($R_{\eta}$ and $R_{\phi}$) between data and simulation.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/etaProfile_Reweighted_Zee.png}}
     \subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/phiProfile_Reweighted_Zee.png}} \\
@@ -178,7 +178,7 @@ For this study, Inclusive photons from the $Z\rightarrow ll\gamma$ are considere
 No identification criteria is applied to photons to avoid any bias from the identification.
 \subsubsection{Electrons reweighting applied to photons}
 The first strategy has been to apply the electron reweighting to photons. The developed reweighting matrix for electrons is directly applied to the selected photons from radiative Z events. Figure \ref{fig:gamma:ss:reweighting:photon:electron} shows the energy profiles and layer 2 shower shapes variables before and after the reweighting. The reweighting goes in the correct direction but not enough to correct photons shower shape mis-modelling; this motivates to implement specific reweighting for photons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix \ref{Adx1:Electron}.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/phiProfile_NCon_Eta_0.40_0.60.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/phiProfile_NCon_Eta_1.60_1.80.jpg}} 
@@ -188,11 +188,11 @@ The first strategy has been to apply the electron reweighting to photons. The de
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/etaProfile_NCon_Eta_1.60_1.80.jpg}} 
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/etaProfile_Con_Eta_0.40_0.60.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/etaProfile_Con_Eta_1.60_1.80.jpg}} \\
-	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Rphi_NCon_Eta_0.40_0.6.jpg}}
+	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Rphi_NCon_Eta_0.40_0.6.jpg.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Rphi_NCon_Eta_1.60_1.80.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Rphi_Con_Eta_0.40_0.6.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Rphi_Con_Eta_1.60_1.80.jpg}} \\
-	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Reta_NCon_Eta_0.40_0.6.jpg}}
+	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Reta_NCon_Eta_0.40_0.6.jpg.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Reta_NCon_Eta_1.60_1.80.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Reta_Con_Eta_0.40_0.6.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/Reta_Con_Eta_1.60_1.80.jpg}}
@@ -201,7 +201,7 @@ The first strategy has been to apply the electron reweighting to photons. The de
 \end{figure}
 \subsubsection{Photon reweighting}
 The second strategy is to drive specific reweighting for photon. Similarly to electrons, the reweighting is recomputed for photons using radiative Z events inclusively in conversion to allow for more statistics. Figure \ref{fig:gamma:ss:reweighting:photon:photon} shows the profiles and shower shapes after applying the derived reweighting on photons. A good agreement is observed in energy profiles for both direction $\eta$ and $\phi$. However for shower shapes variables, no significant improvement is observed and the reweighting seems to be not working for photons. From the energy profiles in Figures \ref{fig:gamma:ss:reweighting:photon:electron} and \ref{fig:gamma:ss:reweighting:photon:photon} photons reweighting from radiative Z are larger than the one for electrons. Additional control plots for other $\eta$ regions and converted photons are provided in Appendix \ref{Adx1:Photon}. To validate the reweighting procedure a closure test is performed on pseudo data.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/phiProfile_NCon_Eta_0.40_0.60.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/PhotonRew/phiProfile_NCon_Eta_1.60_1.80.jpg}} 
@@ -222,7 +222,7 @@ To evaluate the reduction in discrepancy between data and simulation, a closure 
     \item Correct simulated cell to match the pseudo data.
 \end{enumerate}
 Results of the closure test are shown in Figure \ref{fig:gamma:ss:reweighting:photon:closure}. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/PS_phiProfile_NCon_Eta_0.40_0.60.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/PhotonRew/PS_phiProfile_NCon_Eta_1.60_1.80.jpg}}
@@ -237,7 +237,7 @@ Results of the closure test are shown in Figure \ref{fig:gamma:ss:reweighting:ph
 \end{figure}
 Perfect agreement in energy profiles for both directions ($\eta$ and $\phi$) is observed, the closure test reproduces the pseudo data, while for shower shapes the agreement is improved in the correct direction but not enough to correct the fake mis-modelling. The closure test shows that the reweighting procedure was not able to catch the discrepancy between data and simulation, and seems to be working only on average and not event-by-event. Figure \ref{fig:gamma:ss:reweighting:photon:closure:avg} shows the averages of $R_{\eta}$ and $R_{\phi}$ in real data, simulation and after reweighting in bin of photon $|\eta|$. After reweighting, the average of shower shapes in simulation perfectly matches the data distribution, which demonstrates that the reweighting is working on average and not event-by-event.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/Reta_avg.png}}
     \subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/Rphi_avg.png}}
@@ -257,7 +257,7 @@ Where k = 1..77 denotes the cell number, n the corresponding photon $|\eta|$ bin
 The new method requires a perfect matching between photons from data and MC to compute the $\alpha$ factors, which is technically complicated. The procedure is tested with PS data from MC. The PS data is derived from MC by scaling the energy of cell k by 0.26 (the factor 0.26 is arbitrary). For simplicity, the reweighting is evaluated using unconverted photons only.
 The result of the new reweighting procedure is presented in Figure \ref{fig:gamma:ss:reweighting:photon:3dreweighting}. A good agreement is observed after the 3D reweighting for both energy profiles and their corresponding shower shapes variables for layer 2. The improvement in data-MC agreement observed makes the new method promising to be applied to real data.
 %This work is kept for the newcomers to the ATLAS collaboration.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
 	\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/PhotonRew/NPS_phiProfile_NCon_Eta_1.0_1.20.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/PhotonRew/NPS_phiProfile_NCon_Eta_2.20_2.40.jpg}}
@@ -281,7 +281,7 @@ Simulated samples of inclusive photon production are used to train the CNN. The 
 \subsubsection{Images pre-processing}
 \label{gamma:CNN:PreProcessing}
 To compromise between collecting more energy and being minimising the impact of the activity around the cluster, the 7x11 cluster around the hottest cell is considered similarly to the shower shapes computation. As the EM cell granularity changes with $\eta$ (Table \ref{tab:chap2:ATLAS:Calo:ECal:Gr}), it leads to different number of cells in each $\eta$ region and different sizes in the first sampling. The corresponding number of cells in 7x11 windows are summarized in Table \ref{tab:gamma:CNN:PreProcessing:NCells}.
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccccc}
     \hline
@@ -296,7 +296,7 @@ To compromise between collecting more energy and being minimising the impact of 
     \label{tab:gamma:CNN:PreProcessing:NCells}
 \end{table}
 The difference in shape and size of the EM calorimeter windows complicates the network training procedure. To avoid this issue, zeros are appended to the calorimeter cluster image to end up with the same image size in all $\eta$ region for each sampling (e.g sampling 1 with 84 cells is completed by zeros, to have 112 cells). Table \ref{tab:gamma:CNN:PreProcessing:ImgSize} shows the final image shape used for each sampling.
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cc}
     \hline
@@ -314,7 +314,7 @@ I decided to use the cell energy normalized to the total cluster energy as image
 \subsubsection{CNN Architecture}
 \label{gamma:CNN:Model}
 A CNN classifier is built to separate between prompt and background photons using images of the 7x11 cluster windows of sampling 1, 2, and 3. Figure \ref{fig:gamma:CNN:Model:Idea} shows an illustration of the classifier.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=.6\textwidth]{Ch3/Img/CNN_Idea.png}
     \caption{CNN classifier schema.}
@@ -324,7 +324,7 @@ The Global CNN classifier is constructed using the \textsc{Keras} library, with 
 All layers in the network have their weights randomly initialized by sampling from a truncated normal distribution centred on zero with the width given by $\sqrt{1/N_{input}}$, where $N_{input}$ is the number of input units in the weight tensor. The activation function of each layer is Scaled Exponential Linear Unit (SELU) \cite{SELU} to preserve the mean and variance of the inputs between two consecutive layers and handle the normalization issues, except for the final output layer which has "sigmoid" as an activation function.\\
 Layers in the babies CNN are 256 nodes wide, while in the DNN 128 nodes except for the output layer is one node wide.\\
 Using an output layer with a sigmoid activation function allows interpreting the output as the probability for each class (Bad or Good photon), given the input images.\\
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=1.\textwidth]{Ch3/Img/CNN_model.png}
     \caption{Illustration of the global CNN classifier graph.}
@@ -338,7 +338,7 @@ During the training, the binary cross-entropy is used as a loss metric, the opti
 The CNN networks of $\sim$1.4M parameter is trained with a learning rate of $1e^{-4}$ and a batch size fixed to 96 images (32 photons) due to memory limitations, with a maximum number of epochs set to 20. CNN network is trained using two Tesla K80 GPUs with a memory of 12 GB each run on CC-In2p3 cluster (France) \cite{cca}. Each training epoch is $\sim$15 min. An early stopping metric \cite{early} is imposed during the training phase to reduce the over-training/fitting, such that if the network's learning reach the plateau it will stop, whether or not the maximum number of epochs is reached. The metric used to determine the early stopping is the network loss as evaluated on the validation data sample throughout the training. The network aims to minimize the weighted loss function between the truth and predicted labels.
 The network is trained inclusively in \eT, $\eta$, and photon conversion type. Only cluster images and no additional information is included during the training.
 Figure \ref{fig:gamma:CNN:Training:loss}  shows the evaluation of loss function and the accuracy during the training time for the training and validation dataset. After the 4$^{th}$ epoch the network achieves the plateau and the validation loss do not decrease. To reduce the overtraining, the early stopping metric stops the training at epoch 4.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=.7\textwidth]{Ch3/Img/CNN_Loss_Accuracy.png}
     \caption{Neural network loss and accuracy as function of epoch number}
@@ -358,7 +358,7 @@ The signal efficiency $\epsilon_{eff}$ and background rejection $\epsilon_{rej}$
 \end{equation}
 where TP is the number of signal photons correctly classified as signal by the CNN, TN is the number of background photons correctly classified as background, FP is the number of signal photons mis-classified as background and FN is the number of background photons mis-classified as signal. The following binning is used $p_T$ = [10, 20, 30, 40, 60, 80, $\infty$] and $|\eta|$ = [0., 0.6, 1.37, 1.52, 1.8, 2.4].
 Figure \ref{fig:gamma:CNN:Validation:ROC} shows the receiver-operating characteristic (ROC) which illustrates the diagnostic ability of the CNN as its discrimination threshold is varied. The blue dot shows the signal and background rejection of the current cut-based Tight WP. A significant improvement is obtained with the CNN compare to Tight WP for both converted and unconverted photons. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/ROC_UnConverted.png}}
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/ROC_Converted.png}}
@@ -366,7 +366,7 @@ Figure \ref{fig:gamma:CNN:Validation:ROC} shows the receiver-operating character
     \label{fig:gamma:CNN:Validation:ROC}
 \end{figure}
 Figure \ref{fig:gamma:CNN:Validation:Imp} shows the relative improvement over the Tight WP in term of signal efficiency for the same background rejection. An improvement of up to 93\% is achieved. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
    \subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Sig_Imp_UnConverted.png}}
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/Sig_Imp_Converted.png}}
@@ -374,7 +374,7 @@ Figure \ref{fig:gamma:CNN:Validation:Imp} shows the relative improvement over th
     \label{fig:gamma:CNN:Validation:Imp}
 \end{figure}
 %The ROC curve corresponds to the improvement of 93\% for converted photon is shown in Figure \ref{fig:gamma:CNN:Validation:ROC:MaxImp}. 
-%\begin{figure}[ht]
+%\begin{figure}[htbp]
 %    \centering
 %    \includegraphics[width=.5\textwidth]{Ch3/Img/ROC_Converted__PT_0_ETA_1.png}
 %    \caption{Network ROC curve for converted photon with $p_T<$ 20 GeV and 0.6 $<|\eta|<$ 1.37}
@@ -390,7 +390,7 @@ The identification efficiency is evaluated using the Radiative Z method already 
 \end{equation}
 The purities are evaluated in 5 \pT bins and separately for converted and unconverted photons as well as for $ee\gamma$, $\mu\mu\gamma$ and $ll\gamma$ channels. The purities are reported in Table \ref{tab:gamma:CNN:Zllg:Purity:B} and Table \ref{tab:gamma:CNN:Zllg:Purity:A}. Template fit results in the $ll\gamma$ channel is shown in Appendix \ref{Adx2:TemplateFit}.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \raggedleft
 \begin{longtable}[c]{ccccccc}
 \hline\hline
@@ -413,7 +413,7 @@ The purities are evaluated in 5 \pT bins and separately for converted and unconv
 \label{tab:gamma:CNN:Zllg:Purity:B}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \raggedleft
 \begin{longtable}[c]{ccccccc}
 \hline\hline
@@ -437,7 +437,7 @@ The purities are evaluated in 5 \pT bins and separately for converted and unconv
 \end{table}
 The very low background statistics at high \pT leads to a large uncertainties. It indicates that the probes with \pT$>$ 30 GeV are very pure photon samples both before and after applying the CNN. Therefore, the template fit method is only applied for the first \pT bins, and the efficiencies for the rest of bins are obtained by counting. The combined $ll\gamma$ channel is used to estimate the efficiency and evaluate the scale factors.   
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_1.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_2.png}} \\
@@ -447,7 +447,7 @@ The very low background statistics at high \pT leads to a large uncertainties. I
     \label{fig:gamma:CNN:Zllg:Energy:UnC}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_1.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_2.png}} \\
@@ -457,7 +457,7 @@ The very low background statistics at high \pT leads to a large uncertainties. I
     \label{fig:gamma:CNN:Zllg:Energy:C}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_mu_UnConverted_Iso_tight_Wgt.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_mu_Converted_Iso_tight_Wgt.png}} \\
@@ -467,7 +467,7 @@ The very low background statistics at high \pT leads to a large uncertainties. I
     \label{fig:gamma:CNN:Zllg:MU}
 \end{figure}
 Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C} show photon identification efficiency for Tight CNN WP compared to cut-based Tight as a function of photon \eT for unconverted and converted photons respectively. CNN over performs the cut-based algorithm. Ratio plots show the scale factor. The CNN scale factors are reported in Table \ref{tab:gamma:CNN:Zllg:SF:UnC} and Table \ref{tab:gamma:CNN:Zllg:SF:C}, and founded to be closer to one than the cute-based expect for the first \eT bin where the scale factor is slightly large but still better than cut-based. 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
    \begin{tabular}{ccccc}
    \hline\hline
@@ -491,7 +491,7 @@ Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C
 \end{table}
 
 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
    \begin{tabular}{ccccc}
    \hline\hline
@@ -516,7 +516,7 @@ Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C
 
 
 The CNN is not sensitive to any shower shapes mis-modelling as it uses the cell fraction energy where the mis-modelling is infinitesimal and not cached by the CNN algorithm. This is illustrated in Figure \ref{fig:gamma:CNN:Zllg:CNNOutput} where no significant difference in the real and simulated data shapes of the CNN distribution is observed.
-\begin{figure}[H]
+\begin{figure}[htbp]
 %   \centering
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/SubPlot_CNN_output_ETA_bin_0_UnConverted_Iso_tight.png}}
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/SubPlot_CNN_output_ETA_bin_0_Converted_Iso_tight.png}}

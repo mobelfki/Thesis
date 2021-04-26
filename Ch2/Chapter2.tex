@@ -20,7 +20,7 @@ Within the tunnel are two adjacent parallel beam pipes and surrounded by superco
 \subsection{Acceleration chain}
 \label{chap2:LHC:chain}
 A succession of small to large accelerators is used to accelerate the protons extracted form hydrogen gas to the energy needed for injection into the LHC. Figure \ref{fig:chap2:LHC:chain} shows the CERN accelerator complex including all pre-acceleration steps before the LHC.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Ch2/Img/LHC_chain.jpeg}
     \caption{Overview of the CERN accelerator complex, including the LHC and its pre-accelerators \cite{LHC_chain}. The four main LHC experiments are depicted, too}
@@ -50,14 +50,14 @@ where for the design luminosity (nominal parameters for the LHC are given in par
 \end{itemize}
 For optimising the analysis procedure, ATLAS has defined a basic time unit called  Luminosity Block (LB) where the luminosity is assumed to be stable inside each LB. The typical LB duration is one to two minute. Data are analyzed under the assumption that each LB contains data taken under uniform conditions (data quality). To define a data sample for physics, quality criteria are applied to select LBs where the conditions are acceptable. The average luminosity in the LB is multiplied by the LB duration to provide the integrated luminosity delivered in the given LB. \\
 The design luminosity of LHC is $10^{34} \ cm^{-2}s^{-1}$. The integrated good quality data of Run-1 is approximately 25 \ifb as shown in Figure \ref{fig:chap2:LHC:Lumi:Run1}, which Higgs self-coupling measurement does not benefit from it because of the low $\sigma_{pp\rightarrow HH}$. During the first long shutdown (LS1), LHC the energy of the beam is increased from 3.5 TeV to 6.5 TeV which increase the luminosity. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/LumiRun1.png}
     \caption{Cumulative luminosity versus time delivered to (green), recorded by ATLAS (yellow), and certified to be good quality data (blue) during stable beams and for pp collisions at 7 and 8 TeV centre-of-mass energy in 2011 and 2012 (Run 1).}
     \label{fig:chap2:LHC:Lumi:Run1}
 \end{figure}
 Figure \ref{fig:chap2:LHC:Lumi} shows the delivered and recorded luminosity during the Run 2 data taking \cite{Lumi2018}. $\mathcal{L}_{int} = 139$\ifb is used for physics since small fraction of full Run 2 data does not pass the good quality criteria compare to Run 1. For this reason the analyse described in this thesis is performed on the 2015-2018 data subsets.\\
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/Lumi.png}
     \caption{Luminosity delivered by the LHC during the Run 2 data taking. ATLAS recorded this data with an efficiency above 90\%.}
@@ -67,7 +67,7 @@ Knowing the cross section of the \HHyybb production, one can evaluate the number
 \subsection{Pile-up}
 \label{chap2:LHC:PU}
 Because of the very high density of protons at the collision points, more than one proton interact when two LHC bunches cross each other at the center of the experiment. This is commonly referred to as pileup. On top of the usual $in-time$ pileup, defined as the collision events occurring during the same bunch-crossing as the event of interest, one also has to consider $out-of-time$ pileup, coming from remnants of information found in some of the detector subsystems that end-up being attributed to the wrong bunch-crossing, and therefore to the wrong event typically from previous collisions. Figure \ref{fig:chap2:LHC:PU} shows the average number of simultaneous interactions per bunch crossing for Run 2. \\
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/PU.png}
     \caption{Recorded integrated luminosity as function of the mean number of interaction per bunch crossing in pp collisions recorded by the ATLAS detector during Run 2 at 13 TeV \cite{Lumi2018}.}
@@ -77,7 +77,7 @@ Because of the very high density of protons at the collision points, more than o
 \section{ATLAS A Toroidal LHC ApparatuS detector}
 \label{chap2:ATLAS}
 The ATLAS detector is one of the four experiments placed on the four crossing points of the LHC beams. It is currently the largest experiment particle physics with a length of 46 m along the beam pipe and a transverse diameter of 25 m and more than 7000 tons of weight \cite{ATLAS_Exp}. It is a superposition of four sub-detectors, each optimized for the identification and the measurement of a specific category of particles : Inner Tracker, Electromagnetic Calorimeter (ECAL), Hadronic Calorimeter (HCAL) and Muons Spectrometer. It is composed of central called Barrel and two End-Cap to cover the $4\pi$ solid angle. Its geometry is optimised to detect particles produced orthogonal to the beam pipe and allow for forward detection to estimate the energy of invisible particles. The detector has been operating since 2008, taking alignment data with cosmic rays before the LHC launch, and its data is exploited by a collaboration of about 3000 scientific authors from 181 institutions in 38 countries. An overview sketch of the ATLAS detector is shown in Figure \ref{fig:chap2:ATLAS:Img}.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Ch2/Img/ATLAS_sketch.png}
     \caption{Sketch of the ATLAS detector with its different sub-detectors.}
@@ -101,7 +101,7 @@ y = \frac{1}{2}(\frac{E+p_Z}{E-p_Z}),
 \end{equation}
 where E is the particle energy.
 Figure \ref{fig:chap2:ATLAS:SYS} shows the coordinate system common to ATLAS and CMS experiments.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/ATLAS_Sys.jpeg}
     \caption{Coordinate system used by the ATLAS and CMS experiments at the LHC.}
@@ -111,7 +111,7 @@ Figure \ref{fig:chap2:ATLAS:SYS} shows the coordinate system common to ATLAS and
 \subsection{The Inner Tracker}
 \label{chap2:ATLAS:ITk}
 The Inner Detector (ID) has been designed to detect and reconstruct the path of the electrically charged particle bent by a 2T solenoid magnetic field. It also provides a good momentum resolution by reconstructing the curvature and the direction, and both primary and secondary vertex measurements for tracks above approximately 0.5 GeV\cite{ID_TRD, TrkVertexing}. In terms of acceptance, the ID covers region of $|\eta|\leqslant2.5$. To achieve the momentum and vertex resolution requirements imposed by the physics goals at the LHC and the very large track density environment, the ID high-precision measurements must be made with fine detector granularity. The ID is composed of four complementary sub-detectors: IBL, the Pixel Detector, the Semi Conductor Tracker (SCT) and the Transition Radiation (TRT). The magnetic field of 2 T is provided by a solenoid inserted between the ID and the EM calorimeter. The layout of the Inner Detector (ID) is illustrated in Figure \ref{fig:chap2:ATLAS:ITK:ID}.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/ID_withIBL.png}
     \caption{Layout of the Inner Detector (ID) \cite{ID_withIBL}.}
@@ -125,7 +125,7 @@ In 2014, at the first LHC long shutdown, the ATLAS pixel detector was upgraded w
 	\item Luminosity effects, The current pixel detector was designed for a peak luminosity of $10^{34} cm^{-2}s^{-1}$. With high luminosity the event pileup is increased, leading to high occupancy that can induce readout inefficiencies, would thereby limit the $b$-tagging efficiency. The addition of the IBL layer helps to preserve tracking performance in face of luminosity effects.
 \end{itemize}
 Strong constraints and project specifications have a substantial impact on the technologies required for the IBL. IBL covers the region of $|\eta|< 2.58$ in pseudo-rapidity and located at a mean radius of 33.2 mm around the beam pipe. The pixels uses 12 million pixels with a typical size of 50x250 $\mu$m. The IBL consists of 14 staves with each 20 modules made using planar sensors. The temperature of the IBL is controlled using a bi-phase CO2 cooling system. Figure \ref{fig:chap2:ATLAS:ITK:IBL} shows the IBL within the Pixel Detector volume and around the beam pipe.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Ch2/Img/IBL.png}
     \caption{(a) Transverse view of 3 of the Insertable-B-Layer (IBL) staves, located directly on the beam pipe. (b) The layout of one of the 14 IBL staves \cite{ID_withIBL}.}
@@ -133,21 +133,21 @@ Strong constraints and project specifications have a substantial impact on the t
 \end{figure}
 
 Additional measurement point provided by IBL improves significantly the reconstructed parameters by the tracker. Figure \ref{fig:chap2:ATLAS:ITK:IBL:Imp} shows the improvement in impact parameter resolution due to the IBL as measured from early Run 2 data with respect to Run 1. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/IBL_impact.png}
     \caption{Unfolded longitudinal impact parameter resolution measured from data in 2015, $\sqrt{s}= 13$ TeV, with the Inner Detector including the IBL, as a function of $\eta$  for values of 0.4 < \pT < 0.5 GeV compared to that measured from data in 2012, $\sqrt{s} = 8$ TeV \cite{IBL_IP}.}
     \label{fig:chap2:ATLAS:ITK:IBL:Imp}
 \end{figure}
 In addition to a factor of 4 reduction in reconstruction times \cite{IBL_Time}, Figure \ref{fig:chap2:ATLAS:ITK:IBL:Trk} shows the improvement achieved with IBL for the performance of tracking in dense environments (TIDE). Improvements in tracking have a direct impact on vertex identification and $b$-tagging. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/IBL_track.png}
     \caption{The average efficiency to reconstruct primary tracks with a production vertex before the first layer in jets as a function of jet \pT. The same sample generation, with limited statistics, is used for both reconstruction algorithms resulting in correlated features \cite{IBL_Trk}.}
     \label{fig:chap2:ATLAS:ITK:IBL:Trk}
 \end{figure}
 Figure \ref{fig:chap2:ATLAS:ITK:IBL:Btag} shows the improvement in the $b$-tagging efficiency with IP3D+SV1 $b$-tagging algorithms respect to Run 1 algorithm due to the IBL \cite{IBL_Btag, IBL_Btag2}. The IP3D and SV1 algorithms will be explained later in the thesis.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/IBL_btag2.png}
     \caption{Rejection factor against light jets as a function of $b$-jet efficiency for t the combined IP3D+SV1 tagger. Compared are the results with and without IBL.}
@@ -162,7 +162,7 @@ The SCT system is designed to provide four precision points per track in the int
 \subsubsection{Transition Radiation Tracker}
 The TRT is positioned at the outer part of the ID. It consist of 370000 drift tubes called straws. Each straw has a diameter of 4 mm and 1.44 m in long. The straws are filled with a gas mixture of 70\% $Xe$, 27\% $CO_2$ and 3\% $O_2$. Its wall acts as a cathode and kept at high voltage. The anode is a 30 $\mu$m diameter plated tungsten wire placed in the center of the straw. When a charged particle traverses a straw, it ionizes the gas and the produced electrons travel through the anode generating an electric signal. To keep the TRT performance to be constant, the close-loop gas system is used maintaining the correct gas fractions. The straws are arranged to be parallel to the beam-pipe in the barrel and perpendicular in the end-cap region. There are about 50k straws in the barrel and 320k straws in the end-cap providing high precision measurement for each track. The radial resolution is about 130 $\mu m$. \\
 In the Perigee representation, tracks are described using the parameters of a helical trajectory at the point of closest approach to the z-axis: the transverse impact parameter $d_0$, the z coordinate $z_0$, the angles $\theta$ and $\phi$ and the inverse of the particle momentum multiplied by the charge q/p, as illustrated in Figure \ref{fig:chap2:ATLAS:ITK:Trk}
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Track.png}
     \caption{The Perigee representation of the track \cite{Track_schema}.}
@@ -177,7 +177,7 @@ $\oplus$ denote the quadrature addition.
 \label{chap2:ATLAS:Calo}
 
 Based on the calorimetry, the ATLAS calorimeter system is designed to provide a precise energy and position reconstruction for electromagnetic particles (electrons, photons) and jets (hadrons). The good hermiticity of the calorimeter ($|\eta|$ up to 5) also allows to measure the missing transverse energy and provides the separation of electrons and photons from hadrons and jets. The calorimeter system is composed of two calorimeters: the electromagnetic calorimeter (ECal) and the hadronic calorimeter (HCal). Both are sampling calorimeters, with alternating layers of a heavy absorber material and an active material in which an ionisation signal is produced. Figure \ref{fig:chap2:ATLAS:Calo} shows a three dimensional view of the ATLAS calorimeter system.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/Calo.png}
     \caption{ATLAS Calorimeter system.}
@@ -188,14 +188,14 @@ Based on the calorimetry, the ATLAS calorimeter system is designed to provide a 
 \label{chap2:ATLAS:Calo:ECAL}
 The ECal is the first sub-detector after the ID. Is optimised for the reconstruction of the energy of electrons and photons exploiting their showers \cite{LAr_TRD}. It covers the region of $|\eta|<$3.2 excluding the region 1.375 $<|\eta|<$ 1.52 which correspond to the transition region between the barrel and end-caps. The barrel part covers $|\eta|<$1.475, while the two end-caps cover 1.375$<|\eta|<$3.2. The barrel and end-caps are composed of alternated layers of absorbing material lead (Z=82) ead plates ($\sim$1 mm thick), to enforce the development of the full EM showers within EM envelop and separated by active medium Liquid Argon (LAr) of 2 mm thick. The advantages of LAr, such as radiation hardness, intrinsic linear behaviour, cheapness compared to other noble gases, have been considered to outweigh the difficulties associated with the need of cryostats and signal feed-throughs. The total thickness of the calorimeter is at least 22 radiation lengths in the barrel, and more than 24 radiation lengths in the end-caps. The radiation lengths $X_0$ is defined as the scale after which high-energy electrons loose all but 1/e of their initial energy. $X_0$ of lead is 5.6mm. \\
 Electrons and photons traversing the calorimeters initiate electromagnetic cascades, in which $e^+e^-$ pair production and bremsstrahlung processes occur. High-energy electrons predominantly loose energy in matter through bremsstrahlung, while high-energy photons create $e^+e^-$. EM particle produce shower when passed through ECal until its energy falls below the critical energy $E_c$. $E_c$, can be defined as the energy for which the energy loss per $X_0$ due to ionisation of the material is equal to the particle energy. In lead, $E_c$=7.4 MeV for electrons. The EM shower ionizes the atom of the liquid Argon generating an electric signal proportional to the energy deposit by the particle. The ionization is drifted to the electrode under electric field generated by the high voltage of 2000 V. To provide a huge signal response and hermiticity, ATLAS Collaboration adopted a particular geometry for the ECal: $accordion$ geometry. In the barrel, the accordion waves are axial and run in $\phi$; the folding angles of the waves vary with radius to keep the liquid-argon gap constant and reduce the died zone. In the end-caps, the waves are parallel to the radial direction and run axially. The size of the drift gap on each side of the electrode is 2.1 mm. Figure \ref{fig:chap2:ATLAS:Calo:ECal:Acc} shows the accordion shape of the EM calorimeter.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/ECal_accord.png}
     \caption{Accordion shape of the EM calorimeter.}
     \label{fig:chap2:ATLAS:Calo:ECal:Acc}
 \end{figure}
 The ECal is further segmented in three longitudinal layers, to measure the longitudinal shower development called respectively strip, middle and back. It has different EM cells granularity $\Delta\eta\times\Delta\phi$ per layer. Cells of the middle layer (Lr2) in the barrel region are $0.025\times0.025$, while for the strip (Lr1) cells are 8 times finer in the $|\eta|$ direction providing a precise $\eta$ measurement of incident particles. The back layer (Lr3) cells has a twice coarser granularity in $\eta$ and the same $\phi$ segmentation as in Lr2. Before the EM barrel calorimeter there is a Presampler (PS) LAr detector (Lr0), covering range $|\eta|<$1.8 and placed placed to start the shower before the calorimeter. PS has the finest granularity with a cell size of $\Delta\eta\times\Delta\phi = 0.003\times0.1$ used for $\pi\rightarrow\gamma\gamma$ background separation. The number of samplings  and the granularity in each of the samplings are summarized in Table \ref{tab:chap2:ATLAS:Calo:ECal:Gr}.
-\begin{table}[ht]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{cccccc}
     \hline
@@ -229,14 +229,14 @@ Physics studies showed that precision physics can hardly be extended beyond a ps
 \subsection{Muon Spectrometer}
 \label{chap2:ATLAS:MS}
 Muons are minimally ionising particles in the detector due to their relatively high mass, therefore are not stopped by the calorimeter. The Muon Spectrometer (MS) is the outermost part of the ATLAS detector dedicated to detect muons exiting the calorimeter and measure their momentum in the range of $|\eta| < 2.7$ \cite{Muon_TDR}. A large superconducting air-cored toroid magnet is used to bend muons trajectories. Over the range $|\eta| < 1.4$, magnetic bending is provided by the large barrel toroid. For $1.6<|\eta| < 2.7$ region muon tracks are bent by two smaller end-cap magnets inserted into both ends of the barrel toroid. Over $1.4<|\eta|<1.6$, usually referred to as the transition region, magnetic deflection is provided by a combination of barrel and end-cap fields. Two different functions are accomplished by the MS: triggering and high precision tracking. The tracking is performed by the Monitored Drift Tubes (MDTs) and by Cathod Strips Chambers (CSCs) at large pseudo-rapidity. However, trigger system covers the region up to $|\eta| < 2.4$, and it is composed by Resistive Plate Chambers (RPCs) in the barrel and Thin Gap Chamber (TGC) in the end-caps. The conceptual layout of the spectrometeris shown in Figures \ref{fig:chap2:ATLAS:MS}. \\
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{Ch2/Img/Muon.png}
     \caption{Side view of one quadrant ($right$) and transverse view ($left$) of the muon spectrometer.}
     \label{fig:chap2:ATLAS:MS}
 \end{figure}
 The Monitored Drift Tubes are aluminium drift tubes with a diameter of 29.970 mm as Figure \ref{fig:chap2:ATLAS:MS:Tube} shows, operating with a gas mixture of 93\% of $Ar$ and 7\% of $CO_2$ Ar/CO2 at 3 bar pressure. Each chamber consists of two sections with three (inner station) or four (middle and outer station) layers of the drift tubes. Tungsten-rhenium wire of 50$\mu$m collects the electrons resulting from ionization at a potential of 3 kV. The maximum drift time can reach about 700 ns. The MDTs are designed for precise tracking of muons and cover most of the MS pseudorapidity total coverage, with a single-hit resolution of about 35 $\mu$m per chamber. \\
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.35\textwidth]{Ch2/Img/Tube.png}
     \caption{Transverse cross section of the MDT tube.}
@@ -250,6 +250,18 @@ The overall momentum resolution $\frac{\sigma_{p_T}}{p_T}$ provided by the muon 
 \subsection{Trigger}
 \label{chap2:ATLAS:Trigger}
 Collision rate at the center of ATLAS is 40MHz due to the bunch crossing in each 25 ns provided by LHC. At such a rate, it is technically not possible to fully process and store all data recorded by the ATLAS detector. The ATLAS trigger system was design to handle this problem, the purpose of the trigger system is to reduce the input of 40 MHz bunch crossing rate to an output rate of about 200 Hz in order to record them for further analysis. This is done thanks to two separated trigger systems. The first level so-called Level-1 (L1) \cite{Trigger_L1} is a hardware-based trigger that uses reduced granularity signals from the calorimeter and the muon spectrometer to identify Regions-Of-Interest (ROI) with high energy objects or high multiplicity at a latency of 2.5 $\mu$s. The L1 trigger system is responsible for reducing the rate to at least 75 kHz. Events passing the L1 trigger are then sent to the software-based High-Level Trigger (HLT) \cite{Trigger_HLT}. At the HLT, a fast analysis of these ROTs followed by an offline-like reconstruction of the events takes place with a processing time of around 0.2 s. The HLT creates output with a frequency of around 1 kHz. Often the final output rate cannot be made small enough \cite{DQ}. In this case only random events are selected and stored.
+
+
+\section{Upgrade plans towards Run 3 and the HL-LHC}
+\label{chap2:Upgrad}
+The long-term plan for the instantaneous luminosity delivered by the LHC foresees a step-wise increase due to continuous upgrades to the accelerator. In order to cope with the increased event rate and higher pile-up, the LHC experiments perform upgrades to various detector components, too. The main changes in the detector setup are performed during the long shutdown (LS) phases that are planned for 2019-20 (LS2 with the so-called Phase-1 upgrades) and 2024-26 (LS3 and Phase-2 upgrades). During LS2 and LS3, different detector and accelerator upgrades will be installed in ATLAS and LHC. After LS2, LHC will provide around 300 \ifb of data at the end of Run-3, and run with an increased center-of-mass energy ($\sqrt{s} = $ 14 TeV). The Run-3 data taking was planned to start at the beginning of 2021, while given the corona virus (Covid19) epidemic the plan is delayed with 4 months (correspond to 4 months of quarantine).  A subsequent upgrade of the LHC (LS3), the so-called High-Luminosity (HL)-LHC, will allow to run with increased instantaneous luminosity and deliver around 3000 \ifb of proton-proton data.  An overview of the LHC operation plan is shown in Figure \ref{fig:chap2:Upgrad}. The mean pile-up is expected to be up to  $<\mu> = $ 200 during the HL-LHC operation. To cope with the more difficult conditions, the planned upgrades of ATLAS include replacement of the ID during the LS3 by the so-called ITk, a silicon detector made of pixels and strips. ITk will allow to achieve a similar tracking and vertex precision in the HL-LHC conditions. In addition to ITk, the planned upgrades also include tracking system extension with the so-called High-Granularity Timing Detector (HGTD) \cite{HGTD}, based on low gain avalanche detector technology. HGTD will allow significantly improve the performance in the froward region.  High-precision timing greatly improves the track-to-vertex association, leading to a performance similar to that in the central region for the reconstruction of both jets and leptons, as well as for the tagging of heavy-flavour jets. These improvements in object reconstruction performance translate into important sensitivity gains and enhance the reach of the HL-LHC physics program, that double Higgs boson search would profit from it. The full ATLAS upgrade program can be found in References \cite{CERN-LHCC-2015-020, CERN-LHCC-2017-005, CERN-LHCC-2017-017, CERN-LHCC-2017-018, CERN-LHCC-2017-019, CERN-LHCC-2017-020, CERN-LHCC-2017-021}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Ch2/Img/HL-LHC-January-2021_small.jpg}
+    \caption{Operation plan for the LHC Run 3 and HL-LHC periods.}
+    \label{fig:chap2:Upgrad}
+\end{figure}
 \section{Physics objects reconstruction}
 \label{chap2:Objects}
 ATLAS provides energy deposits collected by sub-detectors. To interpret this raw output in terms of the event particles an advanced particle reconstruction chains have to be employed. These are described in this Section.
@@ -257,14 +269,14 @@ ATLAS provides energy deposits collected by sub-detectors. To interpret this raw
 \subsection{Track and Vertex reconstruction}
 \label{chap2:Objects:Trk}
 Tracks are reconstructed in the ID (Section \ref{chap2:ATLAS:ITk}) using a sequence of algorithms \cite{Track_Reco, New_Trk}. The inside-out algorithm starts from three points seeds in the SCT.  A combinatorial Kalman filter (Iterative algorithm that provides best estimate of the state based on projection of earlier measurements and current measurement \cite{Kalman} ) is then used to build track candidates from the chosen seeds by incorporating additional space-points from the remaining layers of the pixel and SCT detectors which are compatible with the preliminary trajectory. Ambiguities in the track candidates are resolved, and tracks are extended into the TRT. The inside-out algorithm is the baseline algorithm designed for the efficient reconstruction of primary charged particles. In a second stage, a back-tracking algorithm is used in track search starting from segments reconstructed in the TRT and extending them inwards by adding silicon hits. The back-tracking is designed to reconstruct secondary particles. Finally tracks with a TRT segment but no extension into the silicon detectors are referred as TRT-standalone tracks. To minimize the fake tracks rate in high pile-up environment two track quality requirements are defined. The robust requirement which request at least 9 hits in the silicon detectors and zero holes (non-existing but expected hit) in the pixel. In contrast to the robust, the default require at least 7 silicon hits and allow at most two pixel holes. The track reconstruction efficiency is defined as the fraction of primary particles with \pT $>$ 400 MeV and $|\eta|<$ 2.5 matched to a reconstructed track. Figure \ref{fig:chap2:Objects:Trk:Eff} shows the track reconstruction efficiency as a function of \pT and $\eta$.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{Ch2/Img/Track_reco_eff.png}
     \caption{The primary track reconstruction efficiency in minimum bias Monte Carlo samples containing exactly one and on average 21 or 41 interactions. The distributions are shown for tracks passing the default(dashed) and robust (solid) requirements.}
     \label{fig:chap2:Objects:Trk:Eff}
 \end{figure}
 Primary vertices are reconstructed using an iterative vertex finding algorithm \cite{Vrtx_Eff}. Vertex seeds are obtained from the z-position at beam axis of the reconstructed tracks. An iterative $\chi^2$ fit constrained with the beam spot position is made using the seed and nearby tracks. Tracks are weighted depending on the $\chi^2$ to measure the compatibility with the fitted vertex \cite{chi2}. Tracks displaced by more than 7$\sigma$ from the vertex are used to seed a new vertex and the procedure is repeated until no additional vertex is found. During reconstruction vertices are required to contain at least two tracks. The efficiency to reconstruct a vertex from a minimum bias interaction is shown in Figure \ref{fig:chap2:Objects:Vtx:Eff}. Vertices  are matched to interactions by calculating the sum of the weights of the tracks in a vertex matched to each interaction. 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{Ch2/Img/Vtx_Reco_Eff.png}
     \caption{The vertex reconstruction efficiency ($left$) and fake probability ($right$) as a function of the average number of interactions.}
@@ -275,21 +287,21 @@ Primary vertices are reconstructed using an iterative vertex finding algorithm \
 \label{chap2:Objects:Egamma}
 Photons and Electrons are reconstructed in a similar way using the EM calorimeter (Section \ref{chap2:ATLAS:Calo:ECAL}). When these particles pass through the calorimeter dense medium, a showering process starts through cascading bremsstrahlung and electron pair production. The electrical signal induced by electrons from ionised active material (LAr) is proportional to the deposited energy in the active volume of the calorimeter and used to compute the cell energy. Note that, the cell energy includes both the electronic noise which is about 10 MeV per cell in the strip and 30 MeV in the middle and back layers, and the $pile-up$ particles noise. The pile-up contributions can be either splitted into two components the $in-time$ pile-up which due to particles coming from the same bunch crossing, and the $out-of-time$ pile-up due to particles from previous bunch crossing. The total deposited energy is measured from the reconstructed EM clusters. To reconstruct the EM clusters, the EM calorimeter is divided into a grid of $N_\eta\times N_\phi$ towers of size of the same middle layer granularity (0.025x0.025). Inside each of these elements, the energy of all cells in all longitudinal layers is summed into tower energy. A window of fixed size 3×5 is moved across each element of the tower. If the window transverse energy \eT (defined as the sum of the transverse energy of the towers contained in the window) is a local maximum and is above a threshold (2.5 GeV), a cluster seed is formed. Then, if the reconstructed cluster is associated with at least one reconstructed track, the candidate is classified as an electron. These reconstruction algorithm is called $fixed-size$ \cite{Fixed_size_cluster}. \\
 A second reconstruction has been developed to benefit from dynamic, variable-size clusters, called $super-clusters$ \cite{Egamma_Perf_run2}. This allows the recovery of low energy photons radiated due to bremsstrahlung interactions in the ID or electrons from photon conversions. In this scenario, the electron is defined as an object consisting of a super cluster and matched track. A converted photon is a cluster matched to a conversion vertex, and an unconverted photon is a cluster matched to neither an electron, track or a conversion vertex. In contrast to the sliding window (fixed-size), the super-cluster selects clusters based on topologically connected calorimeter cells \cite{Topo_cluster}. Figure \ref{fig:chap2:Objetcs:Egamma:SC} shows an illustration of super-clusters. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{Ch2/Img/Super_cluster.png}
     \caption{Diagram of the super clustering algorithm for electrons and photons. Seed clusters are shown in red, satellite clusters in blue.}
     \label{fig:chap2:Objetcs:Egamma:SC}
 \end{figure}
 The topological cluster reconstruction starts from a cell with $|E_{cell}| > 4\sigma$, where $\sigma$ is the expected cell noise includes the known electronic noise and an estimation of the pile-up noises. Then successively, all neighbouring cells with $|E_{cell}| > 2\sigma$ are added. The absolute cell energy is used to avoid biasing the cluster energy upwards due to negative energy induced by the calorimeter noise. The list of reconstructed topo-clusters is sorted according to descending total energy. The topo-clusters are tested one by one for use as super-cluster. For an electron the topo-cluster is required to have a minimum $E_T$ of 1 GeV and matched to a track with at least four hits in the silicon detector \cite{GSF}, while for a photon the threshold is set to 1.5 GeV with no matched track or conversion vertex. For both, the electron and the photon case, to recover radiative losses, satellite clusters around that reconstructed cluster are matched to the super-cluster. The seed clusters with their associated satellite clusters are called super-clusters. Tracks are matched to electron super clusters and conversion vertices to converted photon super clusters. The matching is performed in the same way as the matching to EM topo-clusters was performed, but using the super clusters instead. The reconstruction efficiency using super clusters for an electron is shown in Figure \ref{fig:chap2:Objects:Egamma:El_Eff}.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Electron_Reco_Eff.png}
     \caption{The cluster, track, cluster and track, and electron reconstruction efficiencies as a function of the generated electron $E_T$.}
     \label{fig:chap2:Objects:Egamma:El_Eff}
 \end{figure}
 Figure \ref{fig:chap2:Objects:Egamma:Gamma:Conv:Reco:Eff} shows the reconstruction efficiency for converted photons as a function of the true $E_T$ of the simulated photon for the previous version of the reconstruction software (fixed-size) and the current version (dynamic-size). An important reason for using super clusters is the improved energy resolution that super clusters provide by collecting more of the deposited energy \textbf{ADD PLOT OF ENERGY RESOLUTION COMPARISON}.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Photon_conv_Reco_Eff.png}
     \caption{The converted photon reconstruction efficiency and contributions of the different conversion types as a function of $E^{true}_T$}
@@ -297,7 +309,7 @@ Figure \ref{fig:chap2:Objects:Egamma:Gamma:Conv:Reco:Eff} shows the reconstructi
 \end{figure}
 
 Additionally, an ambiguity resolution is performed to remove a part of the overlap in case one object is reconstructed at the same time as electron and photon since electron and photon super clusters are built independently. However, in order to maintain a high reconstruction efficiency, a residual overlap is allowed to match physics analysis needs. Figure \ref{fig:chap2:Objects:Egamma:Ambg} shows the procedure used for ambiguity resolution. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Ch2/Img/Ambiguity.png}
     \caption{Flowchart showing the logic of the ambiguity resolution for particles initially reconstructed both as electrons and photons.}
@@ -391,7 +403,7 @@ Most of LHC physics require the identification of prompt electrons and / or phot
 \subsubsection{Electron and Photon calibration}
 \label{chap2:Objects:Egamma:Cal}
 After the electron and photon super clusters are built, an initial energy calibration and position correction is applied to them \cite{Egamma_Calibration}. A complex chain with several successive calibration steps is used to calibrate the electron and photon energies based on simulation and well known reference processes. A schematic overview of the whole calibration chain is shown in Figure \ref{fig:chap2:Objects:Egamma:Cal}.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch2/Img/Calibration_Chain.png}
     \caption{Schematic overview of the calibration chain for the electron and photon energies \cite{Egamma_Calib_run1}.}
@@ -411,14 +423,14 @@ The activity near leptons and photons is quantified from the tracks of nearby ch
 \begin{equation}
     \Delta R^{XX} = min(\frac{10}{p_T[GeV]}, \frac{XX}{100}).
 \end{equation}
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Iso_Schema.png}
     \caption{Schema of the calorimeter isolation method: the grid represents the second-layer calorimeter cells in the $\eta$ and $\phi$ directions. The candidate electron is located in the centre of the purple circle representing the isolation cone. All topological clusters, represented in red, for which the barycentres fall within the isolation cone are included in the computation of the isolation variable. The 5x7 cells represented by the yellow rectangle correspond to the subtracted cells in the core subtraction method.}
     \label{fig:chap2:Objects:Egamma:EIso:Schema}
 \end{figure}
 Based on these variables, three different selections criteria, called working points (WPs), are implemented. The working points were defined in two different ways, either targeting a fixed value of efficiency or with fixed cuts on the isolation variables. Table \ref{tab:chap2:Objects:Egamma:EIso:WPs} lists the different electron-isolation WPs used in ATLAS.
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
     \hline \hline
@@ -431,7 +443,7 @@ Based on these variables, three different selections criteria, called working po
     \label{tab:chap2:Objects:Egamma:EIso:WPs}
 \end{table}
 An additional WP named Gradient is designed to give an efficiency of 90\% at \pT = 25 GeV and 99\% at 60 GeV, uniform in $\eta$. Figure \ref{fig:chap2:Objects:Egamma:EIso:Eff} shows the electron isolation efficiency in data recorded in 2017 as a function of electron \eT \cite{Egamma_Perf_2017}. The method used to compute the electron isolation efficiency and the associated uncertainties are described in Ref. \cite{Electron_Reco_Id_Run1}. The jump observed in Gradient efficiency at 15 GeV is due to the isolation efficiency is process dependent: the Gradient cut maps is optimized with $J/\Psi\rightarrow e^+e^-$ events below 15 GeV, while the efficiency measurement is performed with $Z\rightarrow e^+e^-$.
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Electron_Iso_Eff.png}
     \caption{Efficiency of the different isolation working points for electrons from inclusive $Z\rightarrow e^+e^-$ events as a function of the electron \eT. The lower panel shows the ratio of the efficiencies measured in data and in MC simulations \cite{Egamma_Perf_2017}.}
@@ -448,14 +460,14 @@ where \textbf{x} is the vector of the various variables. For each electron candi
     d_L = -\frac{1}{\tau}ln(\frac{L_S+L_B}{L_S} - 1),
 \end{equation}
 where $\tau$ is fixed to 15 \cite{TMVA}. Figure shows an example of the distribution of the transformed discriminant for prompt electrons and for non-prompt one. This distribution illustrates the effective separation between signal and background encapsulated in this single quantity.
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Electron_LH.png}
     \caption{The transformed LH-based identification discriminant $d_L$ for reconstructed electron candidates with good quality tracks with 30 $<E_T<$ 35 GeV and $|\eta|<$ 0.6 \cite{Electron_ID_2016}.}
     \label{fig:chap2:Objects:Egamma:EID:LH}
 \end{figure}
 For physics purposes three WPs are defined. These operating points are referred to as Loose, Medium, and Tight. The efficiency for identifying a prompt election with \eT = 40 GeV are 93\%, 88\% and 80\% for the Loose, Medium and Tight. Figure \ref{fig:chap2:Objects:Egamma:EID:Eff} shows the resulting efficiencies in data \cite{Egamma_Perf_run2}. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Electron_ID_Eff.png}
     \caption{The electron identification efficiency in $Z\rightarrow e^+e^-$ events in data as a function of \eT for the Loose, Medium and Tight operating points.}
@@ -497,7 +509,7 @@ Four muon identification WPs are provided to address specific needs of different
     \item $High-p_T$ : selection  aims  to  maximise the momentum resolution  for  tracks  with transverse momentum above  100 GeV. The  selection is optimised  for  searches  for  high-mass Z' and W' resonances \cite{W,dilepton}. CB muons passing the $Medium$ selection  and having at least three hits in three MS stations are selected.
 \end{itemize}
 Figure \ref{fig:chap2:Objects:Muon:ID:Eff} shows the muon reconstruction and identification efficiency for $Loose$, $Medium$ and $Tight$ muons as measured in $J/\Psi\rightarrow\mu\mu$. 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch2/Img/Muon_ID_Eff.png}
     \caption{Muon reconstruction and identification efficiencies for the $Loose$, $Medium$ and $Tight$ criteria as function of \pT. The panel at the bottom shows the ratio of the measured to predicted efficiencies, with statistical and systematic uncertainties.}
