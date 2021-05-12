@@ -1,0 +1,58 @@
+\newpage
+\chapter*{Personal contributions}
+
+The work presented in this thesis was performed within the ATLAS collaboration. Even though the focus of this thesis will lie on my work, all the work described would not have been possible without major contributions from many other people and common tools and frameworks. In the following I describe shortly my contribution to different parts of the thesis. 
+
+\section*{Selection of photons in ATLAS}
+
+Chapter \ref{gamma} details the process of photons in ATLAS starting from reconstruction, calibration, isolation and identification. My contributions to this process are the following:
+
+\begin{enumerate}
+    \item Shower shape mis-modelling: 
+\begin{itemize}
+    \item I applied the developed shower shape reweighting technique for photons. 
+    \item I showed that the function developed for electron, was not enough to correct the miss-modelling for photons. 
+    \item I developed specific reweighting function for photons and demonstrates that the reweighting procedure is not enough to correct the mis-modelling for Radiative Z photons. 
+    \item I provided a new idea for a 3D reweighting functions and demonstrates its power using pseudo data.
+    \item I documented the work in an internal note.
+ 
+\end{itemize}
+
+\item Photon identification: 
+\begin{itemize}
+    \item I developed a new photon identification algorithm based on Convolutional Neural Network (CNN).
+    \item I quantified the improvement of the new algorithm in different event topologies. 
+    \item I checked the performance of the CNN photon ID algorithm on 2017 data and evaluated the efficiency using the Radiative Z method. 
+    \item I computed the scale factors using the 2017 data. 
+    \item I provided ideas for possible improvements of the CNN algorithm.
+\end{itemize}
+\end{enumerate}
+
+\section*{Jet reconstruction and Tagging in ATLAS}
+Chapter \ref{Jet} details the jets reconstruction procedure and calibration as well as the different tagging algorithms. In this chapter, my contributions were mainly focusing on the $b$-jet calibration method in which: 
+\begin{itemize}
+    \item I optimized the muon selection for the $\mu$-in-jet correction.
+    \item I derive the $p_T$Reco correction function using $t\bar{t}$ for both reconstruction algorithms (Topo and PFlow) and both $b$-tagging algorithms (MV2c10 and Dl1r). 
+    \item I developed an analysis tool applying the $\mu$-in-jet and $p_T$Reco corrections to the $b$-jet object.
+\end{itemize}
+
+\section*{Measurement of Higgs self-coupling}
+
+Chapter \ref{HHyybb} focus on the main topic of the thesis, the measurement of Higgs boson self-coupling. My contribution to this analysis are the following: 
+
+\begin{itemize}
+    \item I studied the improvement of the $b$-jet calibration on the analysis sensitivity.  
+    \item I supervised an M1 student to work on the estimation of the systematic uncertainties of the $b$-jet calibration. 
+    \item I developed the likelihood fit (Kinematic Fit) and studied its impact on the $m_{bb}$ resolution and analysis sensitivity. 
+    \item I developed a tool interfacing the kinematic fit to the \bbyy event.
+    \item I integrated both the $b$-je and the kinematic fit tools in the code used for the analysis (HGamCore).
+    \item I participated in the ntuples (MxAOD) production for the analysis group.
+    \item I developed the analysis strategy using the Deep Neural Network (DNN).
+    \item I estimated the impact of the CNN photon identification on \HHyybb analysis.
+    \item I contribute to the internal notes documentation.
+\end{itemize}
+
+The plots and tables with caption in the box,
+\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
+\end{tcolorbox}
+are my contribution and produced by my self.

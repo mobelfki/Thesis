@@ -9,8 +9,11 @@ As discussed in section \ref{gamma:CNN:Zllg}, CNN performance degrade significan
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Adx/Adx3/Img/Eff_vs_Energy.png}
+    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
     \caption{CNN efficiency as a function of photon transvers energy for different $\eta$ regions. }
     \label{fig:Adx3:Eta}
+    \end{tcolorbox}
+    
 \end{figure}
 
 There was several discussion on how to include $\eta$ as an input variable to the CNN, while the CNN should not take $\eta$ as a discriminant between the signal and background. A reweighting technique to re-weight the $\eta$ distribution to be similar between signal and background can be used in this case. Personally, developing a specific convolution layer which take into account the direction of the photon is the best solution, but technically complicated. Such convolution layer will be able to to define the size of the convolutional filter needed to extract the shower form first layer images for given $\eta$ region. \\
@@ -30,7 +33,7 @@ The second issue of the CNN is the pile-up dependency which makes the efficiency
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Adx/Adx3/Img/AutoEncoder.png}
+    \includegraphics[width=0.85\textwidth]{Adx/Adx3/Img/AutoEncoder.png}
     \caption{Image de-noising with AutoEncoder}
     \label{fig:Adx3:AutoEncoder}
 \end{figure}
@@ -39,7 +42,10 @@ The same idea can be used to reduce pile-up from shower images. An auto-encoder 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{Adx/Adx3/Img/PAED.png}
+    \includegraphics[width=0.55\textwidth]{Adx/Adx3/Img/PAED.png}
+    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
     \caption{CNN classifier with PAED schema.}
     \label{fig:Adx3:PAED}
+    \end{tcolorbox}
+    
 \end{figure}

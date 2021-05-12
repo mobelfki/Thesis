@@ -3,7 +3,6 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
-\graphicspath{ {figures/} }
 \usepackage{array}
 \usepackage{geometry}
 \usepackage{caption}
@@ -12,8 +11,10 @@
 \usepackage{longtable}
 \usepackage{ragged2e}
 \usepackage{xspace}
+\usepackage{comment}
+\usepackage[most]{tcolorbox}
 \geometry{
-left=1.1cm,
+left=1.5cm,
 right=1.5cm,
 top=2cm,
 bottom=2cm
@@ -21,13 +22,14 @@ bottom=2cm
 \DeclareGraphicsExtensions{.pdf,.png,.jpeg}
 \usepackage[english]{babel}
 \usepackage{multirow}
-\usepackage{comment}
 \usepackage[pagestyles]{titlesec}
+
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
 \newpagestyle{mystyle}
 {\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 \pagestyle{mystyle}
-
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
 \newcommand{\eT}{$E_\mathrm{T}$\ }
 \newcommand{\pT}{$p_{T}$\ }
 \newcommand{\bq}{$b$}
@@ -61,9 +63,9 @@ bottom=2cm
 \newcommand*{\Fside}{\ensuremath{f_\mathrm{side}}\xspace}
 \newcommand*{\wthree}{\ensuremath{w_{s\,3}}\xspace}
 \newcommand*{\wtot}{\ensuremath{w_{s\,\mathrm{tot}}}\xspace}
-\newcommand*{\DeltaE}{\ensuremath{\Delta{}E_s}\xspace}
-\newcommand*{\Eratio}{\ensuremath{E_\mathrm{ratio}}\xspace}
-\newcommand*{\Emaxtwor}{\ensuremath{R_\mathrm{max\,1}}\xspace}
+\newcommand*{\DeltaE}{\ensuremath{\Delta E_s}\xspace}
+\newcommand*{\Eratio}{\ensuremath{E_{\mathrm{ratio}}}\xspace}
+\newcommand*{\Emaxtwor}{\ensuremath{R_{\mathrm{max\,1}}}\xspace}
 \newcommand*{\fI}{\ensuremath{f_1}\xspace}
 
 % other shapes
@@ -93,7 +95,7 @@ bottom=2cm
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\title{Thesis}
+\title{Search for Higgs pair production at LHC Collider (CERN): The first measurement for Higgs potential and search for new physics}
 \author{BELFKIR Mohamed}
 \date{December 2020}
 \usepackage[ backend=biber, style=numeric, sorting=none ]{biblatex}
@@ -103,21 +105,28 @@ bottom=2cm
 \addbibresource{Ch3/Chapter3.bib}
 \addbibresource{Ch4/Chapter4.bib}
 \addbibresource{Ch5/Chapter5.bib}
+\addbibresource{Ch6/Chapter6.bib}
 \DeclareUnicodeCharacter{2212}{-}
+
+
+
 \begin{document}
 
 \maketitle
 \tableofcontents
 \newpage
-%\input{Intro/Intro}
+
+\input{Intro/Intro}
+\input{Intro/Contribution}
 %\input{Ch1/Chapter1}
 %\input{Ch2/Chapter2}
 %\input{Ch3/Chapter3}
 %\input{Ch4/Chapter4}
 \input{Ch5/Chapter5}
+\input{Ch6/Chapter6}
 %\input{Con/Con}
 \printbibliography
-%\appendix
+\appendix
 %\input{Adx/Adx1/Appendix1}
 %\input{Adx/Adx2/Appendix2}
 %\input{Adx/Adx3/Appendix3}

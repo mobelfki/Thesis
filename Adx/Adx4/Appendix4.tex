@@ -8,8 +8,11 @@ In the \HHyybb channel, the 4-momenta of the $H\to\gamma\gamma$ component are re
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm,height=7cm]{Adx/Adx4/Img/HH.png}
+    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
     \caption{\HHyybb in the transverse plane.}
     \label{fig:Adx4:HH}
+    \end{tcolorbox}
+
 \end{figure}
 \section{HH system balance}
 
@@ -17,8 +20,11 @@ The per-event fit uses a log-likelihood minimization to balance the HH system. A
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Adx/Adx4/Img/isr.png}
-    \caption{Number of Initial State Radiation for qqF ZH, ggF ZH and ggF HH }
+    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
+    \caption{Number of Initial State Radiation for qqF ZH, ggF ZH and ggF HH.}
     \label{fig:Adx4:ISR}
+    \end{tcolorbox}
+    
 \end{figure}
 
 \section{Likelihood}
@@ -43,15 +49,18 @@ Given the fit parameters and constraints defined above, the log-likelihood is de
 \end{equation}
 
 This is a product of Gaussian terms of $\Omega = (E, \eta, \phi)$ and a $p_T$-dependent jet response likelihood $L(p_T)$, the likelihood also includes a term constraining the sum over all $P_{x,y}$ momenta of the system. The energy and angular resolutions of photons are fixed to 1\% as well as the angular resolutions of the jets. Jets energy resolution is $p_T$-depend. Jet response and resolution are evaluated in the $t\bar{t}$ MC samples used to drive the $p_T$Reco function using parton level as target. Finally this statistics is used to minimize and balance the reconstructed HH system on an event-by-event basis. It was checked that fixing the direction of the particles did not imply a loss in final resolution while it reduces significantly the computing time to converge. For that angles are fixed in the fit to their nominal value to improve computational cost as well as to preserve the \myy distribution.  
-\section{$\sigma_{b\bar{b}\gamma\gamma}$ determination}
+\section{\texorpdfstring{$\sigma_{b\bar{b}\gamma\gamma}$} determination}
 An empirical scan is done to find the minimum value of $\sigma_{b\bar{b}\gamma\gamma}$ which gives the maximum \mbb resolution improvement. For \HHyybb, the event kinematic is changing with different \kl value as illustrated in Figure \ref{fig:chap1:HH:BSM:MHH}, thus changing in the HH system balance. Therefore, for high \kl values the event kinematic gets harder to balance and large $\sigma_{b\bar{b}\gamma\gamma}$ are favored by the fit, thus small improvement in \mbb is expected for high \kl values. Figure \ref{fig:Adx4:Scan} shows the empirical scan of $\sigma_{b\bar{b}\gamma\gamma}$ for different \kl for both 0-jet and 1-jet. 
 
 \begin{figure}[htbp]
    \centering
    \subfloat[0-jet][0-jet]{\includegraphics[width=.35\textwidth]{Adx/Adx4/Img/0JetScan.png}}
    \subfloat[1-jet][1-jet]{\includegraphics[width=.35\textwidth]{Adx/Adx4/Img/1JetScan.png}}
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{\mbb resolution in GeV as a function of $\sigma_{b\bar{b}\gamma\gamma}$ for (a) 0-jet and (b) 1-jet. Blue shows the scan for SM case \kl = 1, red is BSM case of \kl = 2 and green is for \kl = -6. Lines show \mbb resolution before the kinematic fit for each case ($b$-jet calibration).}
    \label{fig:Adx4:Scan}
+   \end{tcolorbox}
+   
 \end{figure}
 
 For 0-jet, the maximum \mbb resolution improvement is obtained for $\sigma_{b\bar{b}\gamma\gamma}$ = 12 GeV for SM, while this value get bigger for large \kl. As expected the $\sigma_{b\bar{b}\gamma\gamma}$ is larger for 1-jet than 0-jet given the additional jet in the event. For simplicity, the optimal value of $\sigma_{b\bar{b}\gamma\gamma}$ chosen are 14 and 16 GeV for 0-jet and 1-jet respectively. This choice is motivated from the di-Higgs combination result which exclude value of \kl less -6.  
@@ -65,34 +74,46 @@ Figures show the $p_x$ and $p_y$ of the HH system before and after the KF for bo
    \centering
    \subfloat[$p_x$][$p_x$]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/pxhh_KF_2Jet_AntiKt4EMTopoJets.png}}
    \subfloat[$p_y$][$p_y$]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/pyhh_KF_2Jet_AntiKt4EMTopoJets.png}}
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{$p_x$ and $p_y$ distributions after (red) and before (blue) applying the kinematic fit for 0-jet events. The $\sigma_{b\bar{b}\gamma\gamma} = $ 14 GeV is used. The kinematic fit is applied on top of the $b$-jet calibration.}
    \label{fig:Adx4:HH:0Jet}
+   \end{tcolorbox}
+   
 \end{figure}
 \begin{figure}[htbp]
    \centering
    \subfloat[$p_x$][$p_x$]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/pxhh_KF_3Jet_AntiKt4EMTopoJets.png}}
    \subfloat[$p_y$][$p_y$]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/pyhh_KF_3Jet_AntiKt4EMTopoJets.png}}
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{$p_x$ and $p_y$ distributions after (red) and before (blue) applying the kinematic fit for 1-jet events. The $\sigma_{b\bar{b}\gamma\gamma} = $ 14 GeV is used. The kinematic fit is applied on top of the $b$-jet calibration.}
    \label{fig:Adx4:HH:1Jet}
+   \end{tcolorbox}
+   
 \end{figure}
 
-\subsection{\mbb resolution}
+\subsection{\texorpdfstring{\mbb} resolution}
 
 Figure \ref{fig:Adx4:HH:mbb} shows the \mbb distribution after the kinematic fit for both 0-jet and 1-jet. An additional 10\% (5\%) improvement is achieved in \mbb resolution for 0-jet (1-jet) events. Figure \ref{fig:Adx4:HH:myy} shows the \myy distribution after and before the kinematic fit for both 0-jet and 1-jet no significance changes in observed.
 \begin{figure}[htbp]
    \centering
    \subfloat[0-jet][0-jet]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/mbb_KF_2Jet_AntiKt4EMTopoJets.png}}
    \subfloat[1-jet][1-jet]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/mbb_KF_3Jet_AntiKt4EMTopoJets.png}}
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{\mbb distributions after (red) and before (blue) applying the kinematic fit for (a) 0-jet and (b) 1-jet events. The kinematic fit is applied on top of the $b$-jet calibration.}
    \label{fig:Adx4:HH:mbb}
+   \end{tcolorbox}
+   
 \end{figure}
 
 \begin{figure}[htbp]
    \centering
    \subfloat[0-jet][0-jet]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/myy_KF_2Jet_AntiKt4EMTopoJets.png}}
    \subfloat[1-jet][1-jet]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/myy_KF_2Jet_AntiKt4EMTopoJets.png}}
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{\myy distributions after (red) and before (blue) applying the kinematic fit for (a) 0-jet and (b) 1-jet events.}
    \label{fig:Adx4:HH:myy}
+   \end{tcolorbox}
+   
 \end{figure}
 
 
@@ -105,6 +126,9 @@ An additional improvement in \mbb resolution is achieved with the kinematic fit,
    \subfloat[ggHH][ggHH]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/ggHH_px_wSoft.png}}
    \subfloat[ggZH][ggZH]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/ggZH_px_wSoft.png}} \\
    \subfloat[qqZH][qqZH]{\includegraphics[width=.48\textwidth]{Adx/Adx4/Img/qqZH_px_wSoft.png}} \\
+   \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{$p_x$ distribution for different ISR multiplicity before (solid line) and after (dashed line) including the soft radiation to compute the $p_x$ for different processes.}
    \label{fig:Adx4:HH:MET}
+   \end{tcolorbox}
+   
 \end{figure}
