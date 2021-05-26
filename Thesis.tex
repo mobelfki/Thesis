@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage[hyperref,backend=biber,backref,backrefstyle=none,style=numeric, sorting=none]{biblatex}
 \usepackage{array}
 \usepackage{geometry}
 \usepackage{caption}
@@ -23,6 +24,7 @@ bottom=2cm
 \usepackage[english]{babel}
 \usepackage{multirow}
 \usepackage[pagestyles]{titlesec}
+\usepackage{pdfpages}
 
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
 \newpagestyle{mystyle}
@@ -38,7 +40,7 @@ bottom=2cm
 \newcommand{\ifb}{fb$^{-1}$\xspace }
 \newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\ }
 \newcommand{\myy}{$m_{\gamma\gamma}$\ }
-\newcommand{\mbb}{$m_{b\bar{b}}$\ }
+\newcommand{\mbb}{$m_{\bar{b}b}$\ }
 \newcommand{\bbbb}{$\bar{b}b\bar{b}b$\xspace}
 \newcommand{\bbtt}{$\tau^+\tau^-\bar{b}b$\xspace}
 \newcommand{\bbyy}{$\gamma\gamma\bar{b}b$\xspace}
@@ -89,6 +91,7 @@ bottom=2cm
 \newcommand*{\deltaZO}{\ensuremath{\Delta z_{0}}\xspace}
 
 \usepackage{titlesec}
+
 \setcounter{secnumdepth}{4}
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -98,7 +101,6 @@ bottom=2cm
 \title{Search for Higgs pair production at LHC Collider (CERN): The first measurement for Higgs potential and search for new physics}
 \author{BELFKIR Mohamed}
 \date{December 2020}
-\usepackage[ backend=biber, style=numeric, sorting=none ]{biblatex}
 \usepackage{csquotes}
 \addbibresource{Ch1/Chapter1.bib}
 \addbibresource{Ch2/Chapter2.bib}
@@ -109,28 +111,33 @@ bottom=2cm
 \DeclareUnicodeCharacter{2212}{-}
 
 
-
 \begin{document}
 
-\maketitle
+\includepdf[pages=-]{FirstPages/gard.pdf}
+\newpage
+\input{FirstPages/Fig_Petit}
+\newpage
+\input{FirstPages/Abstarcs}
 \tableofcontents
 \newpage
-
 \input{Intro/Intro}
 \input{Intro/Contribution}
-%\input{Ch1/Chapter1}
-%\input{Ch2/Chapter2}
-%\input{Ch3/Chapter3}
-%\input{Ch4/Chapter4}
+\input{Ch1/Chapter1}
+\input{Ch2/Chapter2}
+\input{Ch3/Chapter3}
+\input{Ch4/Chapter4}
 \input{Ch5/Chapter5}
 \input{Ch6/Chapter6}
-%\input{Con/Con}
+\input{Con/Con}
 \printbibliography
 \appendix
-%\input{Adx/Adx1/Appendix1}
-%\input{Adx/Adx2/Appendix2}
-%\input{Adx/Adx3/Appendix3}
-%\input{Adx/Adx4/Appendix4}
+\input{Adx/Adx1/Appendix1}
+\input{Adx/Adx2/Appendix2}
+\input{Adx/Adx3/Appendix3}
+\input{Adx/Adx4/Appendix4}
 \listoffigures
+\newpage
 \listoftables
+\newpage
+\input{FirstPages/Acknowledgements}
 \end{document}
