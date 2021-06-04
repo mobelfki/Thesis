@@ -32,15 +32,15 @@ bottom=2cm
 \pagestyle{mystyle}
 %\usepackage{fancyhdr}
 %\pagestyle{fancy}
-\newcommand{\eT}{$E_\mathrm{T}$\ }
-\newcommand{\pT}{$p_{T}$\ }
-\newcommand{\bq}{$b$}
-\newcommand{\kt}{$\kappa_{t}$\ }
-\newcommand{\kl}{$\kappa_{\lambda}$\ }
-\newcommand{\ifb}{fb$^{-1}$\xspace }
-\newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\ }
-\newcommand{\myy}{$m_{\gamma\gamma}$\ }
-\newcommand{\mbb}{$m_{\bar{b}b}$\ }
+\newcommand{\eT}{$E_\mathrm{T}$\xspace}
+\newcommand{\pT}{$p_{T}$\xspace}
+\newcommand{\bq}{$b$\xspace}
+\newcommand{\kt}{$\kappa_{t}$\xspace}
+\newcommand{\kl}{$\kappa_{\lambda}$\xspace}
+\newcommand{\ifb}{fb$^{-1}$\xspace}
+\newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\xspace}
+\newcommand{\myy}{$m_{\gamma\gamma}$\xspace}
+\newcommand{\mbb}{$m_{\bar{b}b}$\xspace}
 \newcommand{\bbbb}{$\bar{b}b\bar{b}b$\xspace}
 \newcommand{\bbtt}{$\tau^+\tau^-\bar{b}b$\xspace}
 \newcommand{\bbyy}{$\gamma\gamma\bar{b}b$\xspace}
@@ -109,14 +109,15 @@ bottom=2cm
 \addbibresource{Ch5/Chapter5.bib}
 \addbibresource{Ch6/Chapter6.bib}
 \DeclareUnicodeCharacter{2212}{-}
-
+\usepackage{lineno}
+\linenumbers
 
 \begin{document}
 
 \includepdf[pages=-]{FirstPages/gard.pdf}
 \newpage
-\input{FirstPages/Fig_Petit}
-\newpage
+%\input{FirstPages/Fig_Petit}
+%\newpage
 \input{FirstPages/Abstarcs}
 \tableofcontents
 \newpage
