@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[12pt, openany]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{ amssymb }
@@ -31,6 +31,12 @@ bottom=2cm
 \usepackage{pdfpages}
 \usepackage{titlesec}
 \usepackage{csquotes}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 \DeclareGraphicsExtensions{.pdf,.png,.jpeg}
 
 \hypersetup
@@ -131,41 +137,42 @@ bottom=2cm
 \begin{document}
 
 \includepdf[pages=-]{FirstPages/gard.pdf}
-\newpage
+\frontmatter
 %\input{FirstPages/Fig_Petit}
 %\newpage
 \input{FirstPages/Abstarcs}
+\afterpage{\blankpage}
+\input{FirstPages/Abs_fr}
+\afterpage{\blankpage}
 \tableofcontents
-\newpage
+\mainmatter
 \input{Intro/Intro}
 \input{Intro/Contribution}
 \input{Ch1/Chapter1}
-\newpage
+\afterpage{\blankpage}
 \input{Ch2/Chapter2}
-\newpage
 \input{Ch3/Chapter3}
-\newpage
 \input{Ch4/Chapter4}
-\newpage\clearpage
 \input{Ch5/Chapter5}
-\newpage
+\afterpage{\blankpage}
 \input{Ch6/Chapter6}
+\afterpage{\blankpage}
 \input{Con/Con}
-\newpage
-\newpage
 \printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
 \appendix
+\afterpage{\blankpage}
 \input{Adx/Adx1/Appendix1}
-\newpage
+\afterpage{\blankpage}
 \input{Adx/Adx2/Appendix2}
-\newpage
 \input{Adx/Adx3/Appendix3}
-\newpage
 \input{Adx/Adx4/Appendix4}
-\newpage
+\afterpage{\blankpage}
 \listoffigures
-\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\afterpage{\blankpage}
 \listoftables
-\newpage
-%\input{FirstPages/Acknowledgements}
+\addcontentsline{toc}{chapter}{List of Tables}
+\input{FirstPages/Acknowledgements}
+\afterpage{\blankpage}
 \end{document}

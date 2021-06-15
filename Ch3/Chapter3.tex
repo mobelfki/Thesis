@@ -1,4 +1,3 @@
-\newpage
 \chapter{Selection of photons in ATLAS}
 \label{gamma}
 The photon object is a key component to study the \HHyybb properties. They are reconstructed similarly to electrons as introduced in Section \ref{chap2:Objects:Egamma}, and their energy is calibrated in the same way. This chapter details photon isolation and identification. I implemented a new photon identification algorithm based on Machine Learning tools to improve photon identification (ID).
@@ -20,7 +19,7 @@ Photon isolation is almost similar to the one from electrons (Section \ref{chap2
     \label{tab:gamma:Iso:WPs}
 \end{table}
 \\
-A discrepancy between the peak positions of the simulated and real distributions of the calorimeter-based variables is observed since Run-1 \cite{Mismodelling_Run1}, pointing to a mismodelling of the lateral profile development of the electromagnetic showers and resulting different isolation efficiency in data and simulations, thus large scale factors. A data-driven shift is applied to handle the mismodelling in simulation. The shift values are computed by taking the difference of the fitted peak values between data and simulation. The fit is performed using the Crystal Ball pdf \cite{CrystalBall} on the $E^{cone40}_T$ and $E^{cone20}_T$ variables in bin of $\eta$, \eT and conversion type (Converted or Unconverted) separately. The resulting shift is then added to the simulation distribution. Figure \ref{fig:gamma:Iso:Shifts} shows the distribution of $E^{cone40}_T$ after the data-driven shifts applied.
+A discrepancy between the peak positions of the simulated and real distributions of the calorimeter-based variables is observed since Run-1 \cite{Mismodelling_Run1}, pointing to a mismodelling of the lateral profile development of the electromagnetic showers and resulting different isolation efficiency in data and simulations, thus large scale factors. A data-driven shift is applied to handle the mismodelling in simulation. The shift values are computed by taking the difference of the fitted peak values between data and simulation. The fit is performed using the Crystal Ball pdf \cite{CrystalBall} on the $E^{cone40}_T$ and $E^{cone20}_T$ variables in bin of $\eta$, \eT and conversion type (converted or unconverted) separately. The resulting shift is then added to the simulation distribution. Figure \ref{fig:gamma:Iso:Shifts} shows the distribution of $E^{cone40}_T$ after the data-driven shifts applied.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\textwidth]{Ch3/Img/photon_shifts_iso.png}
@@ -98,7 +97,7 @@ A comparison between the two versions of the tight WP is shown in Figure \ref{fi
 
 \section{Shower shape mis-modelling}
 \label{gamma:ss}
-The source of the disagreement in shower shapes between the data and the simulation (MC) described above is still unclear. Many sources can contribute to this mis-modelling, mainly from the detector geometry, material distribution and EM shower modelling. It is difficult to handle those sources and fix the mis-modelling. To fix the issue for electron, a cell-based reweighting method has been developed to apply a global correction to reduce systematic uncertainties related to the mis-modelling \cite{xu, khandoga}. The approach shows a promising electron result, which motivated its application to photons. This work was done in the context of my ATLAS qualification task to allow me to sign ATLAS publications.
+The source of the disagreement in shower shapes between the data and the Monte Carlo simulation (MC) described above is still unclear. Many sources can contribute to this mis-modelling, mainly from the detector geometry, material distribution and EM shower modelling. It is difficult to handle those sources and fix the mis-modelling. To fix the issue for electron, a cell-based reweighting method has been developed to apply a global correction to reduce systematic uncertainties related to the mis-modelling \cite{xu, khandoga}. The approach shows a promising electron result, which motivated its application to photons. This work was done in the context of my ATLAS qualification task to allow me to sign ATLAS publications.
 
 \subsection{Cell-based reweighting correction}
 \label{gamma:ss:reweighting}
@@ -278,7 +277,7 @@ The result of the new reweighting procedure is presented in Figure \ref{fig:gamm
 	\subfloat[][]{\includegraphics[width=.35\textwidth]{Ch3/Img/PhotonRew/NPS_Reta_NCon_Eta_1.00_1.20.jpg}}
 	%\subfloat[][]{\includegraphics[width=.25\textwidth]{Ch3/Img/PhotonRew/NPS_Reta_NCon_Eta_2.00_2.20.jpg}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{The energy profile in $\phi$ and $\eta$ directions (a, b) and the corresponding \Rphi and \Reta variables, for unconverted photons with 1.00 $ < |\eta| < $ 1.20. The black points correspond to the pseudo data, red points to non-reweighted simulation and blue points to the reweighted MC from $Z\rightarrow ll\gamma$.}
+    \caption{The energy profile in $\phi$ and $\eta$ directions (a, b) and the corresponding \Rphi and \Reta variables, for unconverted photons with 1.00 $ < |\eta| < $ 1.20. The black points correspond to the pseudo data, red points to non-reweighted simulation and blue points to the reweighted simulation from $Z\rightarrow ll\gamma$.}
     \label{fig:gamma:ss:reweighting:photon:3dreweighting}
     \end{tcolorbox}
 \end{figure}
@@ -316,9 +315,9 @@ The difference in shape and size of the EM calorimeter windows complicates the n
     \hline\hline
         Sampling & Shape \\
     \hline
-        Sampling 1 & (56,2)\\
-        Sampling 2 & (7,11)  \\
-        Sampling 3 & (4,11) \\
+        Sampling 1 & (56, 2)\\
+        Sampling 2 & (7, 11)  \\
+        Sampling 3 & (4, 11) \\
     \hline\hline
     \end{tabular}
     \caption{Image shape of 7$\times$11 windows in each sampling in ($\eta$, $\phi$).}
@@ -384,7 +383,7 @@ The signal efficiency $\epsilon_{eff}$ and background rejection $\epsilon_{rej}$
     \label{eq:eff}
     \epsilon_{eff} = \frac{TP}{TP+FN} \ ; \ \epsilon_{rej} = \frac{TN}{TN+FP},
 \end{equation}
-where TP is the number of prompt photons correctly classified as a signal by the CNN, TN is the number of background photons correctly classified as background, FP is the number of prompt photons misclassified as background and FN is the number of background photons misclassified as a signal. The following binning is used $p_T$ = [10, 20, 30, 40, 60, 80, $\infty$] and $|\eta|$ = [0., 0.6, 1.37, 1.52, 1.8, 2.4].
+where TP is the number of prompt photons correctly classified as a signal by the CNN, TN is the number of background photons correctly classified as background, FP is the number of prompt photons misclassified as background and FN is the number of background photons misclassified as a signal. The following binning is used $p_T$ = [10, 20, 30, 40, 60, 80, $\infty$] GeV and $|\eta|$ = [0., 0.6, 1.37, 1.52, 1.8, 2.4].
 Figure \ref{fig:gamma:CNN:Validation:ROC} shows the receiver-operating characteristic (ROC) which illustrates the diagnostic ability of the CNN as its discrimination threshold is varied. The blue dot shows the signal and background rejection of the current cut-based tight WP. A significant improvement is obtained with the CNN compared to tight WP for both converted and unconverted photons. 
 \begin{figure}[htbp]
     \centering
@@ -412,7 +411,7 @@ Figure \ref{fig:gamma:CNN:Validation:Imp} shows the relative improvement over th
 \subsection{Photon efficiency estimation : Out-of-sample validation}
 \label{gamma:CNN:Zllg}
 Radiated photons from Z boson decay are used to evaluate the final improvement achieved by CNN after an appropriate optimization to define the CNN WPs. The optimization is done by maximizing the $S/\sqrt{(S+B)}$ with at least the same or higher background rejection as cut-based WPs in order to maximize the signal efficiency. CNN output is scanned in bins of $|\eta|$ for both converted and unconverted photons separately to define two WPs (\texttt{Loose} and \texttt{Tight}). To be more consistent with cut-based tight WP the following binning is chosen: [0, 0.6, 0.8, 1.15, 1.37, 1.81, 2.01, 2.37]. \\
-The identification efficiency is evaluated using the Radiative Z method already described in Section \ref{gamma:ID}. Due to the contamination from the Z$\rightarrow ll$+jet, where the jet is misidentified as photons. The efficiency should be corrected by subtracting this background component from the counted numbers (N). Therefore, a template fit method was performed to estimate the signal purity (P) both before and after applying the CNN tight WP. To perform the template fit, the $m_{ll\gamma}$ probability density function for signal ($Z\rightarrow ll\gamma$) is extracted from simulated events while the background (Z$\rightarrow ll$+jet) is fitted using a second-order polynomial function. The likelihood sum of the signal and background PDFs, with floating normalization, is fitted to the data $m_{ll\gamma}$ distribution in the range [60, 120] GeV. Then, the signal purities (P) are calculated within the signal region [80, 100] GeV, making the efficiency corrected as: 
+The identification efficiency is evaluated using the Radiative Z method already described in Section \ref{gamma:ID}. Due to the contamination from the Z$\rightarrow ll$+jet, where the jet is misidentified as photons. The efficiency should be corrected by subtracting this background component from the counted numbers (N). Therefore, a template fit method was performed to estimate the signal purity (P) both before and after applying the CNN tight WP. To perform the template fit, the $m_{ll\gamma}$ probability density function for signal ($Z\rightarrow ll\gamma$) is extracted from simulated events while the background (Z$\rightarrow ll$+jet) is fitted using a second-order polynomial function. The likelihood sum of the signal and background pdfs, with floating normalization, is fitted to the data $m_{ll\gamma}$ distribution in the range [60, 120] GeV. Then, the signal purities (P) are calculated within the signal region [80, 100] GeV, making the efficiency corrected as: 
 \begin{equation}
     \epsilon_{ID} = \frac{N^{\text{after ID}}\times P^{\text{after ID}}}{N^{\text{before ID}} \times P^{\text{before ID}}},
 \end{equation}
@@ -471,7 +470,7 @@ Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_3.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__UnConverted_Iso_tight_Wgt_ETA_Bin_4.png}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{Unconverted photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks) for 4 $|\eta|$ regions. Bottom ratios show the scale factors.}
+    \caption{The unconverted photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and simulation (open marks) for 4 $|\eta|$ regions. Bottom ratios show the scale factors.}
     \label{fig:gamma:CNN:Zllg:Energy:UnC}
     \end{tcolorbox}
 \end{figure}
@@ -482,7 +481,7 @@ Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_3.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN__Converted_Iso_tight_Wgt_ETA_Bin_4.png}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{Converted photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks) for 4 $|\eta|$ regions. Bottom ratios show the scale factors.}
+    \caption{The converted photon identification efficiency as a function of photon \eT for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and simulation (open marks) for 4 $|\eta|$ regions. Bottom ratios show the scale factors.}
     \label{fig:gamma:CNN:Zllg:Energy:C}
     \end{tcolorbox}
 \end{figure}
@@ -543,7 +542,7 @@ The CNN is not sensitive to shower shapes mis-modelling as it uses the cell frac
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/SubPlot_CNN_output_ETA_bin_0_UnConverted_Iso_tight.png}}
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/SubPlot_CNN_output_ETA_bin_0_Converted_Iso_tight.png}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{CNN output distribution as computed for data (black) and MC (blue) for (a) for unconverted photons and (b) converted photons with $|\eta| < $ 0.4.}
+    \caption{CNN output distribution as computed for data (black) and simulation (blue) for (a) for unconverted photons and (b) converted photons with $|\eta| < $ 0.4.}
     \label{fig:gamma:CNN:Zllg:CNNOutput}
     \end{tcolorbox}
 \end{figure}
@@ -557,7 +556,7 @@ The presence of additional $pp$ interactions in the event reduces the photon ide
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_Converted_Iso_tight_Wgt.png}}
 	\subfloat[][]{\includegraphics[width=.45\textwidth]{Ch3/Img/Tight_Inc_vs_Tight_CNN_MU_Converted_Iso_tight_Wgt.png}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{Photon identification efficiency for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and MC (open marks). Unconverted photons (right) and converted photons (left). As a function of pile up $<\mu>$ (top) and number of primary vertices (nPV) (bottom). Bottom ratios show the scale factors.}
+    \caption{Photon identification efficiency for CNN (red) and cut-based (blue) indicated with ATLAS, for data (full marks) and simulation (open marks). Unconverted photons (right) and converted photons (left). As a function of pile up $<\mu>$ (top) and number of primary vertices (nPV) (bottom). Bottom ratios show the scale factors.}
     \label{fig:gamma:CNN:Zllg:MU}
     \end{tcolorbox}
 \end{figure}

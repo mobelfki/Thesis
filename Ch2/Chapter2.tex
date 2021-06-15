@@ -1,4 +1,3 @@
-\newpage
 \chapter{The Large Hadron Collider and the ATLAS detector}
 \label{LHC&ATLAS}
 
@@ -469,7 +468,7 @@ Figure \ref{fig:chap2:Objects:Egamma:EIso:Eff} shows the electron isolation effi
 
 \subsubsection{Electron Identification}
 \label{chap2:Objects:Egamma:EID}
-The identification of prompt electrons relies on a likelihood (LH) discriminant constructed from quantities measured in the different sub-detectors and listed in Table \ref{tab:chap2:Objects:Egamma:SS}. The electron LH is based on the products of the probability density functions (pdf) for signal $L_S$, and for background $L_B$. The PDFs are created by smoothing histograms of the n discriminating variables with an adaptive kernel density estimator (KDE) \cite{KDE} as implemented in the TMVA framework \cite{TMVA} in 9 bins of $|\eta|$ and 7 bins of \eT:
+The identification of prompt electrons relies on a likelihood (LH) discriminant constructed from quantities measured in the different sub-detectors and listed in Table \ref{tab:chap2:Objects:Egamma:SS}. The electron LH is based on the products of probability density functions (pdf) for signal $L_S$, and for background $L_B$. The pdfs are created by smoothing histograms of the n discriminating variables with an adaptive kernel density estimator (KDE) \cite{KDE} as implemented in the TMVA framework \cite{TMVA} in 9 bins of $|\eta|$ and 7 bins of \eT:
 \begin{equation}
     L_{S(B)}(\textbf{x}) = \displaystyle\prod_{i=1}^{n} P_{S(B),i}(x_i),
 \end{equation}

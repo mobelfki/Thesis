@@ -1,4 +1,3 @@
-\newpage
 \chapter{Measurement of Higgs boson self-coupling}
 \label{HHyybb}
 
@@ -493,10 +492,13 @@ VBF & $0.01266 \pm 0.00016$ & $0.01618 \pm 0.00018$ & $(3.22 \pm 0.08) \cdot 10^
 \subsection{Cross-section limits and \kl constraint}
 \label{HHyybb:Results:Xsec}
  Since no significant excess over the background prediction is found, exclusion limits at 95\% CL are computed on the Higgs boson pair production cross-section for each \kl as described in Section $\ref{HHyybb:Stat}$. The upper limit obtained for the double Higgs boson production cross-section $\sigma_{HH}$ in the ggF + VBF production modes is 140 fb assuming \kl = 1. A median value of 180 fb is estimated. Expressed in terms of multiple of the SM production cross-section, the observed limit is 4.1 times the SM prediction while the expected limit is 5.5 times the SM prediction. The expected measured signal strength $\mu$ is 1 $\pm$ 2.37.\\
-
-Constraint on the Higgs boson self-coupling is derived from the cross-section limit scan versus \kl by taking the intersection between the theoretical prediction and the measured cross-section, as shown in Figure \ref{fig:HHyybb:Results:Xsec:Limit}. The observed constraint at 95\% CL is -1.5 $<$ \kl $<$ 6.7, while the expected constraint is -2.4 $<$ \kl $<$ 7.7. BSM effects on the single Higgs boson cross-section and Higgs boson branching ratios are neglected. The couplings of Higgs boson to other particles are set to their SM values \cite{Higgs_80ifb}. Table \ref{tab:HHyybb:139ifb} summarizes the results. \\
-In addition to the constraint, a measurement of \kl is performed by floating \kl in the fit with all other couplings set to their SM values. The best-fit \kl is $2.7^{+2.1}_{-2.2}$ which is close  to the \kl value giving the minimum HH cross-section. The likelihood scan as a function of \kl is shown in Figure \ref{fig:HHyybb:Results:Xsec:LH}.
-
+Constraint on the Higgs boson self-coupling is derived from the cross-section limit scan versus \kl by taking the intersection between the theoretical prediction and the measured cross-section, as shown in Figure \ref{fig:HHyybb:Results:Xsec:Limit}. The observed constraint at 95\% CL is -1.5 $<$ \kl $<$ 6.7, while the expected constraint is -2.4 $<$ \kl $<$ 7.7. BSM effects on the single Higgs boson cross-section and Higgs boson branching ratios are neglected. The couplings of Higgs boson to other particles are set to their SM values \cite{Higgs_80ifb}. Table \ref{tab:HHyybb:139ifb} summarizes the results. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Ch5/Img/figures_Results_kappa_lambda_scan.pdf}
+    \caption{Observed and expected limits at 95\% CL on the cross-section of Higgs boson pair production as a function of the Higgs boson self-coupling modifier $\kappa_{\lambda}= \lambda_{HHH}/\lambda^{\textrm{SM}}_{HHH}$. The $\pm 1\sigma$ and $\pm 2\sigma$ bands show the expected variations on the expected limit due to statistical and systematic uncertainties. The theory prediction curve represents the scenario where all parameters and couplings are set to their SM values except for \kl. The uncertainty band of the theory prediction curve shows the cross-section uncertainty.}
+    \label{fig:HHyybb:Results:Xsec:Limit}
+\end{figure}
 \begin{table}[htbp]
     \centering
     \begin{tabular}{lcc}
@@ -510,21 +512,15 @@ In addition to the constraint, a measurement of \kl is performed by floating \kl
     \caption{Summary of \HHyybb limits at 95\% CL from the 139 \ifb analysis.}
     \label{tab:HHyybb:139ifb}
 \end{table}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Ch5/Img/figures_Results_kappa_lambda_scan.pdf}
-    \caption{Observed and expected limits at 95\% CL on the cross-section of Higgs boson pair production as a function of the Higgs boson self-coupling modifier $\kappa_{\lambda}= \lambda_{HHH}/\lambda^{\textrm{SM}}_{HHH}$. The $\pm 1\sigma$ and $\pm 2\sigma$ bands show the expected variations on the expected limit due to statistical and systematic uncertainties. The theory prediction curve represents the scenario where all parameters and couplings are set to their SM values except for \kl. The uncertainty band of the theory prediction curve shows the cross-section uncertainty.}
-    \label{fig:HHyybb:Results:Xsec:Limit}
-\end{figure}
-
+\\
+In addition to the constraint, a measurement of \kl is performed by floating \kl in the fit with all other couplings set to their SM values. The best-fit \kl is $2.7^{+2.1}_{-2.2}$ which is close  to the \kl value giving the minimum HH cross-section. The likelihood scan as a function of \kl is shown in Figure \ref{fig:HHyybb:Results:Xsec:LH}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch5/Img/figures_Results_scan_hhyybb_kl.pdf}
     \caption{The likelihood function as a function of \kl, with $\mu = $  1. The observed 68\% and 95\% CL ranges are [0.5, 4.7] and [-1.4, 6.5] respectively, while the expected are [-1.4, 6.4] and [-3.1, 8.2].}
     \label{fig:HHyybb:Results:Xsec:LH}
 \end{figure}
-
-
+\\
 Table \ref{tab:HHyybb:Results:Xsec:Cat} shows the expected limit at 95\% CL on the HH cross-section for each category. The significance is mainly driven by the High mass high BDT category. 
 
 \begin{table}[htbp]
@@ -546,7 +542,6 @@ Table \ref{tab:HHyybb:Results:Xsec:Cat} shows the expected limit at 95\% CL on t
     \label{tab:HHyybb:Results:Xsec:Cat}
     \end{tcolorbox}
 \end{table}
-
 
 Figure \ref{fig:HHyybb:Results:Xsec:statvsSys} shows the expected limit at 95\% CL on the cross-section of the HH pair production as a function of the \kl modifier for individual contributions of the statistical and statistical + systematic uncertainties. The statistical only limits are computed by setting all the systematic uncertainties to zero. Table \ref{tab:HHyybb:Results:Xsec:Stat} summarizes the upper limit for \kl = 1 case and the constraint on \kl for each systematic configuration. It shows that this search is statistically limited, and the total impact of systematic uncertainties on the results is about 4\%.
 \begin{figure}[htbp]
@@ -602,10 +597,7 @@ PDF+ $\alpha_{\mathrm{s}}$ & Normalization & 0.7  \\
 
 \section{Comparison to 36 \ifb results}
 \label{HHyybb:36ifb}
-Table \ref{tab:HHyybb:36ifb} compares the observed and expected limits as well as the constraint on \kl derived with 36 \ifb and 139 \ifb datasets \cite{yybb_36ifb, yybb_139}. The limit in the 139 \ifb is improved compared to 36 \ifb analysis by a factor 5. The improvement is coming from both the increase by factor a 3.9 of the integrated luminosity and the new analysis strategy. By extrapolating the 36 \ifb results to 139 \ifb, the new analysis strategy improves the limit by a factor 2.4. Such improvement is mainly coming from the implementation of machine learning in event categorization (BDT) and the split in the two $m_{b\bar{b}\gamma\gamma}^*$ bins (High/Low mass).\\
-In addition to the analysis strategy, the 139 \ifb analysis benefits from several improvements such as the usage of the PFlow algorithm for jet reconstruction which improves jet resolution as well as the specific $b$-jet energy calibration which enhances the analysis sensitivity by $\sim$ 10\%. The $b$-tagging efficiency is also improved by moving from the MV2c10 algorithm to the DL1r which has a higher efficiency as shown in Figure \ref{fig:Jet:Tag:Dlr:Eff_77}. \\
-Considering the VBF production mode for the first time as a part of the signal when setting limits on \kl brings an improvement of 6-8\% in \kl interval. 
-
+Table \ref{tab:HHyybb:36ifb} compares the observed and expected limits as well as the constraint on \kl derived with 36 \ifb and 139 \ifb datasets \cite{yybb_36ifb, yybb_139}.
 \begin{table}[htbp]
     \centering
     \begin{tabular}{lcccc}
@@ -621,6 +613,9 @@ Considering the VBF production mode for the first time as a part of the signal w
     \label{tab:HHyybb:36ifb}
 \end{table}
 
+The limit in the 139 \ifb is improved compared to 36 \ifb analysis by a factor 5. The improvement is coming from both the increase by factor a 3.9 of the integrated luminosity and the new analysis strategy. By extrapolating the 36 \ifb results to 139 \ifb, the new analysis strategy improves the limit by a factor 2.4. Such improvement is mainly coming from the implementation of machine learning in event categorization (BDT) and the split in the two $m_{b\bar{b}\gamma\gamma}^*$ bins (High/Low mass).\\
+In addition to the analysis strategy, the 139 \ifb analysis benefits from several improvements such as the usage of the PFlow algorithm for jet reconstruction which improves jet resolution as well as the specific $b$-jet energy calibration which enhances the analysis sensitivity by $\sim$ 10\%. The $b$-tagging efficiency is also improved by moving from the MV2c10 algorithm to the DL1r which has a higher efficiency as shown in Figure \ref{fig:Jet:Tag:Dlr:Eff_77}. \\
+Considering the VBF production mode for the first time as a part of the signal when setting limits on \kl brings an improvement of 6-8\% in \kl interval. 
 
 \section{Comparison to CMS \HHyybb results}
 \label{HHyybb:CMS}
@@ -678,7 +673,7 @@ The statistical-only expected limit on the HH cross-section for both ATLAS and A
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{Ch5/Img/kappa_lambda_ATLAS_CMS_stat.pdf}
+    \includegraphics[width=0.5\textwidth]{Ch5/Img/kappa_lambda_ATLAS_CMS_stat.pdf}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{The stat. only expected 95\% CL upper limits on the HH cross-section obtained for different values of \kl. Approximate ATLAS+CMS expected limits are obtained by scaling the ATLAS luminosity by a factor 2. The $\pm1\sigma$ and $\pm2\sigma$ bands are shown for the ATLAS expected limits.}
     \label{fig:HHyybb:CMS+ATLAS}

@@ -1,4 +1,3 @@
-\newpage
 \chapter{Jet reconstruction and Tagging in ATLAS}
 \label{Jet}
 Jet objects and specifically $b$-quark jets are crucial to maximize the precision on the measurement of the \HHyybb properties. Jets in ATLAS are currently reconstructed in two ways (EMTopo and PFlow) as introduced in Section \ref{chap2:Objects:Jet}. This chapter details jet reconstruction, $b$-jet identification and calibration implemented in \HHyybb analysis. I implemented a calibration method specific to $b$-jets which provides better reconstruction performances, thus better \mbb invariant mass resolution compared to generic jet corrections.
@@ -31,7 +30,7 @@ The resulting jets from the simulation have to be calibrated such that, on avera
 The first step in the calibration chain aims to recalculate the jet direction to point to the hard scatter primary vertex rather than the centre of the detector. This correction only affects the jet $\eta$ and resulting in a better $\eta$ resolution without changing the jet energy. Figure \ref{fig:Jet:Cal:chain} presents an overview of the ATLAS calibration scheme for jets.
 \begin{figure}[htbp]
      \centering
-     \includegraphics[width=0.8\textwidth]{Ch4/Img/calibration_chain.png}
+     \includegraphics[width=0.7\textwidth]{Ch4/Img/calibration_chain.png}
      \caption{Calibration stages for jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet \cite{JES_Sys_13_TeV}.}
      \label{fig:Jet:Cal:chain}
  \end{figure}
@@ -53,7 +52,7 @@ This correction aims to correct, through a simulation-based procedure, the recon
 where $E_{JES}^{\mathrm{jet}}$ and $E^{\mathrm{jet}}$ are jet energy after and before the  calibration, $F(E^{\mathrm{jet}}, \eta)$ is the inverted jet response for a given (E, $\eta$) bin. A second correction is derived to account for a bias seen in the reconstructed jet $\eta$. The $\eta$ correction is computed as the difference between the reconstructed $\eta^{reco}$ and the truth $\eta^{truth}$ as a function of $E^{truth}$ and $\eta$. Similarly to JES correction, a numerical inversion is used to derive the correction in $E^{reco}$. This correction is evaluated on a multi-jet events sample. At this step, EMTopo (PFlow) jet is denoted EM+JES (PFlow+JES). Comparisons of the jet energy resolution measurement for PFlow+JES and EM+JES jets as a function of jet $p_T$ is shown in Figure \ref{fig:Jet:Cal:chain:JER}.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{Ch4/Img/Jet_Resolution_Topo_vs_PFlow.png}
+    \includegraphics[width=0.55\textwidth]{Ch4/Img/Jet_Resolution_Topo_vs_PFlow.png}
     \caption{The relative jet energy resolution for fully calibrated PFlow+JES jets (green curve) and EM+JES jets (blue curve) as a function of $p_T$ jet.}
     \label{fig:Jet:Cal:chain:JER}
 \end{figure}
@@ -117,7 +116,7 @@ For jets outside the ID acceptance ($|\eta|>$ 2.5), the JVT can not be used due 
 \end{equation}
 where $k$ = 2.5 is a factor to account for intrinsic differences between the jet and tracks terms. The fJVT discriminant is therefore for a given jet is defined as:
 \begin{equation}
-    fJVT = max(fJVT_i) = max(\frac{-\vec{p}_{T, i} \cdot \vec{p}_{T}^{j e t}}{\vec{p}_{T}^{j e t} \cdot \vec{p}_{T}^{j e t}})
+    fJVT = \text{max}(fJVT_i) = \text{max}(\frac{-\vec{p}_{T, i} \cdot \vec{p}_{T}^{j e t}}{\vec{p}_{T}^{j e t} \cdot \vec{p}_{T}^{j e t}})
 \end{equation}
 where $fJVT_i$ is the jet fJVT to the vertex $i$. Figure \ref{fig:Jet:Tag:JVT:fJVT} shows the fJVT discriminant which tends to have large values for QCD pile-up jets, while the distribution for hard-scatter jets falls steeply.
 \begin{figure}[htbp]
@@ -153,13 +152,13 @@ where $p_b$, $p_c$ and $p_{\text{light-flavour}}$ are the NN outputs probabiliti
 For both MV2 and DL1, four WPs are computed for different \bq-tagging efficiencies. The WPs are defined as a fixed cut or \pT dependent cut on the final discriminant variable (Eq. \ref{b-jet}) and labelled with the corresponding integrated efficiency on \bq-jets. The working points are 85\%, 77\%, 70\% and 60\%. Figure \ref{fig:Jet:Tag:Dlr:Eff} shows a comparison of performances of MV2 and DL1 built in 2018, and DL1r optimized in 2019. The 2019 DL1r shows a significant improvement over other algorithms. Figure \ref{fig:Jet:Tag:Dlr:Eff_77} shows the efficiency of identifying \bq-jets as a function of jet \pT for 77\% WP requirement, for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization \cite{Btag_Perf}. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch4/Img/b_jet_Eff.png}
+    \includegraphics[width=0.45\textwidth]{Ch4/Img/b_jet_Eff.png}
     \caption{ROC curves for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization. The x-axis corresponds to the b-jet efficiency, while the y-axis corresponds to light-flavor jets rejection. The shaded bands represent the statistical uncertainty.}
     \label{fig:Jet:Tag:Dlr:Eff}
 \end{figure}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch4/Img/b_jet_Eff_77.png}
+    \includegraphics[width=0.45\textwidth]{Ch4/Img/b_jet_Eff_77.png}
     \caption{Efficiency of identifying b-jets as a function of jet \pT for an inclusive 77\% efficiency requirement, for 2018 recommended versions of MV2 and DL1, and 2019 DL1r optimization.}
     \label{fig:Jet:Tag:Dlr:Eff_77}
 \end{figure}
@@ -171,7 +170,17 @@ The default JES calibration described in Section \ref{Jet:Cal:chain:JES} and app
     \item large \bq-quark mass which reduces the boost of the jet and, as a consequence, a larger fraction of the jet particles lay outside the usual jet cone leading to out-of-cone radiation.
     \item larger semi-leptonic branching ratio of \bq-hadrons which produce elusive neutrino.
 \end{itemize}
-Figure \ref{fig:Jet:Cal:BCal:bJet} illustrates these statements through the schematic of a \bq-jet. To overcome this issue, a step-by-step approach, firstly developed in VH($\rightarrow b\bar{b}$) analysis \cite{Vhbb}, is used:
+Figure \ref{fig:Jet:Cal:BCal:bJet} illustrates these statements through the schematic of a \bq-jet. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Ch4/Img/b-jet.png}
+    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
+    \caption{Typical schema of a \bq-jet.}
+    \label{fig:Jet:Cal:BCal:bJet}
+    \end{tcolorbox}
+\end{figure}
+
+To overcome this issue, a step-by-step approach, firstly developed in VH($\rightarrow b\bar{b}$) analysis \cite{Vhbb}, is used:
 \begin{itemize}
     \item The first correction called "$\mu$-in-jet" adds soft muon in the jet to address the semi-leptonic decay of \bq-hadrons inside \bq-jet.
     \item The second correction called "\pT-Reco" corrects \bq-jets energy for the neutrino presence in the semi-leptonic decay and out-of-cone radiation effect by introducing a global correction factor to correct the jet transverse momenta.
@@ -185,15 +194,7 @@ Figure \ref{fig:Jet:Cal:BCal:bJet} illustrates these statements through the sche
     \label{fig:Jet:Cal:BCal:Chain}
     \end{tcolorbox}
 \end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.4\textwidth]{Ch4/Img/b-jet.png}
-    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{Typical schema of a \bq-jet.}
-    \label{fig:Jet:Cal:BCal:bJet}
-    \end{tcolorbox}
-    
-\end{figure}
+
 
 \subsection{$\mu$-in-jet correction}
 \label{Jet:Cal:BCal:MuInJet}
@@ -234,6 +235,7 @@ Figure \ref{fig:Jet:Cal:BCal:pTReco} shows the correction factor distribution fo
    \end{tcolorbox}
    
 \end{figure}
+\\
 Figure \ref{fig:Jet:Cal:BCal:pTReco} shows that :
 \begin{itemize}
     \item EMTopo hadronic correction factor is $\sim$ 10\% higher than the one for PFlow at low jet \pT. This is explained by the fact that PFlow combines tracking, soft activity and calorimetric information to reconstruct the jet, so it includes low \pT (\pT $>$ 0.5 GeV) tracks that do not reach the calorimeter, which improves the jet resolution at low \pT, as mentioned in Section \ref{Jet:JR}. 
@@ -246,29 +248,26 @@ Figure \ref{fig:Jet:Cal:BCal:pTReco} shows that :
 Figure \ref{fig:Jet:Cal:BCal:Result:E}, shows the maximum possible gain in $b$-jet energy resolution in $t\bar{t}$ sample (used to compute the \pT-Reco correction). The energy resolution is improved by 40\% (20\%) for high (low) energy for semi-leptonic jet, and about 20\% (5\%) for high (low) energy for hadronic jet. Similar improvement is observed for both jet types (EMTopo and PFlow).
 \begin{figure}[htbp]
    \centering
-   \subfloat[topological cluster jets][topological cluster jets]{\includegraphics[width=.48\textwidth]{Ch4/Img/E_AntiKt4EMTopoJets.png}}\quad
-   \subfloat[particle flow jets][particle flow jets]{\includegraphics[width=.48\textwidth]{Ch4/Img/E_AntiKt4EMPFlowJets.png}}
+   \subfloat[topological cluster jets][topological cluster jets]{\includegraphics[width=.45\textwidth]{Ch4/Img/E_AntiKt4EMTopoJets.png}}\quad
+   \subfloat[particle flow jets][particle flow jets]{\includegraphics[width=.45\textwidth]{Ch4/Img/E_AntiKt4EMPFlowJets.png}}
    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{Relative energy resolution improvement after \bq-jet energy calibration in bin of truth energy for $t\bar{t}$ using (a) topological cluster jets (b) particle flow jets.}
     \label{fig:Jet:Cal:BCal:Result:E}
    \end{tcolorbox}
-
 \end{figure}
-
-\subsubsection{Improvement on $H\rightarrow\bar{b}b$}
-The \HHyybb channel benefits from the $H\rightarrow\gamma\gamma$ part which has a very narrow peak for \myy helping in rejection of a huge amount of the continuum background by defining a narrow window of $m_{\gamma\gamma}$ spectrum to select the Higgs boson signal. The $H\rightarrow\bar{b}b$ is suffering from the $b$-jet miscalibration and has large \mbb resolution compared to $m_{\gamma\gamma}$. Any gain on \mbb should be beneficial for background rejection.\\
-The gain on \mbb resolution from the decoupled method is quantified on \HHyybb. The gain in $b$-jet energy resolution reported before is translated into $\sim$22\% improvement in the \mbb invariant mass resolution, as Figure \ref{fig:Jet:Cal:BCal:Result:mbb} shows. In addition, the \mbb peak position get closer to the Higgs boson mass. Similar improvements are obtained in both topological and particle flow jets. \\
 \begin{figure}[htbp]
    \centering
-   \subfloat[topological cluster jets][topological cluster jets]{\includegraphics[width=.48\textwidth]{Ch4/Img/mbb_AntiKt4EMTopoJets.png}}\quad
-   \subfloat[particle flow jets][particle flow jets]{\includegraphics[width=.48\textwidth]{Ch4/Img/mbb_AntiKt4EMPFlowJets.png}}
+   \subfloat[topological cluster jets][topological cluster jets]{\includegraphics[width=.45\textwidth]{Ch4/Img/mbb_AntiKt4EMTopoJets.png}}\quad
+   \subfloat[particle flow jets][particle flow jets]{\includegraphics[width=.45\textwidth]{Ch4/Img/mbb_AntiKt4EMPFlowJets.png}}
    \begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
    \caption{Distribution of \mbb before calibration (blue) and after calibration (red) in $HH\rightarrow bb\gamma\gamma$ for (a) topological cluster jets (b) particle flow jets.}
    \label{fig:Jet:Cal:BCal:Result:mbb}
    \end{tcolorbox}
 \end{figure}
-\\
 
+\subsubsection{Improvement on $H\rightarrow\bar{b}b$}
+The \HHyybb channel benefits from the $H\rightarrow\gamma\gamma$ part which has a very narrow peak for \myy helping in rejection of a huge amount of the continuum background by defining a narrow window of $m_{\gamma\gamma}$ spectrum to select the Higgs boson signal. The $H\rightarrow\bar{b}b$ is suffering from the $b$-jet miscalibration and has large \mbb resolution compared to $m_{\gamma\gamma}$. Any gain on \mbb should be beneficial for background rejection.\\
+The gain on \mbb resolution from the decoupled method is quantified on \HHyybb. The gain in $b$-jet energy resolution reported before is translated into $\sim$22\% improvement in the \mbb invariant mass resolution, as Figure \ref{fig:Jet:Cal:BCal:Result:mbb} shows. In addition, the \mbb peak position get closer to the Higgs boson mass. Similar improvements are obtained in both topological and particle flow jets.\\
 The two steps $\mu$-in-jet and \pT-Reco are combined in a decoupled method denoted \bq-jet energy calibration under a simple \texttt{BJetCalibration} tool. The tool is documented and public to be used by analysis with \bq-jet in their final state. It has been adopted as the standard \bq-jet calibration across all di-Higgs boson channels including $b$-jets (\HHyybb, $HH\rightarrow b\bar{b}b\bar{b}$, $HH\rightarrow b\bar{b}\tau\tau$,  $HH\rightarrow b\bar{b}ll+MET$ and $HH\rightarrow b\bar{b}VV$).
 
 \section{Conclusion}
