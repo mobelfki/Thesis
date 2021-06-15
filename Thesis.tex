@@ -1,7 +1,10 @@
 \documentclass[12pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{ amssymb }
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{lineno}
 \usepackage{hyperref}
 \usepackage[hyperref,backend=biber,backref,backrefstyle=none,style=numeric, sorting=none]{biblatex}
 \usepackage{array}
@@ -13,6 +16,8 @@
 \usepackage{ragged2e}
 \usepackage{xspace}
 \usepackage{comment}
+\usepackage{textcomp}
+\usepackage{gensymb}
 \usepackage[most]{tcolorbox}
 \geometry{
 left=1.5cm,
@@ -20,13 +25,24 @@ right=1.5cm,
 top=2cm,
 bottom=2cm
 }
-\DeclareGraphicsExtensions{.pdf,.png,.jpeg}
 \usepackage[english]{babel}
 \usepackage{multirow}
 \usepackage[pagestyles]{titlesec}
 \usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{csquotes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpeg}
 
-\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\hypersetup
+{
+    pdfauthor={Mohamed BELFKIR},
+    pdfsubject={Constrain the Higgs boson self-coupling using the full Run-2 dataset collected by the ATLAS detector at LHC and search for new physics beyond the Standard Model},
+    pdftitle={Search for Higgs pair production at LHC collider (CERN): The first measurement for Higgs potential and search for new physics},
+    pdfkeywords={Higgs, ATLAS, LHC, di-Higgs, double Higgs production, HH, self-coupling, Higgs self-coupling, bbyy},
+    pdfcreator={Mohamed BELFKIR}
+    pdfproducer={Mohamed BELFKIR}
+}
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
 \newpagestyle{mystyle}
 {\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 \pagestyle{mystyle}
@@ -38,12 +54,12 @@ bottom=2cm
 \newcommand{\kt}{$\kappa_{t}$\xspace}
 \newcommand{\kl}{$\kappa_{\lambda}$\xspace}
 \newcommand{\ifb}{fb$^{-1}$\xspace}
-\newcommand{\HHyybb}{$HH\rightarrow\gamma\gamma\bar{b}b$\xspace}
+\newcommand{\HHyybb}{$HH\to b\bar{b}\gamma\gamma$\xspace}
 \newcommand{\myy}{$m_{\gamma\gamma}$\xspace}
-\newcommand{\mbb}{$m_{\bar{b}b}$\xspace}
-\newcommand{\bbbb}{$\bar{b}b\bar{b}b$\xspace}
-\newcommand{\bbtt}{$\tau^+\tau^-\bar{b}b$\xspace}
-\newcommand{\bbyy}{$\gamma\gamma\bar{b}b$\xspace}
+\newcommand{\mbb}{$m_{b\bar{b}}$\xspace}
+\newcommand{\bbbb}{$b\bar{b}b\bar{b}$\xspace}
+\newcommand{\bbtt}{$b\bar{b}\tau^+\tau^-$\xspace}
+\newcommand{\bbyy}{$b\bar{b}\gamma\gamma$\xspace}
 
 \newcommand{\bib}[6]{
     \bibitem{#1} #2, {\em #3}, \href{#4}{#5}, #6
@@ -90,8 +106,6 @@ bottom=2cm
 \newcommand*{\deltaZOsinTheta}{\ensuremath{|\Delta z_{0}\sin\theta|}\xspace}
 \newcommand*{\deltaZO}{\ensuremath{\Delta z_{0}}\xspace}
 
-\usepackage{titlesec}
-
 \setcounter{secnumdepth}{4}
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -101,7 +115,7 @@ bottom=2cm
 \title{Search for Higgs pair production at LHC Collider (CERN): The first measurement for Higgs potential and search for new physics}
 \author{BELFKIR Mohamed}
 \date{December 2020}
-\usepackage{csquotes}
+
 \addbibresource{Ch1/Chapter1.bib}
 \addbibresource{Ch2/Chapter2.bib}
 \addbibresource{Ch3/Chapter3.bib}
@@ -109,7 +123,9 @@ bottom=2cm
 \addbibresource{Ch5/Chapter5.bib}
 \addbibresource{Ch6/Chapter6.bib}
 \DeclareUnicodeCharacter{2212}{-}
-\usepackage{lineno}
+
+
+
 \linenumbers
 
 \begin{document}
@@ -124,21 +140,32 @@ bottom=2cm
 \input{Intro/Intro}
 \input{Intro/Contribution}
 \input{Ch1/Chapter1}
+\newpage
 \input{Ch2/Chapter2}
+\newpage
 \input{Ch3/Chapter3}
+\newpage
 \input{Ch4/Chapter4}
+\newpage\clearpage
 \input{Ch5/Chapter5}
+\newpage
 \input{Ch6/Chapter6}
 \input{Con/Con}
+\newpage
+\newpage
 \printbibliography
 \appendix
 \input{Adx/Adx1/Appendix1}
+\newpage
 \input{Adx/Adx2/Appendix2}
+\newpage
 \input{Adx/Adx3/Appendix3}
+\newpage
 \input{Adx/Adx4/Appendix4}
+\newpage
 \listoffigures
 \newpage
 \listoftables
 \newpage
-\input{FirstPages/Acknowledgements}
+%\input{FirstPages/Acknowledgements}
 \end{document}

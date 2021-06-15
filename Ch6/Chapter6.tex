@@ -1,48 +1,49 @@
 \newpage
-\chapter{Prospects of Higgs pair production at Run-3 and HL-LHC}
+\chapter{Prospects of Higgs boson pair production at Run-3 and HL-LHC}
 \label{HL-LHC}
 
-With the full Run-2 data, the 95\% CL interval for \kl modifier is -1.5 $<$ \kl $<$ 6.7 using the \HHyybb decay channel. At the end of Run-3, an expected addition of integrated luminosity  300 \ifb is foreseen. At the end of HL-LHC, the integrated luminosity should reach 3000 \ifb at a centre-of-mass energy of 14 TeV. As the measurement is statistically limited, the Higgs pair production search will benefit from the integrated luminosity increase and is predicted to achieve a precision of 50\% on \kl at 68\% CL at the end of HL-LHC \cite{Europ}. New prospects for the measurement of the trilinear Higgs self-coupling at Run-3 and HL-LHC will be presented in this chapter. 
+With the full Run-2 data, the 95\% CL interval for the \kl modifier is -1.5 $<$ \kl $<$ 6.7 using the \HHyybb decay channel. At the end of Run-3, the integrated luminosity is expected to reach 300 \ifb. At the end of HL-LHC, the integrated luminosity should reach 3000 \ifb at a centre-of-mass energy of 14 TeV. As the measurement is statistically limited and will remain so even at HL-LHC, the Higgs boson pair production search will benefit from the integrated luminosity increase and results presented at the last European strategy predict to achieve a precision of 50\% on \kl at 68\% CL at the end of HL-LHC \cite{Europ} by combining both ATLAS and CMS extrapolations. New prospects for the measurement of the trilinear Higgs boson self-coupling at Run-3 and HL-LHC will be presented in this chapter. 
 
-\section{Potiential \HHyybb improvements from analysis tools}
+\section{Potential \HHyybb improvements from analysis tools}
 \label{HL-LHC:Run-3}
 
-Several improvements to the \HHyybb analysis strategy are possible in the next round. Significant enhancement would be achieved if we consider the different items presented in this thesis (not applied for Run-2 publication):
+Several improvements to the \HHyybb analysis strategy are possible in the next round. Significant enhancement would be achieved if we consider the different items presented in this thesis (not applied in the Run-2 publication):
 \begin{itemize}
     \item Even with fewer variables, the DNN categorization described in Section \ref{HHyybb:ObjEvt:DNN} shows promising results. Considering this DNN at next round with the addition of the topness, HT and missing transverse energy variables, around 10\% improvement in the sensitivity of the analysis should be achievable. 
-    \item Additional improvement to the \mbb resolution can be achieved with the usage of the Kinematic Fit (KF), described in Appendix \ref{Adx4}. The KF brings an additional 10\% improvement to the \mbb resolution which can be translated to 2-5\% improvement on the analysis significance. It was shown in Figures \ref{fig:Adx4:HH:0Jet} and \ref{fig:Adx4:HH:1Jet} that the fit is less constrained for high \kl values, with the current allowed \kl interval, few additional \% of improvement are possible considering low \kl values.
+    \item Additional improvement to the \mbb resolution can be achieved with the usage of the Kinematic Fit (KF), described in Appendix \ref{Adx4}. The KF brings an additional 10\% improvement to the \mbb resolution which can be translated to 2-5\% improvement on the analysis significance. 
+    %It was shown in Figures \ref{fig:Adx4:HH:0Jet} and \ref{fig:Adx4:HH:1Jet} that the fit is less constrained for high \kl values, with the current allowed \kl interval, few additional \% of improvement are possible considering low \kl values.
 \end{itemize}
 
 \subsection{Photon identification with CNN in \HHyybb}
 \label{HL-LHC:Run-3:CNN}
 
-Improving photon identification (PID) can have important impact for \HHyybb. The algorithm introduced in Section \ref{gamma:CNN} provides an improved PID efficiency. In \HHyybb channel, this gain leads to an enhancement of the signal acceptance. The developed CNN is applied to photons from the \HHyybb simulated events.  Figure \ref{fig:HL-LHC:Run-3:CNN:E} shows the efficiencies of the Tight WP for both cut-based and CNN algorithms as a function of photon energy and pseudorapidity. The CNN over-performs the cut-based and shows an efficiency close to 100\% over the full energy spectrum.
+Improving photon identification (PID) can have important impact for \HHyybb. The CNN-based algorithm introduced in Section \ref{gamma:CNN} provides an improved PID efficiency. In the \HHyybb channel, this gain leads to an enhancement of the signal acceptance. The developed CNN is applied to photons from the \HHyybb simulated events.  Figure \ref{fig:HL-LHC:Run-3:CNN:E} shows the efficiencies of the Tight WP for both the cut-based and the CNN algorithms as a function of photon energy and pseudorapidity. The CNN over-performs the cut-based and shows an efficiency close to 100\% over the full energy spectrum.
 \begin{figure}[htbp]
     \centering
-     \subfloat[as function of E][as function of E]{\includegraphics[width=0.45\textwidth]{Ch6/Img/Eff_MixtureNN_All_Inclusive_Tight_E.pdf}}
-    \subfloat[as function of $|\eta|$][as function of $|\eta|$]{\includegraphics[width=0.45\textwidth]{Ch6/Img/Eff_MixtureNN_All_Inclusive_Tight_ETA.pdf}}
+     \subfloat[as function of E][as function of E]{\includegraphics[width=0.45\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_E_Sig.pdf}}
+    \subfloat[as function of $|\eta|$][as function of $|\eta|$]{\includegraphics[width=0.45\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_ETA_Sig.pdf}}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{Photon identification efficiency of cut-based Run-2 ID algorithm (blue) and the CNN ID algorithm (red) as function of photon energy and $|\eta|$ from \HHyybb simulated events. Tight isolation is applied as baseline.}
     \label{fig:HL-LHC:Run-3:CNN:E}
     \end{tcolorbox}
 \end{figure}
 
-The increase in the PID efficiency for each photon can be translated to $\sim$15\% improvement in the signal acceptance as shown in the \myy distribution in Figure \ref{fig:HL-LHC:Run-3:CNN:M}. This also true for single Higgs backgrounds.\\
+The increase in the PID efficiency for each photon can be translated to $\sim$ 15\% improvement in the signal acceptance as shown in the \myy distribution in Figure \ref{fig:HL-LHC:Run-3:CNN:M}. This is also true for single Higgs boson backgrounds.\\
  
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_MixtureNN_All_Inclusive_Tight_M.pdf}
+    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_M_Sig.pdf}
      \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{\myy invariant mass distribution for two selected photons with cut-based algorithm (blue) and CNN algorithm (red).}
     \label{fig:HL-LHC:Run-3:CNN:M}
     \end{tcolorbox}
 \end{figure}
 
-For the continuum $\gamma\gamma$+jets background, the PID efficiency is shown in Figure \ref{fig:HL-LHC:Run-3:CNN:Cont:E}. The same improvement can be achieved for the continuum background. Figure \ref{fig:HL-LHC:Run-3:CNN:Cont:M} shows the \myy spectrum with an improvement of 15\% in the statistics. With the CNN algorithm, the continuum statistics can be enhanced by 15\% which will slightly improve the background modelling, thus reduce the spurious signal systematics and improve the analysis significance with approximately 7.3\%. The $b$-jet requirement in \HHyybb leads to high $\gamma\gamma$ purity as described in Section \ref{HHyybb:Modelling:Bkg}. For H$\to\gamma\gamma$ analysis, an improvement in the $\gamma\gamma$ purity is expected with the CNN algorithm.
+For the continuum $\gamma\gamma$+jets background, the PID efficiency is shown in Figure \ref{fig:HL-LHC:Run-3:CNN:Cont:E}. The same improvement can be achieved for the continuum background. Figure \ref{fig:HL-LHC:Run-3:CNN:Cont:M} shows the \myy spectrum with an improvement of 15\% in the statistics. With the CNN algorithm, the continuum statistics can be enhanced by 15\% which will slightly improve the background modelling, thus reduce the spurious signal systematics and improve the analysis significance with approximately 7.3\%. The $b$-jet requirement in \HHyybb leads to a high $\gamma\gamma$ purity as described in Section \ref{HHyybb:Modelling:Bkg}. For the H$\to\gamma\gamma$ analysis, an improvement in the $\gamma\gamma$ purity is expected with the CNN algorithm.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_E.pdf}
+    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_E_Bkg.pdf}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{Photon identification efficiency of cut-based Run-2 ID algorithm (blue) and the CNN ID algorithm (red) as function of photon energy from $\gamma\gamma$+jets simulated events. Tight isolation is applied as baseline.}
     \label{fig:HL-LHC:Run-3:CNN:Cont:E}
@@ -51,30 +52,31 @@ For the continuum $\gamma\gamma$+jets background, the PID efficiency is shown in
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_M.pdf}
+    \includegraphics[width=0.5\textwidth]{Ch6/Img/Eff_Tight_All_Inclusive_Tight_M_Bkg.pdf}
      \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{\myy invariant mass distribution of the continuum $\gamma\gamma$+jets for two selected photons with cut-based algorithm (blue) and CNN algorithm (red).}
     \label{fig:HL-LHC:Run-3:CNN:Cont:M}
     \end{tcolorbox}
 \end{figure}
 
-\section{Expected results from Run-2+Run-3 combination}
+\section{Expected results at the end of Run-3}
 \label{Run-3}
 
-Some detector upgrades are planned for the Run-3, but most of them do not have a significant impact on the \HHyybb election efficiency.  As mentioned before, the expected integrated luminosity at the end of Run-3 is around 300 \ifb. Combining the full Run-2 and Run-3 leads to a total integrated luminosity of 439 \ifb. Given the expected similarity in the LHC beams and data taking conditions, a simple extrapolation from the Run-2 to Run-2+Run-3 is reasonable. The extrapolation is set by scaling the full Run-2 workspace to 439/139 $\sim$ 3.2. To allow for an easy extrapolation, impacts from reconstruction algorithms are neglected. Given the assumption that \HHyybb analysis is statistically dominated, no systematic uncertainties are considered. \\
+Some detector upgrades are planned for the Run-3, but most of them do not have a significant impact on the \HHyybb election efficiency.  As mentioned before, the expected integrated luminosity collected at Run-3 is around 300 \ifb. Given the expected similarity in the LHC beams and data taking conditions, a simple extrapolation from the Run-2 to Run-3 is reasonable. The extrapolation is set by scaling the full Run-2 workspace to 300/139 $\sim$ 2.16. To allow for an easy extrapolation, impacts from reconstruction algorithms are neglected. Given the assumption that \HHyybb analysis is statistically dominated, no systematic uncertainties are considered. \\
 
-The expected upper 95\% CL limits on the Higgs pair production cross-section as a function of Higgs self-coupling \kl is shown in Figure \ref{fig:Run-3:Limit} for both full Run-2 and extrapolation to Run-2+Run-3. The expected limit for SM is found to be 2.6 times SM expectations which is twice lower. The expected \kl interval at 95\% CL from the limit scan is [-0.7, 6].
+The expected upper 95\% CL limits on the Higgs boson pair production cross-section as a function of the Higgs boson self-coupling \kl is shown in Figure \ref{fig:Run-3:Limit} for both full Run-2 and extrapolation to Run-3. The expected limit for the SM at \kl = 1 is found to be 3.8 times SM expectations which is 1.4 lower. The expected \kl interval at 95\% CL from the limit scan is [-1.1, 6.5].
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Ch6/Img/kappa_lambda_Run_2_Run_3_stat.pdf}
+    \includegraphics[width=0.5\textwidth]{Ch6/Img/kappa_lambda_Run_3_stat.pdf}
      \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
     \caption{The 95\% CL expected upper limits on the HH production cross-section as function of \kl. The $\pm$1 and $\pm$2 bands are shown for the Run-2 results. The expected allowed \kl intervals are also reported.}
     \label{fig:Run-3:Limit}
     \end{tcolorbox}
 \end{figure}
-\\
-An Asimov dataset with the background-only hypothesis was created, and maximum likelihood fits of this dataset were performed with different \kl hypotheses. The negative logarithm of the ratio of the maximum likelihood for \kl to the fit with \kl= 1 is shown in Figure \ref{fig:Run-3:LH} for both Run-2 and Run-2+Run-3. The 1$\sigma$ and the 2$\sigma$ confidence interval (CI) constraints on \kl are shown in Table \ref{tab:Run-3:kl}. It can be seen in Figure \ref{fig:Run-3:LH} that there are typically two minima. The first minimum is located at \kl= 1 as the signal hypothesis used to create the Asimov dataset. The second minimum is observed at a \kl value that corresponds to a similar cross-section with respect to the \kl point at the first minimum. The measured signal strength is 1.0 $\pm$ 1.25 considering only statistical uncertainties. The expected median significance of the SM HH signal relative to the background-only hypothesis is 0.87$\sigma$. 
+
+
+An Asimov dataset with the background-only hypothesis was created, and maximum likelihood fits of this dataset were performed with different \kl hypotheses. The negative logarithm of the ratio of the maximum likelihood for \kl to the fit with \kl= 1 is shown in Figure \ref{fig:Run-3:LH} for both Run-2 and Run-2+Run-3. The 1$\sigma$ and the 2$\sigma$ confidence interval (CI) constraints on \kl are shown in Table \ref{tab:Run-3:kl}. It can be seen in Figure \ref{fig:Run-3:LH} that there are typically two minima. The first minimum is located at \kl= 1 as the signal hypothesis used to create the Asimov dataset. The second minimum is observed at a \kl value that corresponds to a identical cross-section with respect to the \kl point at the first minimum. The measured signal strength is 1.0 $\pm$ 1.52 considering only statistical uncertainties. The expected median significance of the SM HH signal relative to the background-only hypothesis is 0.71$\sigma$. 
 
 \begin{table}[htbp]
     \centering
@@ -83,7 +85,7 @@ An Asimov dataset with the background-only hypothesis was created, and maximum l
         Scenario & 1$\sigma$ CI & 2$\sigma$ CI \\
     \hline    
         Run-2 Stat. Only & [-1.3, 6.4]  & [-2.9, 8] \\
-        Run-2+Run-3 Stat. Only & [-0.4, 5.3] & [-1.5, 6.6] \\
+        Run-2+Run-3 Stat. Only & [-0.7, 5.6] & [-1.9, 7.0] \\
     \hline\hline 
     \end{tabular}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
@@ -96,7 +98,7 @@ An Asimov dataset with the background-only hypothesis was created, and maximum l
     \centering
     \includegraphics[width=0.5\textwidth]{Ch6/Img/likelihood_subplot_Run3.pdf}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
-    \caption{Negative natural logarithm of the ratio of the maximum likelihood for \kl to the maximum likelihood for \kl= 1. The dashed lines at 0.5 and 2.0 indicate the values corresponding to a 1$\sigma$ and 2$\sigma$ confidence intervals, respectively (assuming an asymptotic $\chi^2$ distribution of the test statistic).}
+    \caption{Negative natural logarithm of the ratio of the maximum likelihood to the maximum likelihood for \kl= 1. The dashed lines at 0.5 and 2.0 indicate the values corresponding to a 1$\sigma$ and 2$\sigma$ confidence intervals, respectively (assuming an asymptotic $\chi^2$ distribution of the test statistic).}
     \label{fig:Run-3:LH}
     \end{tcolorbox}
 \end{figure}
@@ -104,10 +106,10 @@ An Asimov dataset with the background-only hypothesis was created, and maximum l
 \section{Prospects at HL-LHC}
 \label{HL-LHC:HL-LHC}
 
-As described in Section \ref{chap2:Upgrad}, the HL-LHC is a planned upgrade of the LHC accelerator which plans to deliver an integrated luminosity of 3000 \ifb. It should be operated at $\sqrt{s} = $ 14 TeV and will start after the long shut-down 3 (LS3) finishing in 2027. An upgrade of the ATLAS detector and trigger system are planned are assumed to compensate the higher pileup rate which will be around 200 collisions per bunch crossing. Due to the higher pileup, photon and jet energy resolutions are expected to slightly degrade, but this might be compensated by better reconstruction techniques. With the ITk, the $b$-tagging efficiency will be improved by 8\% per jet, while remaining the same rejection efficiency. A prospects study of the Higgs pair production at HL-LHC was performed in the context of the European strategy in 2019. In this study, three HH decay channels are considered : \bbbb, \bbtt and \bbyy. For \bbbb and \bbtt the 36 \ifb analysis are kept unchanged and extrapolated to 3000 \ifb at 14 TeV, while a completely new truth simulation-based analysis is performed for \bbyy. In the following the European strategy results for \HHyybb, its combination with \bbbb and \bbtt and new extrapolation of the full Run-2 \HHyybb analysis to HL-LHC integrated luminosity are presented.
+As described in Section \ref{chap2:Upgrad}, the HL-LHC is a planned upgrade of the LHC accelerator to deliver an integrated luminosity of 3000 \ifb in ten years. It should be operated at $\sqrt{s} = $ 14 TeV and will start after the long shut-down 3 (LS3) finishing in 2027. An upgrade of the ATLAS detector and trigger system are planned are assumed to compensate the higher pileup rate which will be around 200 collisions per bunch crossing. Due to the higher pileup, photon and jet energy resolutions are expected to slightly degrade, but this should be compensated by better reconstruction techniques. With the ITk, the $b$-tagging efficiency will be improved by 8\% per jet, while remaining the same rejection efficiency. A prospects study of Higgs boson pair production at HL-LHC was performed in the context of the European strategy in 2019. In this study, three HH decay channels were considered : \bbbb, \bbtt and \bbyy. For \bbbb and \bbtt the 36 \ifb analysis were kept unchanged and extrapolated to 3000 \ifb at 14 TeV, while a completely new truth simulation-based analysis was performed for \bbyy. In the following the European strategy results for \HHyybb, its combination with \bbbb and \bbtt and new extrapolation of the full Run-2 \HHyybb analysis to HL-LHC integrated luminosity are presented.
 
 \subsection{Estimation for European strategy 2019 of \bbyy}
-As mentioned above, the prospect of \HHyybb at HL-LHC are performed through the use of truth-level Monte Carlo samples generated at $\sqrt{s} = $ 14 TeV. To emulate the response of the upgraded ATLAS detector at the HL-LHC, the final state particles at truth level are smeared assuming the pile-up density of 200 at HL-LHC. In contrary to 36 \ifb analysis, the projection improves the sensitivity by including a BDT categorization. The BDT is trained to separate the SM HH signal from the backgrounds. The BDT response for signal and background is shown in Figure \ref{fig:HL-LHC:36ifb:BDT}. 
+As mentioned above, the prospect of \HHyybb at HL-LHC was performed through the use of truth-level Monte Carlo samples generated at $\sqrt{s} = $ 14 TeV. To emulate the response of the upgraded ATLAS detector at the HL-LHC, the final state particles at truth level are smeared assuming a pile-up density of 200 at HL-LHC. In contrary to the 36 \ifb analysis, the projection improves the sensitivity by including a BDT categorization. The BDT is trained to separate the SM HH signal from the backgrounds. The BDT response for signal and background is shown in Figure \ref{fig:HL-LHC:36ifb:BDT}. 
 
 \begin{figure}[htbp]
     \centering
@@ -116,7 +118,7 @@ As mentioned above, the prospect of \HHyybb at HL-LHC are performed through the 
     \label{fig:HL-LHC:36ifb:BDT}
 \end{figure}
 
-A BDT cut is set at 0.54 to define a single category that maximizes the statistical-only significance. The BDT selects around 40\% of the SM HH signal, while it rejects almost 99\% of backgrounds. The analysis used the $m_{\gamma\gamma\bar{b}b}$ shape fit in the \myy $\in$ [123, 127] GeV window to extract the results. The sensitivity to \kl is enhanced by defining eight bins in the $m_{\gamma\gamma\bar{b}b}$ distribution. The negative log-likelihood ratio performed on an Asimov data set generated with \kl = 1 is shown in Figure \ref{fig:HL-LHC:36ifb:LH}. Table \ref{tab:HL-LHC:36ifb:kl} summarized constraints on \kl from the likelihood ratio test. It shows that even with 3000 \ifb the analysis still statistically dominated.
+A BDT cut is set at 0.54 to define a single category that maximizes the computed significance accounting for statistical uncertainties only. The BDT selects around 40\% of the SM HH signal, while it rejects almost 99\% of backgrounds. The analysis uses the $m_{\gamma\gamma\bar{b}b}$ shape fit in the \myy $\in$ [123, 127] GeV window to extract the results. The sensitivity to \kl is enhanced by defining eight bins in the $m_{\gamma\gamma\bar{b}b}$ distribution. The negative log-likelihood ratio performed on an Asimov dataset generated with \kl = 1 is shown in Figure \ref{fig:HL-LHC:36ifb:LH}. Table \ref{tab:HL-LHC:36ifb:kl} summarizes constraints on \kl from the likelihood ratio test. It shows that even with 3000 \ifb the analysis is still statistically dominated.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch6/Img/figures_bbyy_NoSyst_likelihoodCurve_-3to10.eps}
@@ -127,7 +129,7 @@ A BDT cut is set at 0.54 to define a single category that maximizes the statisti
 \begin{table}[htbp]
     \centering
     \begin{tabular}{lcc}
-\hline \hline Scenario & $1 \sigma \mathrm{CI}$ & $2 \sigma \mathrm{CI}$ \\
+\hline \hline Scenario & $1 \sigma \ \mathrm{CI}$ & $2 \sigma \ \mathrm{CI}$ \\
 \hline No systematic uncertainties & $-0.1<\kappa_{\lambda}<2.4$ & $-1.1<\kappa_{\lambda}<8.1$ \\
 Systematic uncertainties included & $-0.2<\kappa_{\lambda}<2.5$ & $-1.4<\kappa_{\lambda}<8.2$ \\
 \hline \hline
@@ -138,8 +140,8 @@ Systematic uncertainties included & $-0.2<\kappa_{\lambda}<2.5$ & $-1.4<\kappa_{
 
 \subsection{Combination with \bbbb and \bbtt channels}
 
-An extrapolation of the 36 \ifb analysis of \bbbb and \bbtt channels to HL-LHC was also performed (More details in Ref. \cite{Europ}). Their statistical combination is performed by constructing a combined likelihood function that takes into account Asimov, signal and background models and correlated systematic uncertainties from all channels as well as orthogonality between channels. Figure \ref{fig:HL-LHC:Comb:LH} shows the combined likelihood scan. The combined significance for SM HH is evaluated to be 3.5$\sigma$ without systematic uncertainties and 3$\sigma$ including systematic and its mainly driven by \bbtt and \bbyy channels as shown in Figure \ref{fig:HL-LHC:Comb:sig}. The significance depends on the expected signal yield, and therefore it is lower for those \kl values for which the cross-section and the acceptance times efficiency is low. The measured combined signal strength is 1.0 $\pm$ 0.4 including systematic and 1.0 $\pm$ 0.3 without systematic. Tables \ref{tab:HL-LHC:Comb:sig} and \ref{tab:tab:HL-LHC:Comb:mu} show the significance and the signal strength measured in the individual HH channels, respectively. \\
-Table \ref{tab:HL-LHC:Comb:CI} resumes the constraints on \kl from the likelihood test performed on the Asimov dataset created from the backgrounds and HH signal with \kl= 1.  
+An extrapolation of the 36 \ifb analysis of \bbbb and \bbtt channels to HL-LHC was also performed (More details in Ref. \cite{Europ}). Their statistical combination is performed by constructing a combined likelihood function that takes into account signal and background models and correlated systematic uncertainties from all channels. Figure \ref{fig:HL-LHC:Comb:LH} shows the combined likelihood scan on an Asimov dataset. The combined significance for SM HH is evaluated to be 3.5$\sigma$ without systematic uncertainties and 3$\sigma$ including systematic and its mainly driven by \bbtt and \bbyy channels as shown in Figure \ref{fig:HL-LHC:Comb:sig}. The significance depends on the expected signal yield, and therefore it is lower for those \kl values for which the cross-section and the acceptance times efficiency is low. The measured combined signal strength is 1.0 $\pm$ 0.4 including systematics and 1.0 $\pm$ 0.3 without systematics. Tables \ref{tab:HL-LHC:Comb:sig} and \ref{tab:tab:HL-LHC:Comb:mu} show the significance and the signal strength measured in the individual HH channels, respectively. \\
+Table \ref{tab:HL-LHC:Comb:CI} summarizes the constraints on \kl from the likelihood test performed on the Asimov dataset created from the backgrounds and HH signal with \kl= 1.  
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch6/Img/figures_combination_bbbb_bbtt_bbyy_lHHH0100_NoSyst_overlay_Preliminary.pdf}
@@ -150,7 +152,7 @@ Table \ref{tab:HL-LHC:Comb:CI} resumes the constraints on \kl from the likelihoo
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Ch6/Img/figures_combination_bbbb_bbtt_bbyy_NoSyst_Significance_Preliminary.pdf}
-    \caption{Expected significance of observing Higgs-boson-pair production as a function of \kl without any systematic uncertainties.  The two horizontal dashed lines show the 3$\sigma$ and 5$\sigma$ thresholds.} 
+    \caption{Expected significance of observing Higgs boson pair production as a function of \kl without any systematic uncertainties.  The two horizontal dashed lines show the 3$\sigma$ and 5$\sigma$ thresholds.} 
     \label{fig:HL-LHC:Comb:sig}
 \end{figure}
 
@@ -179,7 +181,7 @@ Channel & Measured $\mu$ (Statistical-only) & Measured $\mu$ (Statistical + Syst
 $H H \rightarrow b \bar{b} b \bar{b}$ & $1.0 \pm 0.6$ & $1.0 \pm 1.6$ \\
 $H H \rightarrow b \bar{b} \tau^{+} \tau^{-}$ & $1.0 \pm 0.4$ & $1.0 \pm 0.5$ \\
 $H H \rightarrow b \bar{b} \gamma \gamma$ & $1.0 \pm 0.6$ & $1.0 \pm 0.6$ \\
-\hline Combined & $1.00 \pm 0.31$ & $1.0 \pm 0.4$ \\
+\hline Combined & $1.0 \pm 0.3$ & $1.0 \pm 0.4$ \\
 \hline \hline
 \end{tabular}
     \caption{Signal strength measured in the individual channels and their combination using an Asimov dataset with SM HH signal injected.}
@@ -200,8 +202,8 @@ Systematic uncertainties & $0.25 \leq \kappa_{\lambda} \leq 1.9$ & $-0.4 \leq \k
 
 
 \section{New extrapolation of full Run-2 \HHyybb analysis}
-
-To evaluate the performance of the new Run-2 \HHyybb analysis at HL-LHC, an extrapolation to 3000 \ifb is performed. The assumption that the planned upgrades to the ATLAS detector and the improvements to reconstruction algorithms will mitigate effects of higher pile-up, resulting in the same Run-2 detector performances, is assumed. For simplicity, the 139 \ifb analysis strategy is kept unchanged and a simple integrated luminosity scaling is performed. No systematic uncertainty is considered since the European strategy study shows that \bbyy analysis still statistically dominated even at HL-LHC. The effect of energy increase on the cross-section is considered. Scale factors are applied to account for the increase from 13 TeV to 14 TeV \cite{CERN_yellow}. The values of these scale factors are listed in Table \ref{tab:HL-LHC:XSec}. An average scaling of +18\% is used for the continuum background normalization.
+An increase of the analysis sensitivity is expected from further analysis strategy optimization, while the global developments of the analysis are hard to predict over many years of R\&D. The extrapolation aims at giving a realistic estimation of the expected sensitivity gain using the current state-of-the-art analysis methods.\\
+To evaluate the performance of the new Run-2 \HHyybb analysis  at HL-LHC, an extrapolation to 3000 \ifb is performed. The assumption that the planned upgrades to the ATLAS detector and the improvements to reconstruction algorithms will mitigate effects of higher pile-up, resulting in the same performance as the Run-2 detector, is assumed. For simplicity, the 139 \ifb analysis strategy is kept unchanged and a simple integrated luminosity scaling is performed. No systematic uncertainty is considered since the European strategy study showed that \bbyy analysis still be statistically dominated even at HL-LHC. The effect of the planned energy increase to 14 TeV on the cross-section is considered. Scale factors are applied to account for the increase from 13 TeV to 14 TeV \cite{CERN_yellow}. The values of these scale factors are listed in Table \ref{tab:HL-LHC:XSec}. An average scaling of +18\% is used for the continuum background normalization.
 
 \begin{table}[htbp]
     \centering
@@ -216,7 +218,6 @@ To evaluate the performance of the new Run-2 \HHyybb analysis at HL-LHC, an extr
     \label{tab:HL-LHC:XSec}
 \end{table}
 
-An increase of the analysis sensitivity is expected from further analysis strategy optimization, while the global developments of the analysis are hard to predict over many years of R\&D. The extrapolation aims at giving a realistic estimation of the expected sensitivity gain using the current state-of-the-art analysis methods. \\
 
 An Asimov dataset with the SM signal+background hypothesis was created, and maximum likelihood fits of this dataset were performed with different \kl hypotheses. The negative logarithm of the ratio of the maximum likelihood for \kl to the fit with \kl= 1 is shown in Figure \ref{fig:HL-LHC:LH}. The 1$\sigma$ and the 2$\sigma$ confidence interval (CI) constraints on \kl from the full Run-2 analysis, the European strategy and the extrapolation of the full Run-2 analysis to HL-LHC are shown in Table \ref{tab:HL-LHC:kl}. 
 
@@ -237,7 +238,7 @@ An Asimov dataset with the SM signal+background hypothesis was created, and maxi
     \hline    
         Run-2 Stat. Only & [-1.3, 6.4]  & [-2.9, 8] \\ 
         European Strategy Stat. Only & [-0.1, 2.4] & [-1.1, 8.1] \\
-        Extrapolation to HL-LHC Stat. Only & [0.4, 1.8] & [-0.05, 4.4] \\
+        Extrapolation from to HL-LHC Stat. Only & [0.4, 1.8] & [-0.1, 4.4] \\
     \hline\hline 
     \end{tabular}
     \begin{tcolorbox}[colback=black!5!white, colframe=white!75!black]
@@ -267,7 +268,8 @@ The expected median significance of the SM HH signal relative to the background-
     \label{tab:HL-LHC:Sig}
     \end{tcolorbox}
 \end{table}
-\\
+
+
 The HL-LHC extrapolation of the Run-2 analysis shows similar performance for the SM HH to the European strategy results while it shows a better \kl constraint. This is mainly driven by the BDT strategy. As mentioned before, the European strategy study used a single BDT trained on SM HH and define a single signal region. By construction, this signal region is equivalent to the High mass, High BDT category defined for full Run-2 analysis from which the significance is mostly driven. This explains the similarity in analysis performance. For \kl sensitivity, having a dedicated BDT targeting BSM scenarios trained on \kl = 10 HH signal, mostly improves the full Run-2 sensitivity for \kl variations. This explains the improved \kl constraint. Figure \ref{fig:HL-LHC:Sig} shows the significance as a function of \kl from the extrapolation of full Run-2 analysis and the European strategy results. \\
 
 \begin{figure}[htbp]
@@ -281,4 +283,4 @@ The HL-LHC extrapolation of the Run-2 analysis shows similar performance for the
 
 \section{Conclusion}
 
-A prospect study for the search for non-resonant Higgs-boson-pair production at the HL-LHC has been performed, using the \bbbb, \bbyy and \bbtt channels and their combination. From the European strategy combination, the signal strength is expected to be measured with an accuracy of 30\% and the \kl is constrained at 95\% to [-0.1, 2.7] $\cup$ [5.5, 6.9]. The full Run-2 \HHyybb analysis presented in this thesis is statistically extrapolated to HL-LHC. From 139 \ifb \HHyybb extrapolation, the signal strength is expected to be measured with an accuracy of 44\% and the Higgs self-coupling is constrained at 95\% to [-0.05, 4.4]. Improving the sensitivity of the \HHyybb in the future through the enhancement of \mbb resolution, the analysis strategy and photon identification would be beneficial.  
+A prospect study for the search for non-resonant Higgs boson pair production at the HL-LHC has been performed, using the \bbbb, \bbyy and \bbtt channels and their combination. From the European strategy combination, the signal strength is expected to be measured with an accuracy of 30\% and the \kl is constrained at 95\% to [-0.1, 2.7] $\cup$ [5.5, 6.9]. The full Run-2 \HHyybb analysis presented in this thesis is statistically extrapolated to HL-LHC. From 139 \ifb \HHyybb extrapolation, the signal strength is expected to be measured with an accuracy of 44\% and the Higgs boson self-coupling is constrained at 95\% CL to [-0.1, 4.4] and measured with a precision of order of 60\% at 68\% CI. Improving the sensitivity of the \HHyybb in the future through the enhancement of \mbb resolution, the analysis strategy and photon identification would be beneficial.  

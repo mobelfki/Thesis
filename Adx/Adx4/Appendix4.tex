@@ -45,7 +45,7 @@ Given the fit parameters and constraints defined above, the log-likelihood is de
 
 \begin{equation}
     \centering
-    -2log(\mathcal{L}) = \sum_{i} (\frac{\Omega_i^*-\Omega_i}{\sigma_{\Omega_i}})^2 - 2log(L(p_T)) + (\frac{ \sum p_x^*-0}{\sigma_{\sigma_{b\bar{b}\gamma\gamma}}})^2 + (\frac{ \sum p_y^*-0}{\sigma_{\sigma_{b\bar{b}\gamma\gamma}}})^2.
+    -2\log (\mathcal{L}) = \sum_{i} (\frac{\Omega_i^*-\Omega_i}{\sigma_{\Omega_i}})^2 - 2\log(L(p_T)) + (\frac{ \sum p_x^*-0}{\sigma_{\sigma_{b\bar{b}\gamma\gamma}}})^2 + (\frac{ \sum p_y^*-0}{\sigma_{\sigma_{b\bar{b}\gamma\gamma}}})^2.
 \end{equation}
 
 This is a product of Gaussian terms of $\Omega = (E, \eta, \phi)$ and a $p_T$-dependent jet response likelihood $L(p_T)$. The likelihood also includes a term constraining the sum over all $P_{x,y}$ momenta of the system. The energy and angular resolutions of photons are fixed to 1\% as well as the angular resolutions of the jets. Jets energy resolution is $p_T$-depend. Jet response and resolution are evaluated in the $t\bar{t}$ MC samples used to drive the $p_T$Reco function using parton level as target. Finally, this statistics is used to minimize and balance the reconstructed HH system on an event-by-event basis. It was checked that fixing the direction of the particles did not imply a loss in final resolution while it reduces significantly the computing time to converge. For that, angles are fixed in the fit to their nominal value to improve computational cost as well as to preserve the \myy distribution.  
