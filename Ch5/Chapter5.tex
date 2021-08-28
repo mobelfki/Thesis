@@ -89,7 +89,7 @@ Muon candidates are required to have $p_T > $ 10 GeV, $|\eta| < $ 2.7 and requir
 \subsubsection{Jets}
 \label{HHyybb:ObjEvt:Obj:Jet}
 As described in Chapter \ref{Jet}, particle flow jets are adopted for this analysis. They are required to have $|\eta| < $ 2.5 and $p_T > $ 25 GeV. A tight JVT is applied to separate jets arising from the hard-scatter and those from pile-up, as defined in Section \ref{Jet:Tag}. The selected jets are calibrated using the calibration chain described in Section \ref{Jet:Cal}. \\
-The jet flavour is determined using the 77\% efficiency WP of the DL1r tagger as described is Section \ref{Jet:Tag:Dlr}. Events are required to have exactly two $b$-jets ($N_{\text{b-jet}}^{77\%} = $ 2) to preserve the orthogonality with the HH$\to$\bbbb channel. The two $b$-jets are used to reconstruct the $H\to\bar{b}b$ candidate. \\
+The jet flavour is determined using the 77\% efficiency WP of the DL1r tagger as described is Section \ref{Jet:Tag:Dlr}. Events are required to have exactly two $b$-jets ($N_{\text{b-jet}}^{77\%} = $ 2) to preserve the orthogonality with the HH$\to$\bbbb channel which requires more than two $b$-jets. The two $b$-jets are used to reconstruct the $H\to\bar{b}b$ candidate. \\
 The energy of $b$-tagged jets is corrected with the calibration method introduced in Section \ref{Jet:Cal:BCal}. The improvement on the \mbb resolution translates to a 7.2\% $\pm$ 2\% improvement in the expected signal significance (the error is estimated using the bootstrap method \cite{Bootstrap}). \\
 
 An additional 5-10\% improvement on the \mbb resolution could have been achieved through the use of a likelihood-based kinematic fit denoted "kinematic fit". The kinematic fit uses the $H\to\gamma\gamma$ component reconstructed with a percent-level precision to improve the $H\to\bar{b}b$ resolution through the constraint of the good overall balance in the transverse plane. I developed the kinematic fit for this \HHyybb analysis. It is not used in the final analysis as a bug was found in its implementation after sample production. Fixing the bug would have delayed the publication. A detailed description of the kinematic fit can be found in Appendix \ref{Adx4}. \\
@@ -181,7 +181,7 @@ The BDT approach improves the analysis significance by approximately 20\% compar
     \subfloat[][High mass, BDT loose]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_HMass.pdf}}
     \subfloat[][Low mass, BDT loose ]{\includegraphics[width=.5\textwidth]{Ch5/Img/m_yy_XGBoost_btag77_withTop_BCal_looseScore_LMass.pdf}}
   
-    \caption{Distributions of \myy in all signal categories. The simulated continuum background is scaled by the $\gamma\gamma$, $\gamma$-jet/jet-$\gamma$, and jet-jet fractions and normalized to the data side-band. The background decomposition is described in Section \ref{HHyybb:Modelling:Bkg}.}
+    \caption{Distributions of \myy in all signal categories. The simulated continuum background is scaled by the $\gamma\gamma$, $\gamma$-jet/jet-$\gamma$, and jet-jet fractions and normalized to the data side-band ($m_{\gamma\gamma} \in [105, 120] \cup [130, 160]$ GeV). The background decomposition is described in Section \ref{HHyybb:Modelling:Bkg}.}
     \label{fig:HHyybb:ObjEvt:myy}
 \end{figure}
 

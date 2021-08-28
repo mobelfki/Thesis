@@ -26,11 +26,11 @@ A discrepancy between the peak positions of the simulated and real distributions
     \caption{Distribution of $E^{cone40}_T$ in data and simulation, in the central region of the detector ($|\eta|<$0.6), separately for converted (left) and unconverted (right) photons after the data-driven shifts are applied.}
     \label{fig:gamma:Iso:Shifts}
 \end{figure}
-Figure \ref{fig:gamma:Iso:Eff} shows the efficiency of the isolation WPs defined in Table \ref{tab:gamma:Iso:WPs}, using $Z\rightarrow ll\gamma$. The radiative Z decays signature is used to estimate the photon efficiencies as it provides a clean environment of prompt photons, especially in the low-\eT range. 
+Figure \ref{fig:gamma:Iso:Eff} shows the efficiency of the isolation WPs defined in Table \ref{tab:gamma:Iso:WPs}, using $Z\rightarrow ll\gamma$ ($l=e, \mu$). The radiative Z decays signature is used to estimate the photon efficiencies as it provides a clean environment of prompt photons, especially in the low-\eT range. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\textwidth]{Ch3/Img/Photon_Iso_Eff.png}
-    \caption{Efficiency of the isolation working points for converted(left) and unconverted (right) photons as a function of photon \eT. The lower panel shows the ratio of the efficiencies measured in data and in simulation (scale factors).}
+    \caption{Efficiency of the isolation working points for converted(left) and unconverted (right) photons as a function of photon \eT. The lower panel shows the ratio of the efficiencies measured in data and in simulation (scale factors). TThe error bars account for the systematic and statistical errors.}
     \label{fig:gamma:Iso:Eff}
 \end{figure}
 
@@ -70,11 +70,11 @@ Similarly to the calorimeter based variables for isolation, the shower shapes va
 \\
 Photon identification efficiency is measured using three different methods over distinct energy regimes:
 \begin{itemize}
-\item The Matrix Method (MM): based on the inclusive-photon production sample collected using single-photon triggers and performed over a wide kinematic range from 25 GeV to 1.5 TeV. 
+\item The Matrix Method (MM): based on the inclusive-photon production sample collected using single-photon triggers and performed over a wide kinematic range from 25 GeV to 1.5 TeV in \eT. 
 \item The Radiative Z method: uses the clean signature of radiative Z at low-energy and allows a measurement of identification efficiency $\epsilon_{ID}$ from \eT = 10 GeV to 100 GeV. This method handles small background contamination from Z+jets where the jet is misidentified as a photon using a maximum-likelihood fit \cite{Photon_Eff_Run1}. 
 \item Electron Extrapolation (EE): uses a transformed electron shower shapes sample form $Z\rightarrow e^+e^-$ and measures $\epsilon_{ID}$ in the region 25 $<$ \eT $<$ 150 GeV.
 \end{itemize}
-These methods are fully described in Section 5 of Ref. \cite{Photon_Eff_2015}. The efficiencies from each method are then combined to provide a $\epsilon_{ID}$ measurement for the \eT-dependent selection as shown in Figures \ref{fig:gamma:ID:Eff:UnCov} and \ref{fig:gamma:ID:Eff:Cov}. 
+These methods are fully described in Section 5 of Ref. \cite{Photon_Eff_2015}. The tight identification efficiencies from each method are then combined to provide a $\epsilon_{ID}$ measurement for the \eT-dependent selection as shown in Figures \ref{fig:gamma:ID:Eff:UnCov} and \ref{fig:gamma:ID:Eff:Cov}. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{Ch3/Img/Unconverted_Eff_2017.png}
@@ -115,7 +115,10 @@ The aim is to redistribute the energy between the cluster cells in simulation to
 \end{enumerate}
 The main idea behind the reweighting is to factorize out the material effects and not the physics behaviours, especially the bremsstrahlung tails in the energy profile for electrons and positrons. For electron only, the bremsstrahlung tails are extracted from the $e^+$ and $e^-$ energy profiles as: 
 \begin{equation}
-    E_{i} = (E_{i}^{\text{electron}} <  E_{i}^{\text{positron}}) \ ? \ E_{i}^{\text{electron}} \ : \  E_{i}^{\text{positron}},
+E_{i}=\left\{\begin{array}{l}
+E_{i}^{\text {electron }} \text { if } E_{i}^{\text {electron }}<E_{i}^{\text {positron }} \\
+E_{i}^{\text {positron }} \quad \text { otherwise }
+\end{array}\right.
 \end{equation}
 so it is derived independently of bremsstrahlung and similarly for both electrons and positrons.
 
@@ -141,14 +144,14 @@ For this study, inclusive photons from $Z\rightarrow ll\gamma$ events are consid
 \begin{enumerate}
     \item Photon selection:  
     \begin{itemize}
-    \item Transverse momentum $p_T > $  10 GeV.
+    \item Transverse energy \eT $> $  10 GeV.
     \item Pseudorapidity $|\eta|$ within the calorimeter acceptance: $|\eta| < $ 2.37, excluding the transition region between the barrel and end-cap (crack region): 1.37 $ < |\eta| < $ 1.52
     \item Isolation: tight.
     \item Identification: None. 
 \end{itemize}
     \item Electron selection:
     \begin{itemize}
-        \item Transverse momentum $p_T > $ 10 GeV.
+        \item Transverse energy \eT $> $  10 GeV.
         \item Pseudorapidity $|\eta| < $ 1.37 or $1.52 < |\eta| < $ 2.47.
         \item Longitudinal impact parameter $z_0 < $ 10 mm, transverse impact parameter significance $|d_0|/\sigma_{d_0}$ less than 10.
         \item Isolation: loose.
@@ -156,7 +159,7 @@ For this study, inclusive photons from $Z\rightarrow ll\gamma$ events are consid
     \end{itemize}
     \item Combined muon selection: 
     \begin{itemize}
-        \item Transverse momentum $p_T > $ 10 GeV.
+        \item Transverse energy \eT $> $  10 GeV.
         \item Pseudorapidity $|\eta| < $ 2.5.
         \item Longitudinal impact parameter $z_0 < $ 10 mm, transverse impact parameter significance $|d_0|/\sigma_{d_0}$ less than 10.
         \item Isolation: loose.
@@ -390,7 +393,7 @@ Figure \ref{fig:gamma:CNN:Validation:ROC} shows the receiver-operating character
    \subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/ROC_UnConverted.png}}
 	\subfloat[][]{\includegraphics[width=.5\textwidth]{Ch3/Img/ROC_Converted.png}}
 	\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black]
-    \caption{Network ROC curve for (a) unconverted photons (b) converted photons, the orange line show the ROC curve and the blue dot show the tight WP, x-axis is the $\epsilon_{eff}$ and y-axis show the $\epsilon_{rej}$ as defined in Eq. \ref{eq:eff}.}
+    \caption{Network ROC curve for inclusive (a) unconverted photons (b) converted photons, the orange line show the ROC curve and the blue dot show the tight WP, x-axis is the $\epsilon_{eff}$ and y-axis show the $\epsilon_{rej}$ as defined in Eq. \ref{eq:eff}.}
     \label{fig:gamma:CNN:Validation:ROC}
     \end{tcolorbox}
     
@@ -486,7 +489,7 @@ Figures \ref{fig:gamma:CNN:Zllg:Energy:UnC} and \ref{fig:gamma:CNN:Zllg:Energy:C
     \end{tcolorbox}
 \end{figure}
 \\
-The CNN scale factors are reported in Table \ref{tab:gamma:CNN:Zllg:SF:UnC} and Table \ref{tab:gamma:CNN:Zllg:SF:C}, and found to be closer to unity except for the first \eT bin where the scale factor is slightly large but still better than cut-based. 
+The CNN scale factors are reported in Table \ref{tab:gamma:CNN:Zllg:SF:UnC} and Table \ref{tab:gamma:CNN:Zllg:SF:C}, and found to be closer to unity except for the first \eT bin where the scale factor is slightly large but still better than cut-based as shown in the ratio plots. 
 \begin{table}[htbp]
     \centering
    \begin{tabular}{lcccc}

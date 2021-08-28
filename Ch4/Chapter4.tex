@@ -27,7 +27,7 @@ The resulting jets from the simulation have to be calibrated such that, on avera
 
 \subsection{Jet Calibration Chain}
 \label{Jet:Cal:chain}
-The first step in the calibration chain aims to recalculate the jet direction to point to the hard scatter primary vertex rather than the centre of the detector. This correction only affects the jet $\eta$ and resulting in a better $\eta$ resolution without changing the jet energy. Figure \ref{fig:Jet:Cal:chain} presents an overview of the ATLAS calibration scheme for jets.
+The first step in the calibration chain aims to recalculate the jet direction to point to the hard scatter primary vertex rather than the centre of the detector. This correction only affects the jet $\eta$ and resulting in a better $\eta$ resolution without changing the jet energy called origin correction. Figure \ref{fig:Jet:Cal:chain} presents an overview of the ATLAS calibration scheme for jets.
 \begin{figure}[htbp]
      \centering
      \includegraphics[width=0.7\textwidth]{Ch4/Img/calibration_chain.png}
@@ -53,13 +53,13 @@ where $E_{JES}^{\mathrm{jet}}$ and $E^{\mathrm{jet}}$ are jet energy after and b
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.55\textwidth]{Ch4/Img/Jet_Resolution_Topo_vs_PFlow.png}
-    \caption{The relative jet energy resolution for fully calibrated PFlow+JES jets (green curve) and EM+JES jets (blue curve) as a function of $p_T$ jet.}
+    \caption{The relative jet energy resolution in simulation for fully calibrated PFlow+JES jets (green curve) and EM+JES jets (blue curve) as a function of $p_T$ jet.}
     \label{fig:Jet:Cal:chain:JER}
 \end{figure}
 
-\subsubsection{Global Sequential Calibration (GSC)}
+\subsubsection{Global Sequential Calibration}
 \label{Jet:Cal:chain:GSC}
-The GSC corrects effects due to intrinsic properties of the jets not properly taken into account in previous steps and the hadron composition yielded by the fragmentation process. The average particle composition and shower shape of a jet vary between initiating particles, most notably between quark- and gluon-initiated jets. The GSC uses five observables to improve the resolution of the JES jets. For each observable, an independent jet 4-momentum correction is derived as a function of $p_{T}^{truth}$ and $|\eta|$ by inverting the reconstructed jet response in simulated events. The effect of each correction is therefore to remove the dependence of the jet response on each observable while conserving the overall energy scale at the JES step. No correlation between observables is taken into account. The five observables are:
+The Global Sequential Calibration (GSC) corrects effects due to intrinsic properties of the jets not properly taken into account in previous steps and the hadron composition yielded by the fragmentation process. The average particle composition and shower shape of a jet vary between initiating particles, most notably between quark- and gluon-initiated jets. The GSC uses five observables to improve the resolution of the JES jets. For each observable, an independent jet 4-momentum correction is derived as a function of $p_{T}^{truth}$ and $|\eta|$ by inverting the reconstructed jet response in simulated events. The effect of each correction is therefore to remove the dependence of the jet response on each observable while conserving the overall energy scale at the JES step. No correlation between observables is taken into account. The five observables are:
 \begin{enumerate}
     \item $f_{Tile0}$, the fraction of jet energy measured in the first layer of the hadronic Tile calorimeter.
     \item $f_{LAr3}$, the fraction of jet energy measured in the last layer of the electromagnetic LAr calorimeter.
@@ -245,7 +245,7 @@ Figure \ref{fig:Jet:Cal:BCal:pTReco} shows that :
 
 \subsection{$b$-jet energy correction improvement}
 \label{Jet:Cal:BCal:Result}
-Figure \ref{fig:Jet:Cal:BCal:Result:E}, shows the maximum possible gain in $b$-jet energy resolution in $t\bar{t}$ sample (used to compute the \pT-Reco correction). The energy resolution is improved by 40\% (20\%) for high (low) energy for semi-leptonic jet, and about 20\% (5\%) for high (low) energy for hadronic jet. Similar improvement is observed for both jet types (EMTopo and PFlow).
+Figure \ref{fig:Jet:Cal:BCal:Result:E}, shows the maximum possible gain in $b$-jet energy resolution in $t\bar{t}$ sample (used to compute the \pT-Reco correction). The energy resolution is improved by 40\% (20\%) for low (high) energy for semi-leptonic jet, and about 20\% (5\%) for low (high) energy for hadronic jet. Similar improvement is observed for both jet types (EMTopo and PFlow).
 \begin{figure}[htbp]
    \centering
    \subfloat[topological cluster jets][topological cluster jets]{\includegraphics[width=.45\textwidth]{Ch4/Img/E_AntiKt4EMTopoJets.png}}\quad
